@@ -82,4 +82,14 @@ public class SafetyController {
       return message;
     }
 
+    /**
+     * retourner les adresses mail de tous les habitants de la ville.
+     * @param city nom de la ville
+     * @return les mail des habitants
+     */
+    @GetMapping("/communityEmail")
+    public String getMailAllPersons(@RequestParam String city){
+        String message = "{\"message\": \"mail des habitant pour la ville de  : " + city + "\"}";
+        return message;
+    }
 }
