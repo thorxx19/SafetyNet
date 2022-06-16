@@ -24,4 +24,16 @@ public class SafetyController {
         return message;
     }
 
+    /**
+     * retourner une liste d'enfants (tout individu âgé de 18 ans ou moins) habitant à cette adresse.
+     * @param address adresse rechercher
+     * @return la liste des enfant trouver a l'adresse
+     */
+    @GetMapping("/childAlert")
+    public String getAddressChild(@RequestParam String address){
+        String message = "{\"message\": \"l'adresse de cette enfant et pas trouver\"}";
+        return message;
+    }
+
+
 }
