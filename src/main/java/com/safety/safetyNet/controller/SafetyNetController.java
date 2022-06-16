@@ -102,25 +102,8 @@ public class SafetyNetController {
      */
     @GetMapping("/communityEmail")
     public Object getMailAllPersons(@RequestParam String city){
-       ArrayList<Persons> dataPersons = safetyNetService.getAllMail();
 
-        List<Email> listEmail = new ArrayList<>();
-
-
-        //todo garder que les mail unique
-   if (dataPersons != null) {
-    for (Persons data : dataPersons) {
-
-        if (city.equals(data.getCity())){
-            Email mail = new Email();
-            mail.setEmail(data.getEmail());
-            listEmail.add(mail);
-        }
+        List<Email> listEmail = safetyNetService.getAllMail(city);
+        return listEmail;
     }
-
-         }else{
-               return null;
-           }
-                return listEmail;
-            }
 }
