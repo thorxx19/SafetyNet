@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class Firestations {
 
-    public String address;
-    public String station;
+    private String address;
+    private String station;
 
 }

@@ -15,23 +15,5 @@ import java.io.IOException;
 public class SafetyNetService {
 
 
-    public ListSafety test(){
-
-
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(SerializationFeature.INDENT_OUTPUT);
-
-        try {
-
-            ListSafety data = mapper.readValue(new File("data.json"),ListSafety.class);
-            log.info(String.valueOf(data.getFirestations()));
-
-            return data;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    return null;
-    }
 
 }

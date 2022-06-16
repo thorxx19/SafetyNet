@@ -9,10 +9,10 @@ import java.util.List;
 @Data
 public class Medicalrecords {
 
-    public String firstName;
-    public String lastName;
-    public String birthdate;
-    public List<String> medications;
-    public List<String> allergies;
+    private String firstName;
+    private String lastName;
+    private String birthdate;
+    private List<String> medications;
+    private List<String> allergies;
 
 }
