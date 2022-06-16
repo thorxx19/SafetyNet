@@ -35,5 +35,15 @@ public class SafetyController {
         return message;
     }
 
+    /**
+     *  retourner une liste des numéros de téléphone des résidents desservis par la caserne de pompiers.
+     * @param firestation n° de la station
+     * @return liste de n° de tel des résident
+     */
+    @GetMapping("/phoneAlert")
+    public String getNumberPhone(@RequestParam int firestation){
+        String message = "{\"message\": \"pas de N° de tel a cette station\"}";
+        return message;
+    }
 
 }
