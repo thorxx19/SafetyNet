@@ -58,4 +58,15 @@ public class SafetyController {
         return message;
     }
 
+    /**
+     * retourner une liste de tous les foyers desservis par la caserne
+     * @param stations n° de la caserne de pompier
+     * @return liste de foyer
+     */
+    @GetMapping("/flood/stations")
+    public String getHomesAtThisStationNumber(@RequestParam int stations){
+        String message = "{\"message\": \"pas d'habitant pour cette caserne de pompier\"}";
+        return message;
+    }
+
 }
