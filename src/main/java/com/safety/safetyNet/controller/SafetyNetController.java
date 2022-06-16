@@ -2,15 +2,27 @@ package com.safety.safetyNet.controller;
 
 
 
+import com.safety.safetyNet.model.Email;
+import com.safety.safetyNet.model.Persons;
+import com.safety.safetyNet.service.SafetyNetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
+import static com.safety.safetyNet.constantes.SafetyNetConstantes.*;
 
 /**
  * @author o.froidefond
  */
 @RestController
-public class SafetyController {
+public class SafetyNetController {
+
+    @Autowired
+    SafetyNetService safetyNetService;
+
 
 
     /**
@@ -84,12 +96,29 @@ public class SafetyController {
 
     /**
      * retourner les adresses mail de tous les habitants de la ville.
+     *
      * @param city nom de la ville
      * @return les mail des habitants
      */
     @GetMapping("/communityEmail")
-    public String getMailAllPersons(@RequestParam String city){
-        String message = "{\"message\": \"mail des habitant pour la ville de  : " + city + "\"}";
-        return message;
+    public Object getMailAllPersons(@RequestParam String city){
+       ArrayList<Persons> dataPersons = safetyNetService.getAllPersons();
+
+        List<Email> listEmail = new ArrayList<>();
+
+   if (dataPersons != null) {
+    for (Persons data : dataPersons) {
+
+        if (city.equals(data.getCity())){
+            Email mail = new Email();
+            mail.setEmail(data.getEmail());
+            listEmail.add(mail);
+        }
     }
+
+         }else{
+               return null;
+           }
+                return listEmail;
+            }
 }

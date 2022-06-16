@@ -12,7 +12,8 @@ import java.io.IOException;
 
 
 @Slf4j
-public class SafetyRepository {
+@Repository
+public class SafetyNetRepository {
 
     public ListSafety test() {
 
@@ -23,20 +24,7 @@ public class SafetyRepository {
         try {
 
             ListSafety data = mapper.readValue(new File("src/main/java/com/safety/safetyNet/config/data.json"), ListSafety.class);
-            //log.info(String.valueOf(data.getFirestations()));
-            //log.info(String.valueOf(data.getMedicalrecords()));
-            //log.info(String.valueOf(data.getPersons()));
-            //log.info(String.valueOf(data));
-
-
-            String resultJ = "";
-            for (Object res : data.getPersons()) {
-                resultJ = res.toString();
-
-                if (resultJ.contains("address=112 Steppes Pl")) {
-                    log.info(res.toString());
-                }
-            }
+            return data;
         } catch (IOException e) {
             e.printStackTrace();
         }

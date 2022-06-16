@@ -2,17 +2,32 @@ package com.safety.safetyNet.service;
 
 
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import com.safety.safetyNet.model.ListSafety;
+import com.safety.safetyNet.model.Persons;
+import com.safety.safetyNet.repository.SafetyNetRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.IOException;
+import java.util.ArrayList;
 
 
 @Slf4j
+@Service
 public class SafetyNetService {
+
+    @Autowired
+    SafetyNetRepository safetyNetRepository;
+
+    public ArrayList<Persons> getAllPersons(){
+
+     ListSafety data = safetyNetRepository.test();
+
+     ArrayList<Persons> dataPersons = data.getPersons();
+
+      return dataPersons;
+    }
+
 
 
 
