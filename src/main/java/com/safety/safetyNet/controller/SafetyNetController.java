@@ -3,6 +3,7 @@ package com.safety.safetyNet.controller;
 
 
 import com.safety.safetyNet.model.Email;
+import com.safety.safetyNet.model.MessageError;
 import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.service.SafetyNetService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +32,10 @@ public class SafetyNetController {
      * @return les habitants couverts par la station numéro
      */
     @GetMapping("/firestation")
-    public String getFireStationNumber(@RequestParam int stationNumber){
-        String message = "{\"message\": \"sation n° "+stationNumber+"\" non implémenter\"}";
+    public Object getFireStationNumber(@RequestParam int stationNumber){
+        MessageError message = new MessageError();
+        message.setMessage("sation n° "+stationNumber+ " non implémenter");
+        message.setError("error numéro de caserne de pompier");
         return message;
     }
 
@@ -42,19 +45,23 @@ public class SafetyNetController {
      * @return la liste des enfant trouver a l'adresse
      */
     @GetMapping("/childAlert")
-    public String getAddressChild(@RequestParam String address){
-        String message = "{\"message\": \"l'adresse de cette enfant et pas trouver\"}";
+    public Object getAddressChild(@RequestParam String address){
+        MessageError message = new MessageError();
+        message.setMessage("l'adresse de cette enfant n'est pas trouver");
+        message.setError("error d'adresse");
         return message;
     }
 
     /**
-     *  retourner une liste des numéros de téléphone des résidents desservis par la caserne de pompiers.
+     * retourner une liste des numéros de téléphone des résidents desservis par la caserne de pompiers.
      * @param firestation n° de la station
      * @return liste de n° de tel des résident
      */
     @GetMapping("/phoneAlert")
-    public String getNumberPhone(@RequestParam int firestation){
-        String message = "{\"message\": \"pas de N° de tel a cette station\"}";
+    public Object getNumberPhone(@RequestParam int firestation){
+        MessageError message = new MessageError();
+        message.setMessage("pas d'habitant enregistrée pour la staion "+firestation+"");
+        message.setError("error pas de numéro de téléphone ");
         return message;
     }
 
@@ -65,8 +72,10 @@ public class SafetyNetController {
      * @return liste d'habitant
      */
     @GetMapping("/fire")
-    public String getHabitantAtThisAdrdress(@RequestParam String address){
-        String message = "{\"message\": \"pas d'habitant a cette adresse\"}";
+    public Object getHabitantAtThisAdrdress(@RequestParam String address){
+        MessageError message = new MessageError();
+        message.setMessage("il n'y pas d'habitant a l'adresse "+ address +"");
+        message.setError("error d'adresse");
         return message;
     }
 
@@ -76,8 +85,10 @@ public class SafetyNetController {
      * @return liste de foyer
      */
     @GetMapping("/flood/stations")
-    public String getHomesAtThisStationNumber(@RequestParam int stations){
-        String message = "{\"message\": \"pas d'habitant pour cette caserne de pompier\"}";
+    public Object getHomesAtThisStationNumber(@RequestParam int stations){
+        MessageError message = new MessageError();
+        message.setMessage("pas d'habitant pour cette caserne de pompier N° "+ stations +"");
+        message.setError("error number stations");
         return message;
     }
 
@@ -89,14 +100,15 @@ public class SafetyNetController {
      * @return la fiche de la personne compléte
      */
     @GetMapping("/personInfo")
-    public String getMedicalRecordsOfThisPerson(@RequestParam String firstName,@RequestParam String lastName){
-        String message = "{\"message\": \"profil de l'habitant : " + firstName + " " + lastName + "\"}";
+    public Object getMedicalRecordsOfThisPerson(@RequestParam String firstName,@RequestParam String lastName){
+        MessageError message = new MessageError();
+        message.setMessage("pas de correspondence pour "+ lastName +" "+ firstName +"");
+        message.setError("error firstName or lastName");
       return message;
     }
 
     /**
      * retourner les adresses mail de tous les habitants de la ville.
-     *
      * @param city nom de la ville
      * @return les mail des habitants
      */
@@ -104,6 +116,13 @@ public class SafetyNetController {
     public Object getMailAllPersons(@RequestParam String city){
 
         List<Email> listEmail = safetyNetService.getAllMail(city);
-        return listEmail;
+        if (listEmail == null){
+            MessageError message = new MessageError();
+            message.setMessage("il y a pas donnée pour la ville de "+ city + "");
+            message.setError("error name of city");
+            return message;
+        }else{
+            return listEmail;
+        }
     }
 }

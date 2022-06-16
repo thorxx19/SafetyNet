@@ -36,25 +36,28 @@ public class SafetyNetService {
      ArrayList<Persons> dataPersons = data.getPersons();
 
         ArrayList<Email> listEmail = new ArrayList<>();
+        TreeSet<String> treeMail = new TreeSet<>();
+        String mailString = "";
 
-
-
-        //todo garder que les mail unique
         if (data != null) {
             for (Persons dataMail : dataPersons) {
 
                 if (city.equals(dataMail.getCity())){
-                    Email mail = new Email();
-                    mail.setEmail(dataMail.getEmail());
-
-                    listEmail.add(mail);
+                    mailString = dataMail.getEmail().toString();
+                    treeMail.add(mailString);
+                } else {
+                    return null;
                 }
+            }
+            for (String mailTree: treeMail) {
+                Email mail = new Email();
+                mail.setEmail(mailTree);
+                listEmail.add(mail);
             }
 
         } else {
             return null;
         }
-
       return listEmail;
     }
 }
