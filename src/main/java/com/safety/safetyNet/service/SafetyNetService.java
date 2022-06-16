@@ -19,9 +19,9 @@ public class SafetyNetService {
     @Autowired
     SafetyNetRepository safetyNetRepository;
 
-    public ArrayList<Persons> getAllPersons(){
+    public ArrayList<Persons> getAllMail(){
 
-     ListSafety data = safetyNetRepository.test();
+     ListSafety data = safetyNetRepository.getData();
 
      ArrayList<Persons> dataPersons = data.getPersons();
 

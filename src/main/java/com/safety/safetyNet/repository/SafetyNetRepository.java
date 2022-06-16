@@ -15,7 +15,7 @@ import java.io.IOException;
 @Repository
 public class SafetyNetRepository {
 
-    public ListSafety test() {
+    public ListSafety getData() {
 
 
         ObjectMapper mapper = new ObjectMapper();
