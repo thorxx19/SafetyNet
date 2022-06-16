@@ -46,4 +46,16 @@ public class SafetyController {
         return message;
     }
 
+    /**
+     *  retourner la liste des habitants vivant à l’adresse donnée ainsi que le numéro de la caserne
+     * de pompiers la desservant.
+     * @param address l'adresse rechercher
+     * @return liste d'habitant
+     */
+    @GetMapping("/fire")
+    public String getHabitantAtThisAdrdress(@RequestParam String address){
+        String message = "{\"message\": \"pas d'habitant a cette adresse\"}";
+        return message;
+    }
+
 }
