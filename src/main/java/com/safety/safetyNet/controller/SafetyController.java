@@ -69,4 +69,17 @@ public class SafetyController {
         return message;
     }
 
+    /**
+     * retourner le nom, l'adresse, l'âge, l'adresse mail et les antécédents médicaux (médicaments,
+     * posologie, allergies) de chaque habitant.
+     * @param firstName le prénom rechercher
+     * @param lastName le nom rechercher
+     * @return la fiche de la personne compléte
+     */
+    @GetMapping("/personInfo")
+    public String getMedicalRecordsOfThisPerson(@RequestParam String firstName,@RequestParam String lastName){
+        String message = "{\"message\": \"profil de l'habitant : " + firstName + " " + lastName + "\"}";
+      return message;
+    }
+
 }
