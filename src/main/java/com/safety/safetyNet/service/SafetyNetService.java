@@ -71,7 +71,7 @@ public class SafetyNetService {
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
         ArrayList<Firestations> dataFireStations = data.getFirestations();
-        ArrayList<Medicalrecords> dataMedical = data.getMedicalrecords();
+        ArrayList<MedicalRecords> dataMedical = data.getMedicalrecords();
         ArrayList<Object> listPersons = new ArrayList<>();
         int countAdult = 0;
         int countChildren = 0;
@@ -81,8 +81,8 @@ public class SafetyNetService {
             if (stationNumber == station) {
                 for (Persons person : dataPersons) {
                     if (person.getAddress().equals(firestation.getAddress())) {
-                        for (Medicalrecords medic : dataMedical) {
-                            if (person.getLastName().equals(medic.getLastName()) && person.getFirstName().equals(medic.getFirstName())){
+                        for (MedicalRecords medic : dataMedical) {
+                            if (person.getLastName().equals(medic.getLastName()) && person.getFirstName().equals(medic.getFirstName())) {
                                 Calendar today = Calendar.getInstance();
                                 SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
                                 try {
@@ -92,12 +92,12 @@ public class SafetyNetService {
                                     TimeUnit time = TimeUnit.DAYS;
                                     long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
                                     long yearBirth = resultDay / 365;
-                                    if (yearBirth <= 18){
-                                        countChildren ++;
-                                    }else{
-                                        countAdult ++;
+                                    if (yearBirth <= 18) {
+                                        countChildren++;
+                                    } else {
+                                        countAdult++;
                                     }
-                                } catch (Exception e){
+                                } catch (Exception e) {
                                     log.info(e.getMessage());
                                 }
                             }
@@ -112,10 +112,12 @@ public class SafetyNetService {
                 }
             }
         }
-        CountPeople countPeople = new CountPeople();
-        countPeople.setChildren(countChildren);
-        countPeople.setAdult(countAdult);
-        listPersons.add(countPeople);
+        if (countAdult != 0 || countChildren != 0) {
+            CountPeople countPeople = new CountPeople();
+            countPeople.setChildren(countChildren);
+            countPeople.setAdult(countAdult);
+            listPersons.add(countPeople);
+        }
         if (listPersons.isEmpty()) {
             MessageError message = new MessageError();
             message.setMessage("sation n° " + stationNumber + " non implémenter");
@@ -134,10 +136,10 @@ public class SafetyNetService {
      */
     public Object getChildrenThisAddress(String address) {
         ListSafety data = safetyNetRepository.getData();
-        ArrayList<Medicalrecords> dataMedical = data.getMedicalrecords();
+        ArrayList<MedicalRecords> dataMedical = data.getMedicalrecords();
         ArrayList<Persons> dataPersons = data.getPersons();
         ArrayList<Object> listMineur = new ArrayList<>();
-        for (Medicalrecords medic : dataMedical) {
+        for (MedicalRecords medic : dataMedical) {
             Calendar today = Calendar.getInstance();
             SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
             try {
@@ -221,25 +223,29 @@ public class SafetyNetService {
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
         ArrayList<Firestations> dataFireStations = data.getFirestations();
+        ArrayList<MedicalRecords> dateMedicalRecords = data.getMedicalrecords();
         TreeSet<String> stationTree = new TreeSet<>();
 
         ArrayList<Object> listPersons = new ArrayList<>();
         for (Persons person : dataPersons) {
             if (address.equals(person.getAddress())) {
-                for (Firestations station : dataFireStations) {
-                    if (address.equals(station.getAddress())) {
-                        stationTree.add(station.getStation());
+                for (MedicalRecords medic : dateMedicalRecords) {
+                    if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
+                            .equals(medic.getFirstName())) {
+                        PersonsMedical persons = new PersonsMedical();
+                        persons.setLastName(person.getLastName());
+                        persons.setPhone(person.getPhone());
+                        persons.setAge(0);
+                        persons.setAllergies(medic.getAllergies());
+                        persons.setMedications(medic.getMedications());
+                        listPersons.add(persons);
                     }
                 }
-                Persons persons = new Persons();
-                persons.setAddress(person.getAddress());
-                persons.setEmail(person.getEmail());
-                persons.setCity(person.getCity());
-                persons.setFirstName(person.getFirstName());
-                persons.setLastName(person.getLastName());
-                persons.setZip(person.getZip());
-                persons.setPhone(person.getPhone());
-                listPersons.add(persons);
+            }
+            for (Firestations station : dataFireStations) {
+                if (address.equals(station.getAddress())) {
+                    stationTree.add(station.getStation());
+                }
             }
         }
         if (!stationTree.isEmpty()) {
@@ -255,10 +261,12 @@ public class SafetyNetService {
         }
         return listPersons;
     }
-    public Object getHouseServeFireStation(int fireStation){
+
+    public Object getHouseServeFireStation(int fireStation) {
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
         ArrayList<Firestations> dataFireStations = data.getFirestations();
+        ArrayList<MedicalRecords> dateMedicalRecords = data.getMedicalrecords();
         ArrayList<Object> listPersons = new ArrayList<>();
         TreeSet<String> listLastName = new TreeSet<>();
 
@@ -268,22 +276,31 @@ public class SafetyNetService {
                 for (Persons person : dataPersons) {
                     listLastName.add(person.getLastName());
                     if (person.getAddress().equals(firestation.getAddress())) {
-                        Persons persons = new Persons();
-                        persons.setFirstName(person.getFirstName());
-                        persons.setLastName(person.getLastName());
-                        persons.setAddress(person.getAddress());
-                        persons.setCity(person.getCity());
-                        persons.setZip(person.getZip());
-                        persons.setPhone(person.getPhone());
-                        persons.setEmail(person.getEmail());
-                        listPersons.add(persons);
+                        for (MedicalRecords medic : dateMedicalRecords) {
+                            if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
+                                    .equals(medic.getFirstName())) {
+                                PersonsFireStation persons = new PersonsFireStation();
+                                persons.setLastName(person.getLastName());
+                                persons.setAddress(person.getAddress());
+                                persons.setAge(0);
+                                persons.setEmail(person.getEmail());
+                                persons.setAllergies(medic.getAllergies());
+                                persons.setMedications(medic.getMedications());
+                                listPersons.add(persons);
+                            }
+                        }
                     }
                 }
             }
         }
+        if (listPersons.isEmpty()) {
+            MessageError message = new MessageError();
+            message.setMessage("pas d'habitant pour cette caserne de pompier N° " + fireStation + "");
+            message.setError("error number stations");
+            listPersons.add(message);
+        }
 
-
-        return null;
+        return listPersons;
     }
 
 
