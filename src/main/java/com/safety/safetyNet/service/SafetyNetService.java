@@ -232,13 +232,27 @@ public class SafetyNetService {
                 for (MedicalRecords medic : dateMedicalRecords) {
                     if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
                             .equals(medic.getFirstName())) {
-                        PersonsMedical persons = new PersonsMedical();
-                        persons.setLastName(person.getLastName());
-                        persons.setPhone(person.getPhone());
-                        persons.setAge(0);
-                        persons.setAllergies(medic.getAllergies());
-                        persons.setMedications(medic.getMedications());
-                        listPersons.add(persons);
+                        Calendar today = Calendar.getInstance();
+                        SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
+                        try {
+                            Date birth = dateTimeFormatter.parse(medic.getBirthdate());
+                            Date todayParse = today.getTime();
+                            long result = todayParse.getTime() - birth.getTime();
+                            TimeUnit time = TimeUnit.DAYS;
+                            long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
+                            long yearBirth = resultDay / 365;
+                            PersonsMedical persons = new PersonsMedical();
+                            persons.setLastName(person.getLastName());
+                            persons.setPhone(person.getPhone());
+                            persons.setAge(yearBirth);
+                            persons.setAllergies(medic.getAllergies());
+                            persons.setMedications(medic.getMedications());
+                            listPersons.add(persons);
+
+                        } catch (Exception e) {
+                            log.info(e.getMessage());
+                        }
+
                     }
                 }
             }
@@ -279,14 +293,28 @@ public class SafetyNetService {
                         for (MedicalRecords medic : dateMedicalRecords) {
                             if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
                                     .equals(medic.getFirstName())) {
-                                PersonsFireStation persons = new PersonsFireStation();
-                                persons.setLastName(person.getLastName());
-                                persons.setAddress(person.getAddress());
-                                persons.setAge(0);
-                                persons.setEmail(person.getEmail());
-                                persons.setAllergies(medic.getAllergies());
-                                persons.setMedications(medic.getMedications());
-                                listPersons.add(persons);
+                                Calendar today = Calendar.getInstance();
+                                SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
+                                try {
+                                    Date birth = dateTimeFormatter.parse(medic.getBirthdate());
+                                    Date todayParse = today.getTime();
+                                    long result = todayParse.getTime() - birth.getTime();
+                                    TimeUnit time = TimeUnit.DAYS;
+                                    long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
+                                    long yearBirth = resultDay / 365;
+
+                                    PersonsFireStation persons = new PersonsFireStation();
+                                    persons.setLastName(person.getLastName());
+                                    persons.setAddress(person.getAddress());
+                                    persons.setAge(yearBirth);
+                                    persons.setEmail(person.getEmail());
+                                    persons.setAllergies(medic.getAllergies());
+                                    persons.setMedications(medic.getMedications());
+                                    listPersons.add(persons);
+
+                                } catch (Exception e){
+                                    log.error(e.getMessage());
+                                }
                             }
                         }
                     }
