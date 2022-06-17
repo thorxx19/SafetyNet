@@ -188,6 +188,12 @@ public class SafetyNetService {
         return listPhone;
     }
 
+    /**
+     * fonction pour récupérer les personne en fonction de leur adresse et indiquer
+     * quel caserne de pompier qui les desserve.
+     * @param address
+     * @return
+     */
     public Object getPersonsThisAddressPlusStationNumber(String address) {
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
