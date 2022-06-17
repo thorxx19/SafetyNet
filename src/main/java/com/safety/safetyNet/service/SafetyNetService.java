@@ -7,12 +7,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TreeSet;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -72,26 +71,51 @@ public class SafetyNetService {
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
         ArrayList<Firestations> dataFireStations = data.getFirestations();
+        ArrayList<Medicalrecords> dataMedical = data.getMedicalrecords();
         ArrayList<Object> listPersons = new ArrayList<>();
+        int countAdult = 0;
+        int countChildren = 0;
 
         for (Firestations firestation : dataFireStations) {
             int station = Integer.parseInt(firestation.getStation());
             if (stationNumber == station) {
                 for (Persons person : dataPersons) {
                     if (person.getAddress().equals(firestation.getAddress())) {
-                        Persons persons = new Persons();
+                        for (Medicalrecords medic : dataMedical) {
+                            if (person.getLastName().equals(medic.getLastName()) && person.getFirstName().equals(medic.getFirstName())){
+                                Calendar today = Calendar.getInstance();
+                                SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
+                                try {
+                                    Date birth = dateTimeFormatter.parse(medic.getBirthdate());
+                                    Date todayParse = today.getTime();
+                                    long result = todayParse.getTime() - birth.getTime();
+                                    TimeUnit time = TimeUnit.DAYS;
+                                    long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
+                                    long yearBirth = resultDay / 365;
+                                    if (yearBirth <= 18){
+                                        countChildren ++;
+                                    }else{
+                                        countAdult ++;
+                                    }
+                                } catch (Exception e){
+                                    log.info(e.getMessage());
+                                }
+                            }
+                        }
+                        PersonsStation persons = new PersonsStation();
                         persons.setFirstName(person.getFirstName());
                         persons.setLastName(person.getLastName());
                         persons.setAddress(person.getAddress());
-                        persons.setCity(person.getCity());
-                        persons.setZip(person.getZip());
                         persons.setPhone(person.getPhone());
-                        persons.setEmail(person.getEmail());
                         listPersons.add(persons);
                     }
                 }
             }
         }
+        CountPeople countPeople = new CountPeople();
+        countPeople.setChildren(countChildren);
+        countPeople.setAdult(countAdult);
+        listPersons.add(countPeople);
         if (listPersons.isEmpty()) {
             MessageError message = new MessageError();
             message.setMessage("sation n° " + stationNumber + " non implémenter");
@@ -101,57 +125,55 @@ public class SafetyNetService {
         return listPersons;
 
     }
+
     /**
      * fonction pour trier les mineurs de 18 ans et moins en fonction de leur adresse.
+     *
      * @param address l'adresse de la résidence
      * @return liste de mineur
      */
-    public Object getChildrenThisAddress(String address)  {
+    public Object getChildrenThisAddress(String address) {
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Medicalrecords> dataMedical = data.getMedicalrecords();
         ArrayList<Persons> dataPersons = data.getPersons();
         ArrayList<Object> listMineur = new ArrayList<>();
         for (Medicalrecords medic : dataMedical) {
             Calendar today = Calendar.getInstance();
-            SimpleDateFormat dateTimeFormatter = new  SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
             try {
                 Date birth = dateTimeFormatter.parse(medic.getBirthdate());
                 Date todayParse = today.getTime();
                 long result = todayParse.getTime() - birth.getTime();
                 TimeUnit time = TimeUnit.DAYS;
-                long resultDay = time.convert(result,TimeUnit.MILLISECONDS);
-                long yearBirth = resultDay/365;
-                    if (yearBirth <= 18) {
-                        for (Persons person: dataPersons) {
-                            if (medic.getFirstName().equals(person.getFirstName()) && medic.getLastName()
-                                    .equals(person.getLastName()) && address.equals(person.getAddress())){
-                                Persons persons = new Persons();
-                                persons.setAddress(person.getAddress());
-                                persons.setPhone(person.getPhone());
-                                persons.setZip(person.getZip());
-                                persons.setEmail(person.getEmail());
-                                persons.setCity(person.getCity());
-                                persons.setLastName(person.getLastName());
-                                persons.setFirstName(person.getFirstName());
-                                listMineur.add(persons);
-                            }
+                long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
+                long yearBirth = resultDay / 365;
+                if (yearBirth <= 18) {
+                    for (Persons person : dataPersons) {
+                        if (medic.getFirstName().equals(person.getFirstName()) && medic.getLastName()
+                                .equals(person.getLastName()) && address.equals(person.getAddress())) {
+                            PersonsChildren persons = new PersonsChildren();
+                            persons.setLastName(person.getLastName());
+                            persons.setFirstName(person.getFirstName());
+                            persons.setAge(yearBirth);
+                            listMineur.add(persons);
                         }
                     }
-            } catch (Exception e){
+                }
+            } catch (Exception e) {
                 log.error(e.getMessage());
             }
         }
-        if (listMineur.isEmpty()){
-                MessageError message = new MessageError();
-                message.setMessage("l'adresse de cette enfant n'est pas trouver");
-                message.setError("error d'adresse");
-                listMineur.add(message);
+        if (listMineur.isEmpty()) {
+            MessageError message = new MessageError();
+            message.setMessage("l'adresse de cette enfant n'est pas trouver");
+            message.setError("error d'adresse");
+            listMineur.add(message);
         }
         return listMineur;
     }
 
     /**
-     * fonction pour récupérer les numéro d etéléphone en fonction de la caserne de pompier
+     * fonction pour récupérer les numéro de téléphone en fonction de la caserne de pompier
      *
      * @param stationNumber numéro de la caserne de pompier
      * @return liste de numéro de téléphone unique
@@ -191,8 +213,9 @@ public class SafetyNetService {
     /**
      * fonction pour récupérer les personne en fonction de leur adresse et indiquer
      * quel caserne de pompier qui les desserve.
-     * @param address
-     * @return
+     *
+     * @param address l'adresse des habitant
+     * @return liste de personne
      */
     public Object getPersonsThisAddressPlusStationNumber(String address) {
         ListSafety data = safetyNetRepository.getData();
@@ -232,4 +255,36 @@ public class SafetyNetService {
         }
         return listPersons;
     }
+    public Object getHouseServeFireStation(int fireStation){
+        ListSafety data = safetyNetRepository.getData();
+        ArrayList<Persons> dataPersons = data.getPersons();
+        ArrayList<Firestations> dataFireStations = data.getFirestations();
+        ArrayList<Object> listPersons = new ArrayList<>();
+        TreeSet<String> listLastName = new TreeSet<>();
+
+        for (Firestations firestation : dataFireStations) {
+            int station = Integer.parseInt(firestation.getStation());
+            if (fireStation == station) {
+                for (Persons person : dataPersons) {
+                    listLastName.add(person.getLastName());
+                    if (person.getAddress().equals(firestation.getAddress())) {
+                        Persons persons = new Persons();
+                        persons.setFirstName(person.getFirstName());
+                        persons.setLastName(person.getLastName());
+                        persons.setAddress(person.getAddress());
+                        persons.setCity(person.getCity());
+                        persons.setZip(person.getZip());
+                        persons.setPhone(person.getPhone());
+                        persons.setEmail(person.getEmail());
+                        listPersons.add(persons);
+                    }
+                }
+            }
+        }
+
+
+        return null;
+    }
+
+
 }

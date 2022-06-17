@@ -78,6 +78,7 @@ public class SafetyNetController {
      */
     @GetMapping("/flood/stations")
     public Object getHomesAtThisStationNumber(@RequestParam int stations){
+        Object persons = safetyNetService.getHouseServeFireStation(stations);
         MessageError message = new MessageError();
         message.setMessage("pas d'habitant pour cette caserne de pompier N° "+ stations +"");
         message.setError("error number stations");
