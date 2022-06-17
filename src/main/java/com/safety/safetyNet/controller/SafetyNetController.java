@@ -34,12 +34,6 @@ public class SafetyNetController {
     @GetMapping("/firestation")
     public Object getFireStationNumber(@RequestParam int stationNumber){
         Object persons = safetyNetService.getAllPersonsWithStationNumber(stationNumber);
-        if (persons == null) {
-            MessageError message = new MessageError();
-            message.setMessage("sation n° " + stationNumber + " non implémenter");
-            message.setError("error numéro de caserne de pompier");
-            return message;
-        }
         return persons;
     }
 
@@ -50,10 +44,8 @@ public class SafetyNetController {
      */
     @GetMapping("/childAlert")
     public Object getAddressChild(@RequestParam String address){
-        MessageError message = new MessageError();
-        message.setMessage("l'adresse de cette enfant n'est pas trouver");
-        message.setError("error d'adresse");
-        return message;
+        Object children = safetyNetService.getChildrenThisAddress(address);
+        return children;
     }
 
     /**
@@ -63,10 +55,8 @@ public class SafetyNetController {
      */
     @GetMapping("/phoneAlert")
     public Object getNumberPhone(@RequestParam int firestation){
-        MessageError message = new MessageError();
-        message.setMessage("pas d'habitant enregistrée pour la staion "+firestation+"");
-        message.setError("error pas de numéro de téléphone ");
-        return message;
+        Object phone = safetyNetService.getNumberPhoneThisFireStation(firestation);
+        return phone;
     }
 
     /**
@@ -77,10 +67,8 @@ public class SafetyNetController {
      */
     @GetMapping("/fire")
     public Object getHabitantAtThisAdrdress(@RequestParam String address){
-        MessageError message = new MessageError();
-        message.setMessage("il n'y pas d'habitant a l'adresse "+ address +"");
-        message.setError("error d'adresse");
-        return message;
+        Object persons = safetyNetService.getPersonsThisAddressPlusStationNumber(address);
+        return persons;
     }
 
     /**
@@ -117,16 +105,8 @@ public class SafetyNetController {
      * @return les mail des habitants
      */
     @GetMapping("/communityEmail")
-    public Object getMailAllPersons(@RequestParam String city){
-
-        List<Email> listEmail = safetyNetService.getAllMail(city);
-        if (listEmail == null){
-            MessageError message = new MessageError();
-            message.setMessage("il y a pas donnée pour la ville de "+ city + "");
-            message.setError("error name of city");
-            return message;
-        }else{
-            return listEmail;
-        }
+    public Object getMailAllPersons(@RequestParam String city) {
+        Object listEmail = safetyNetService.getAllMail(city);
+        return listEmail;
     }
 }

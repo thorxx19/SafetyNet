@@ -4,9 +4,8 @@ package com.safety.safetyNet.model;
 import lombok.Data;
 
 @Data
-public class Firestations {
+public class Station {
 
-    private String address;
     private String station;
 
 }

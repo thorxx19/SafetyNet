@@ -4,10 +4,11 @@ package com.safety.safetyNet.model;
 import lombok.Data;
 
 
+import java.util.Date;
 import java.util.List;
 
 @Data
-public class Medicalrecords {
+public class Medicalrecords{
 
     private String firstName;
     private String lastName;

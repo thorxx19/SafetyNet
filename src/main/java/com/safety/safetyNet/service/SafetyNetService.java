@@ -1,18 +1,19 @@
 package com.safety.safetyNet.service;
 
 
-import com.safety.safetyNet.model.Email;
-import com.safety.safetyNet.model.Firestations;
-import com.safety.safetyNet.model.ListSafety;
-import com.safety.safetyNet.model.Persons;
+import com.safety.safetyNet.model.*;
 import com.safety.safetyNet.repository.SafetyNetRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.TreeSet;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author o.froidefond
@@ -30,12 +31,12 @@ public class SafetyNetService {
      * @param city le nom de la ville
      * @return Une liste de mail trié
      */
-    public List<Email> getAllMail(String city) {
+    public Object getAllMail(String city) {
 
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
 
-        ArrayList<Email> listEmail = new ArrayList<>();
+        ArrayList<Object> listEmail = new ArrayList<>();
         TreeSet<String> treeMail = new TreeSet<>();
         String mailString = "";
 
@@ -52,23 +53,26 @@ public class SafetyNetService {
             listEmail.add(mail);
         }
         if (listEmail.isEmpty()) {
-            return null;
-        } else {
-            return listEmail;
+            MessageError message = new MessageError();
+            message.setMessage("il y a pas donnée pour la ville de " + city + "");
+            message.setError("error name of city");
+            listEmail.add(message);
         }
+        return listEmail;
+
     }
 
     /**
      * fonction pour triée les habitant en fonction de la caserne de pompier.
+     *
      * @param stationNumber numéro de la caserne de pompier.
      * @return la liste des personnes qui habite autour de la caserne de pompier.
      */
     public Object getAllPersonsWithStationNumber(int stationNumber) {
-
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
         ArrayList<Firestations> dataFireStations = data.getFirestations();
-        ArrayList<Persons> listPersons = new ArrayList<>();
+        ArrayList<Object> listPersons = new ArrayList<>();
 
         for (Firestations firestation : dataFireStations) {
             int station = Integer.parseInt(firestation.getStation());
@@ -89,11 +93,137 @@ public class SafetyNetService {
             }
         }
         if (listPersons.isEmpty()) {
-            return null;
-        } else {
-            return listPersons;
+            MessageError message = new MessageError();
+            message.setMessage("sation n° " + stationNumber + " non implémenter");
+            message.setError("error numéro de caserne de pompier");
+            listPersons.add(message);
         }
+        return listPersons;
+
+    }
+    /**
+     * fonction pour trier les mineurs de 18 ans et moins en fonction de leur adresse.
+     * @param address l'adresse de la résidence
+     * @return liste de mineur
+     */
+    public Object getChildrenThisAddress(String address)  {
+        ListSafety data = safetyNetRepository.getData();
+        ArrayList<Medicalrecords> dataMedical = data.getMedicalrecords();
+        ArrayList<Persons> dataPersons = data.getPersons();
+        ArrayList<Object> listMineur = new ArrayList<>();
+        for (Medicalrecords medic : dataMedical) {
+            Calendar today = Calendar.getInstance();
+            SimpleDateFormat dateTimeFormatter = new  SimpleDateFormat("dd/MM/yyyy");
+            try {
+                Date birth = dateTimeFormatter.parse(medic.getBirthdate());
+                Date todayParse = today.getTime();
+                long result = todayParse.getTime() - birth.getTime();
+                TimeUnit time = TimeUnit.DAYS;
+                long resultDay = time.convert(result,TimeUnit.MILLISECONDS);
+                long yearBirth = resultDay/365;
+                    if (yearBirth <= 18) {
+                        for (Persons person: dataPersons) {
+                            if (medic.getFirstName().equals(person.getFirstName()) && medic.getLastName()
+                                    .equals(person.getLastName()) && address.equals(person.getAddress())){
+                                Persons persons = new Persons();
+                                persons.setAddress(person.getAddress());
+                                persons.setPhone(person.getPhone());
+                                persons.setZip(person.getZip());
+                                persons.setEmail(person.getEmail());
+                                persons.setCity(person.getCity());
+                                persons.setLastName(person.getLastName());
+                                persons.setFirstName(person.getFirstName());
+                                listMineur.add(persons);
+                            }
+                        }
+                    }
+            } catch (Exception e){
+                log.error(e.getMessage());
+            }
+        }
+        if (listMineur.isEmpty()){
+                MessageError message = new MessageError();
+                message.setMessage("l'adresse de cette enfant n'est pas trouver");
+                message.setError("error d'adresse");
+                listMineur.add(message);
+        }
+        return listMineur;
     }
 
+    /**
+     * fonction pour récupérer les numéro d etéléphone en fonction de la caserne de pompier
+     *
+     * @param stationNumber numéro de la caserne de pompier
+     * @return liste de numéro de téléphone unique
+     */
+    public Object getNumberPhoneThisFireStation(int stationNumber) {
+        ListSafety data = safetyNetRepository.getData();
+        ArrayList<Persons> dataPersons = data.getPersons();
+        ArrayList<Firestations> dataFireStations = data.getFirestations();
+        ArrayList<Object> listPhone = new ArrayList<>();
+        TreeSet<String> treePhone = new TreeSet<>();
 
+        for (Firestations firestation : dataFireStations) {
+            int station = Integer.parseInt(firestation.getStation());
+            if (stationNumber == station) {
+                for (Persons person : dataPersons) {
+                    if (person.getAddress().equals(firestation.getAddress())) {
+                        treePhone.add(person.getPhone());
+                    }
+                }
+            }
+        }
+        for (String phone : treePhone) {
+            Phone phoneTree = new Phone();
+            phoneTree.setPhone(phone);
+            listPhone.add(phoneTree);
+        }
+        if (listPhone.isEmpty()) {
+
+            MessageError message = new MessageError();
+            message.setMessage("pas d'habitant enregistrée pour la staion " + stationNumber + "");
+            message.setError("error pas de numéro de téléphone ");
+            listPhone.add(message);
+        }
+        return listPhone;
+    }
+
+    public Object getPersonsThisAddressPlusStationNumber(String address) {
+        ListSafety data = safetyNetRepository.getData();
+        ArrayList<Persons> dataPersons = data.getPersons();
+        ArrayList<Firestations> dataFireStations = data.getFirestations();
+        TreeSet<String> stationTree = new TreeSet<>();
+
+        ArrayList<Object> listPersons = new ArrayList<>();
+        for (Persons person : dataPersons) {
+            if (address.equals(person.getAddress())) {
+                for (Firestations station : dataFireStations) {
+                    if (address.equals(station.getAddress())) {
+                        stationTree.add(station.getStation());
+                    }
+                }
+                Persons persons = new Persons();
+                persons.setAddress(person.getAddress());
+                persons.setEmail(person.getEmail());
+                persons.setCity(person.getCity());
+                persons.setFirstName(person.getFirstName());
+                persons.setLastName(person.getLastName());
+                persons.setZip(person.getZip());
+                persons.setPhone(person.getPhone());
+                listPersons.add(persons);
+            }
+        }
+        if (!stationTree.isEmpty()) {
+            Station station = new Station();
+            station.setStation(stationTree.first());
+            listPersons.add(station);
+        }
+        if (listPersons.isEmpty()) {
+            MessageError message = new MessageError();
+            message.setMessage("il n'y pas d'habitant a l'adresse " + address + "");
+            message.setError("error d'adresse");
+            listPersons.add(message);
+        }
+        return listPersons;
+    }
 }
