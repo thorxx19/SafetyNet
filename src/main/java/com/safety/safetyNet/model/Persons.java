@@ -7,7 +7,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class Persons extends Email{
+public class Persons extends Email {
 
     private String firstName;
     private String lastName;

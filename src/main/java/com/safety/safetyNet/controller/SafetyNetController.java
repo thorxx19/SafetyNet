@@ -33,10 +33,14 @@ public class SafetyNetController {
      */
     @GetMapping("/firestation")
     public Object getFireStationNumber(@RequestParam int stationNumber){
-        MessageError message = new MessageError();
-        message.setMessage("sation n° "+stationNumber+ " non implémenter");
-        message.setError("error numéro de caserne de pompier");
-        return message;
+        Object persons = safetyNetService.getAllPersonsWithStationNumber(stationNumber);
+        if (persons == null) {
+            MessageError message = new MessageError();
+            message.setMessage("sation n° " + stationNumber + " non implémenter");
+            message.setError("error numéro de caserne de pompier");
+            return message;
+        }
+        return persons;
     }
 
     /**
