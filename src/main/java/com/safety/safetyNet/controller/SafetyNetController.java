@@ -2,18 +2,12 @@ package com.safety.safetyNet.controller;
 
 
 
-import com.safety.safetyNet.model.Email;
-import com.safety.safetyNet.model.MessageError;
-import com.safety.safetyNet.model.Persons;
+import com.safety.safetyNet.model.*;
 import com.safety.safetyNet.service.SafetyNetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.List;
-import static com.safety.safetyNet.constantes.SafetyNetConstantes.*;
 
 /**
  * @author o.froidefond
@@ -43,8 +37,8 @@ public class SafetyNetController {
      * @return la liste des enfant trouver a l'adresse
      */
     @GetMapping("/childAlert")
-    public Object getAddressChild(@RequestParam String address){
-        Object children = safetyNetService.getChildrenThisAddress(address);
+    public ResponsePersonsChildren getAddressChild(@RequestParam String address){
+        ResponsePersonsChildren children = safetyNetService.getChildrenThisAddress(address);
         return children;
     }
 
@@ -54,8 +48,8 @@ public class SafetyNetController {
      * @return liste de n° de tel des résident
      */
     @GetMapping("/phoneAlert")
-    public Object getNumberPhone(@RequestParam int firestation){
-        Object phone = safetyNetService.getNumberPhoneThisFireStation(firestation);
+    public ResponsePhone getNumberPhone(@RequestParam int firestation){
+        ResponsePhone phone = safetyNetService.getNumberPhoneThisFireStation(firestation);
         return phone;
     }
 
@@ -66,8 +60,8 @@ public class SafetyNetController {
      * @return liste d'habitant
      */
     @GetMapping("/fire")
-    public Object getHabitantAtThisAdrdress(@RequestParam String address){
-        Object persons = safetyNetService.getPersonsThisAddressPlusStationNumber(address);
+    public ResponsePersonsMedical getHabitantAtThisAdrdress(@RequestParam String address){
+        ResponsePersonsMedical persons = safetyNetService.getPersonsThisAddressPlusStationNumber(address);
         return persons;
     }
 
@@ -77,8 +71,8 @@ public class SafetyNetController {
      * @return liste de foyer
      */
     @GetMapping("/flood/stations")
-    public Object getHomesAtThisStationNumber(@RequestParam int stations){
-        Object persons = safetyNetService.getHouseServeFireStation(stations);
+    public ResponsePersonsFireStation getHomesAtThisStationNumber(@RequestParam int stations){
+        ResponsePersonsFireStation persons = safetyNetService.getHouseServeFireStation(stations);
         return persons;
     }
 
