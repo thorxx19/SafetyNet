@@ -26,8 +26,8 @@ public class SafetyNetController {
      * @return les habitants couverts par la station numéro
      */
     @GetMapping("/firestation")
-    public Object getFireStationNumber(@RequestParam int stationNumber){
-        Object persons = safetyNetService.getAllPersonsWithStationNumber(stationNumber);
+    public ResponsePersonsStation getFireStationNumber(@RequestParam int stationNumber){
+        ResponsePersonsStation persons = safetyNetService.getAllPersonsWithStationNumber(stationNumber);
         return persons;
     }
 
@@ -97,8 +97,8 @@ public class SafetyNetController {
      * @return les mail des habitants
      */
     @GetMapping("/communityEmail")
-    public Object getMailAllPersons(@RequestParam String city) {
-        Object listEmail = safetyNetService.getAllMail(city);
+    public ResponseEmail getMailAllPersons(@RequestParam String city) {
+        ResponseEmail listEmail = safetyNetService.getAllMail(city);
         return listEmail;
     }
 }

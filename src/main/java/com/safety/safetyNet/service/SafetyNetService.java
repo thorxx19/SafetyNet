@@ -27,7 +27,7 @@ public class SafetyNetService {
      * @param city le nom de la ville
      * @return Une liste de mail trié
      */
-    public Object getAllMail(String city) {
+    public ResponseEmail getAllMail(String city) {
 
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
@@ -58,12 +58,15 @@ public class SafetyNetService {
      * @param stationNumber numéro de la caserne de pompier.
      * @return la liste des personnes qui habite autour de la caserne de pompier.
      */
-    public Object getAllPersonsWithStationNumber(int stationNumber) {
+    public ResponsePersonsStation getAllPersonsWithStationNumber(int stationNumber) {
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
         ArrayList<Firestations> dataFireStations = data.getFirestations();
         ArrayList<MedicalRecords> dataMedical = data.getMedicalrecords();
-        ArrayList<Object> listPersons = new ArrayList<>();
+        ArrayList<PersonsStation> listPersons = new ArrayList<>();
+        ResponsePersonsStation responsePersonsStation = new ResponsePersonsStation();
+        CountPeople countPeople = new CountPeople();
+
         int countAdult = 0;
         int countChildren = 0;
 
@@ -104,18 +107,14 @@ public class SafetyNetService {
             }
         }
         if (countAdult != 0 || countChildren != 0) {
-            CountPeople countPeople = new CountPeople();
             countPeople.setChildren(countChildren);
             countPeople.setAdult(countAdult);
-            listPersons.add(countPeople);
         }
-        if (listPersons.isEmpty()) {
-            MessageError message = new MessageError();
-            message.setMessage("sation n° " + stationNumber + " non implémenter");
-            message.setError("error numéro de caserne de pompier");
-            listPersons.add(message);
-        }
-        return listPersons;
+
+        responsePersonsStation.setCountPeople(countPeople);
+        responsePersonsStation.setPersonsStationList(listPersons);
+
+        return responsePersonsStation;
 
     }
 
