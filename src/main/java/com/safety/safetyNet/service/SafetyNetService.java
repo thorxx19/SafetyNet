@@ -32,29 +32,23 @@ public class SafetyNetService {
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
 
-        ArrayList<Object> listEmail = new ArrayList<>();
+        ArrayList<String> listEmail = new ArrayList<>();
         TreeSet<String> treeMail = new TreeSet<>();
-        String mailString = "";
+        ResponseEmail responseEmail = new ResponseEmail();
 
 
         for (Persons dataMail : dataPersons) {
             if (city.equals(dataMail.getCity())) {
-                mailString = dataMail.getEmail();
-                treeMail.add(mailString);
+                treeMail.add(dataMail.getEmail());
             }
         }
         for (String mailTree : treeMail) {
             Email mail = new Email();
-            mail.setEmail(mailTree);
-            listEmail.add(mail);
+            listEmail.add(mailTree);
+            mail.setEmail(listEmail);
         }
-        if (listEmail.isEmpty()) {
-            MessageError message = new MessageError();
-            message.setMessage("il y a pas donnée pour la ville de " + city + "");
-            message.setError("error name of city");
-            listEmail.add(message);
-        }
-        return listEmail;
+        responseEmail.setMail(listEmail);
+        return responseEmail;
 
     }
 
