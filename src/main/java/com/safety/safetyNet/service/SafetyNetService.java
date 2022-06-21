@@ -173,7 +173,7 @@ public class SafetyNetService {
         ArrayList<Persons> dataPersons = data.getPersons();
         ArrayList<Firestations> dataFireStations = data.getFirestations();
 
-        List<Phone> listPhone = new ArrayList<>();
+        ArrayList<String> listPhone = new ArrayList<>();
         TreeSet<String> treePhone = new TreeSet<>();
         ResponsePhone responsePhone = new ResponsePhone();
 
@@ -190,8 +190,9 @@ public class SafetyNetService {
         }
         for (String phone : treePhone) {
             Phone phoneTree = new Phone();
-            phoneTree.setPhone(phone);
-            listPhone.add(phoneTree);
+
+            listPhone.add(phone);
+            phoneTree.setPhone(listPhone);
         }
 
         responsePhone.setPhone(listPhone);
@@ -199,7 +200,7 @@ public class SafetyNetService {
     }
 
     /**
-     * fonction pour récupérer les personne en fonction de leur adresse et indiquer
+     * fonction pour récupérer une liste de personnes en fonction de leur adresse et indiquer
      * quel caserne de pompier qui les desserve.
      *
      * @param address l'adresse des habitant
@@ -258,6 +259,12 @@ public class SafetyNetService {
         return responsePersonsMedical;
     }
 
+    /**
+     * fonction pour récupérer une liste de personnes en fonction de leur caserne de pompier.
+     *
+     * @param fireStation n° de caserne de pompier
+     * @return une liste de personnes
+     */
     public ResponsePersonsFireStation getHouseServeFireStation(int fireStation) {
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
@@ -308,5 +315,50 @@ public class SafetyNetService {
         return responsePersonsFirestation;
     }
 
+    /**
+     * fonction pour récupérer une personne avec les antécédant médicaux
+     * @param firstname le prénom
+     * @param lastName le nom de famille
+     * @return une personne avec les infos
+     */
+    public ResponsePersonInfo getPersonInfo(String firstname, String lastName){
+        ListSafety data = safetyNetRepository.getData();
+        ArrayList<Persons> dataPersons = data.getPersons();
+        ArrayList<MedicalRecords> dateMedicalRecords = data.getMedicalrecords();
+
+        PersonInfo personInfo = new PersonInfo();
+        ResponsePersonInfo responsePersonInfo = new ResponsePersonInfo();
+        for (Persons person : dataPersons) {
+            if (firstname.equals(person.getFirstName()) && lastName.equals(person.getLastName())) {
+                for (MedicalRecords medic : dateMedicalRecords) {
+                    if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
+                            .equals(medic.getFirstName())) {
+                        Calendar today = Calendar.getInstance();
+                        SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
+                        try {
+                            Date birth = dateTimeFormatter.parse(medic.getBirthdate());
+                            Date todayParse = today.getTime();
+                            long result = todayParse.getTime() - birth.getTime();
+                            TimeUnit time = TimeUnit.DAYS;
+                            long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
+                            long yearBirth = resultDay / 365;
+
+                            personInfo.setLastName(person.getLastName());
+                            personInfo.setAddress(person.getAddress());
+                            personInfo.setAge(yearBirth);
+                            personInfo.setEmail(person.getEmail());
+                            personInfo.setMedications(medic.getMedications());
+                            personInfo.setAllergies(medic.getAllergies());
+
+                        } catch (Exception e) {
+                            log.error("error :", e);
+                        }
+                    }
+                }
+            }
+        }
+        responsePersonInfo.setPersonInfo(personInfo);
+        return responsePersonInfo;
+    }
 
 }

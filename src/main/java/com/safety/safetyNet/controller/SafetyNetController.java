@@ -30,7 +30,6 @@ public class SafetyNetController {
         ResponsePersonsStation persons = safetyNetService.getAllPersonsWithStationNumber(stationNumber);
         return persons;
     }
-
     /**
      * retourner une liste d'enfants (tout individu âgé de 18 ans ou moins) habitant à cette adresse.
      * @param address adresse rechercher
@@ -41,7 +40,6 @@ public class SafetyNetController {
         ResponsePersonsChildren children = safetyNetService.getChildrenThisAddress(address);
         return children;
     }
-
     /**
      * retourner une liste des numéros de téléphone des résidents desservis par la caserne de pompiers.
      * @param firestation n° de la station
@@ -52,7 +50,6 @@ public class SafetyNetController {
         ResponsePhone phone = safetyNetService.getNumberPhoneThisFireStation(firestation);
         return phone;
     }
-
     /**
      *  retourner la liste des habitants vivant à l’adresse donnée ainsi que le numéro de la caserne
      * de pompiers la desservant.
@@ -64,7 +61,6 @@ public class SafetyNetController {
         ResponsePersonsMedical persons = safetyNetService.getPersonsThisAddressPlusStationNumber(address);
         return persons;
     }
-
     /**
      * retourner une liste de tous les foyers desservis par la caserne
      * @param stations n° de la caserne de pompier
@@ -75,7 +71,6 @@ public class SafetyNetController {
         ResponsePersonsFireStation persons = safetyNetService.getHouseServeFireStation(stations);
         return persons;
     }
-
     /**
      * retourner le nom, l'adresse, l'âge, l'adresse mail et les antécédents médicaux (médicaments,
      * posologie, allergies) de chaque habitant.
@@ -84,13 +79,10 @@ public class SafetyNetController {
      * @return la fiche de la personne compléte
      */
     @GetMapping("/personInfo")
-    public Object getMedicalRecordsOfThisPerson(@RequestParam String firstName,@RequestParam String lastName){
-        MessageError message = new MessageError();
-        message.setMessage("pas de correspondence pour "+ lastName +" "+ firstName +"");
-        message.setError("error firstName or lastName");
-      return message;
+    public ResponsePersonInfo getMedicalRecordsOfThisPerson(@RequestParam String firstName, @RequestParam String lastName){
+        ResponsePersonInfo persons = safetyNetService.getPersonInfo(firstName,lastName);
+        return persons;
     }
-
     /**
      * retourner les adresses mail de tous les habitants de la ville.
      * @param city nom de la ville
