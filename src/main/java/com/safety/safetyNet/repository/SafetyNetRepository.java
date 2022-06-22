@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;
-import java.io.IOException;
+
 
 
 @Slf4j
@@ -17,16 +17,13 @@ public class SafetyNetRepository {
 
     public ListSafety getData() {
 
-
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         try {
-
-            ListSafety data = mapper.readValue(new File("src/main/java/com/safety/safetyNet/config/data.json"), ListSafety.class);
-            return data;
-        } catch (IOException e) {
-            e.printStackTrace();
+            return mapper.readValue(new File("src/main/java/com/safety/safetyNet/config/data.json"), ListSafety.class);
+        } catch (Exception e) {
+            log.error("error :", e);
         }
         return null;
     }

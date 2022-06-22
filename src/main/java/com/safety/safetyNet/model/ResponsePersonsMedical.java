@@ -12,5 +12,4 @@ public class ResponsePersonsMedical {
     private Station station;
 
 
-
 }

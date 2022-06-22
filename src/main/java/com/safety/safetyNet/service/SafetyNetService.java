@@ -302,7 +302,7 @@ public class SafetyNetService {
                                     persons.setMedications(medic.getMedications());
                                     TabListPersons.add(persons);
 
-                                } catch (Exception e){
+                                } catch (Exception e) {
                                     log.error("error :", e);
                                 }
                             }
@@ -317,11 +317,12 @@ public class SafetyNetService {
 
     /**
      * fonction pour récupérer une personne avec les antécédant médicaux
+     *
      * @param firstname le prénom
-     * @param lastName le nom de famille
+     * @param lastName  le nom de famille
      * @return une personne avec les infos
      */
-    public ResponsePersonInfo getPersonInfo(String firstname, String lastName){
+    public ResponsePersonInfo getPersonInfo(String firstname, String lastName) {
         ListSafety data = safetyNetRepository.getData();
         ArrayList<Persons> dataPersons = data.getPersons();
         ArrayList<MedicalRecords> dateMedicalRecords = data.getMedicalrecords();

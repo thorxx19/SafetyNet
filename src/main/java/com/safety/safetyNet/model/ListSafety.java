@@ -8,8 +8,8 @@ import java.util.ArrayList;
 @Data
 public class ListSafety {
 
-   private ArrayList<Persons> persons;
-   private ArrayList<Firestations> firestations;
-   private ArrayList<MedicalRecords> medicalrecords;
+    private ArrayList<Persons> persons;
+    private ArrayList<Firestations> firestations;
+    private ArrayList<MedicalRecords> medicalrecords;
 
 }
