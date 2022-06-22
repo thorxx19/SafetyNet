@@ -2,7 +2,6 @@ package com.safety.safetyNet.constantes;
 
 public class SafetyNetConstantes {
 
-
-    public final static String CULVER = "Culver";
+    public static final String PATH_FILE = "src/main/java/com/safety/safetyNet/config/data.json";
 
 }

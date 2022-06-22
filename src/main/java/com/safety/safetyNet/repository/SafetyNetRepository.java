@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;
+import static com.safety.safetyNet.constantes.SafetyNetConstantes.*;
 
 
 
@@ -21,7 +22,7 @@ public class SafetyNetRepository {
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         try {
-            return mapper.readValue(new File("src/main/java/com/safety/safetyNet/config/data.json"), ListSafety.class);
+            return mapper.readValue(new File(PATH_FILE), ListSafety.class);
         } catch (Exception e) {
             log.error("error :", e);
         }
