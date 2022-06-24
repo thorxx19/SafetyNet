@@ -1,9 +1,8 @@
-package com.safety.safetyNet;
+package com.safety.safetyNet.service;
 
-
-import com.safety.safetyNet.integration.SafetyNetController;
-import com.safety.safetyNet.service.SafetyNetService;
+import com.safety.safetyNet.controller.SafetyNetMedicalRecordController;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -13,25 +12,24 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(controllers = SafetyNetController.class)
+@WebMvcTest(controllers = SafetyNetMedicalRecordController.class)
 @Slf4j
-public class FireStationTest {
+class SafetyNetMedicalRecordServiceTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @MockBean
-    private SafetyNetService safetyNetService;
+    private SafetyNetMedicalRecordService safetyNetMedicalRecordService;
 
+    //todo a finir
     @Test
-    public void testGetFireStation(){
+    @Disabled
+    public void testGetMedicalRecord() {
         try {
-            mockMvc.perform(get("/firestation?stationNumber=3")).andExpect(status().isOk());
+            mockMvc.perform(get("")).andExpect(status().isOk());
         } catch (Exception e) {
-           log.error("error :", e);
+            log.error("error :", e);
         }
-
     }
-
-
 }

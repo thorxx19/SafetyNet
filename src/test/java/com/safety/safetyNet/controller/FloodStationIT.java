@@ -1,4 +1,4 @@
-package com.safety.safetyNet.integration;
+package com.safety.safetyNet.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -20,11 +20,11 @@ public class FloodStationIT {
     private MockMvc mockMvc;
 
     @Test
-    public void testGetFloodStation(){
+    public void testGetFloodStation() {
         try {
             mockMvc.perform(get("/flood/stations?stations=1")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$.personsFireStations[0].lastName",is("Duncan")));
-        } catch (Exception e){
+                    .isOk()).andExpect(jsonPath("$.personsFireStations[0].lastName", is("Duncan")));
+        } catch (Exception e) {
             log.error("error :", e);
         }
     }

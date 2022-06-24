@@ -3,13 +3,13 @@ package com.safety.safetyNet.model;
 
 import lombok.Data;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Data
 public class ListSafety {
 
-    private ArrayList<Persons> persons;
-    private ArrayList<Firestations> firestations;
-    private ArrayList<MedicalRecords> medicalrecords;
+    private List<Persons> persons;
+    private List<FireStations> firestations;
+    private List<MedicalRecords> medicalrecords;
 
 }

@@ -10,13 +10,13 @@ import java.util.List;
 @Slf4j
 public class JsonUtils {
 
-    public static List<ListSafety> jsonToObjectListSafety(String jsonStrinIn){
+    public static List<ListSafety> jsonToObjectListSafety(String jsonStrinIn) {
 
         ObjectMapper mapper = new ObjectMapper();
         List<ListSafety> missions = null;
 
         try {
-            missions = Arrays.asList(mapper.readValue(jsonStrinIn,ListSafety[].class));
+            missions = Arrays.asList(mapper.readValue(jsonStrinIn, ListSafety[].class));
         } catch (Exception e) {
             log.error("error :", e);
         }

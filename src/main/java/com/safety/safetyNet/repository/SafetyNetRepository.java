@@ -8,8 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;
-import static com.safety.safetyNet.constantes.SafetyNetConstantes.*;
 
+import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
 
 @Slf4j
@@ -19,7 +19,6 @@ public class SafetyNetRepository {
     public ListSafety getData() {
 
         ObjectMapper mapper = new ObjectMapper();
-        mapper.enable(SerializationFeature.INDENT_OUTPUT);
 
         try {
             return mapper.readValue(new File(PATH_FILE), ListSafety.class);
@@ -29,6 +28,15 @@ public class SafetyNetRepository {
         return null;
     }
 
+    public void writeData(ListSafety listSafety) {
+        ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+        try {
+
+            mapper.writeValue(new File(PATH_FILE), listSafety);
+        } catch (Exception e) {
+            log.error("error :", e);
+        }
+    }
 
 
 }
