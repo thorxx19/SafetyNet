@@ -3,8 +3,11 @@ package com.safety.safetyNet.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.safety.safetyNet.model.DeletePerson;
 import com.safety.safetyNet.model.NewPerson;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -12,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -23,7 +27,8 @@ public class PersonsIT {
     private MockMvc mockMvc;
 
     @Test
-    public void testPostPerson() {
+    @DisplayName("test l'intégration d'une nouvelle personne")
+    public void testPerson1() {
 
         NewPerson newPerson = new NewPerson();
 
@@ -46,6 +51,29 @@ public class PersonsIT {
             String requestJson = ow.writeValueAsString(newPerson);
 
             mockMvc.perform(post("/person")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .accept(MediaType.APPLICATION_JSON)
+                            .content(requestJson))
+                    .andExpect(status().isOk());
+        } catch (Exception e) {
+            log.error("error :", e);
+        }
+    }
+    @Test
+    @DisplayName("Teste la suppression d'une personne grâce à son nom et prénom.")
+    public void testPerson2(){
+        DeletePerson deletePerson = new DeletePerson();
+
+        deletePerson.setFirstName("Olivier");
+        deletePerson.setLastName("Froidefond");
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
+        ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
+
+        try {
+            String requestJson = ow.writeValueAsString(deletePerson);
+            mockMvc.perform(delete("/person")
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON)
                             .content(requestJson))

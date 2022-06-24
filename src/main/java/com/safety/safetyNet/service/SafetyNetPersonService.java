@@ -177,4 +177,59 @@ public class SafetyNetPersonService {
 
         return listSafety;
     }
+    public ListSafety deletePerson(DeletePerson deletePerson){
+        ListSafety data = safetyNetRepository.getData();
+        List<Persons> dataPersons = data.getPersons();
+        List<MedicalRecords> dataMedicalRecords = data.getMedicalrecords();
+        List<FireStations> dataFireStation = data.getFirestations();
+
+
+        ArrayList<Persons> personsList = new ArrayList<>();
+        ArrayList<FireStations> fireStationsList = new ArrayList<>();
+        ArrayList<MedicalRecords> medicalRecordsList = new ArrayList<>();
+
+        ListSafety listSafety = new ListSafety();
+        for (Persons person : dataPersons) {
+            if (!deletePerson.getFirstName().equals(person.getFirstName()) && !deletePerson.getLastName().equals(person.getLastName())) {
+
+                Persons persons = new Persons();
+
+                persons.setFirstName(person.getFirstName());
+                persons.setLastName(person.getLastName());
+                persons.setAddress(person.getAddress());
+                persons.setCity(person.getCity());
+                persons.setZip(person.getZip());
+                persons.setPhone(person.getPhone());
+                persons.setEmail(person.getEmail());
+                personsList.add(persons);
+
+            }
+        }
+        for (MedicalRecords medical : dataMedicalRecords) {
+            if (!deletePerson.getFirstName().equals(medical.getFirstName()) && !deletePerson.getLastName().equals(medical.getLastName())) {
+                MedicalRecords medicalRecords = new MedicalRecords();
+
+                medicalRecords.setFirstName(medical.getFirstName());
+                medicalRecords.setLastName(medical.getLastName());
+                medicalRecords.setBirthdate(medical.getBirthdate());
+                medicalRecords.setMedications(medical.getMedications());
+                medicalRecords.setAllergies(medical.getAllergies());
+                medicalRecordsList.add(medicalRecords);
+            }
+        }
+        for (FireStations fireStation : dataFireStation) {
+            FireStations firestations = new FireStations();
+
+            firestations.setAddress(fireStation.getAddress());
+            firestations.setStation(fireStation.getStation());
+            fireStationsList.add(firestations);
+        }
+
+        listSafety.setPersons(personsList);
+        listSafety.setFirestations(fireStationsList);
+        listSafety.setMedicalrecords(medicalRecordsList);
+
+
+        return listSafety;
+    }
 }

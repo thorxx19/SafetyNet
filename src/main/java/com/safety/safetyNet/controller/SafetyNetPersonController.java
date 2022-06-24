@@ -1,5 +1,6 @@
 package com.safety.safetyNet.controller;
 
+import com.safety.safetyNet.model.DeletePerson;
 import com.safety.safetyNet.model.ListSafety;
 import com.safety.safetyNet.model.NewPerson;
 import com.safety.safetyNet.model.ResponsePersonInfo;
@@ -29,10 +30,14 @@ public class SafetyNetPersonController {
         ResponsePersonInfo persons = safetyNetPersonService.getPersonInfo(firstName, lastName);
         return persons;
     }
-
     @PostMapping("/person")
     public void postNewPerson(@RequestBody NewPerson newPerson) {
         ListSafety listSafety = safetyNetPersonService.postNewPerson(newPerson);
+        safetyNetRepository.writeData(listSafety);
+    }
+    @DeleteMapping("/person")
+    public void deletePerson(@RequestBody DeletePerson deletePerson){
+        ListSafety listSafety = safetyNetPersonService.deletePerson(deletePerson);
         safetyNetRepository.writeData(listSafety);
     }
 
