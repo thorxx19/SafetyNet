@@ -177,7 +177,8 @@ public class SafetyNetPersonService {
 
         return listSafety;
     }
-    public ListSafety deletePerson(DeletePerson deletePerson){
+
+    public ListSafety deletePerson(DeletePerson deletePerson) {
         ListSafety data = safetyNetRepository.getData();
         List<Persons> dataPersons = data.getPersons();
         List<MedicalRecords> dataMedicalRecords = data.getMedicalrecords();
@@ -224,6 +225,97 @@ public class SafetyNetPersonService {
             firestations.setStation(fireStation.getStation());
             fireStationsList.add(firestations);
         }
+
+        listSafety.setPersons(personsList);
+        listSafety.setFirestations(fireStationsList);
+        listSafety.setMedicalrecords(medicalRecordsList);
+
+
+        return listSafety;
+    }
+
+    public ListSafety putPerson(NewPerson putPerson) {
+        ListSafety data = safetyNetRepository.getData();
+        List<Persons> dataPersons = data.getPersons();
+        List<MedicalRecords> dataMedicalRecords = data.getMedicalrecords();
+        List<FireStations> dataFireStation = data.getFirestations();
+
+
+        ArrayList<Persons> personsList = new ArrayList<>();
+        ArrayList<FireStations> fireStationsList = new ArrayList<>();
+        ArrayList<MedicalRecords> medicalRecordsList = new ArrayList<>();
+
+        ListSafety listSafety = new ListSafety();
+        for (Persons person : dataPersons) {
+            if (putPerson.getFirstName().equals(person.getFirstName()) && putPerson.getLastName().equals(person.getLastName())) {
+
+                Persons persons = new Persons();
+
+                persons.setFirstName(person.getFirstName());
+                persons.setLastName(person.getLastName());
+                persons.setAddress(putPerson.getAddress());
+                persons.setCity(putPerson.getCity());
+                persons.setZip(putPerson.getZip());
+                persons.setPhone(putPerson.getPhone());
+                persons.setEmail(putPerson.getEmail());
+                personsList.add(persons);
+
+            } else {
+                Persons persons = new Persons();
+
+                persons.setFirstName(person.getFirstName());
+                persons.setLastName(person.getLastName());
+                persons.setAddress(person.getAddress());
+                persons.setCity(person.getCity());
+                persons.setZip(person.getZip());
+                persons.setPhone(person.getPhone());
+                persons.setEmail(person.getEmail());
+                personsList.add(persons);
+
+            }
+        }
+        for (MedicalRecords medical : dataMedicalRecords) {
+            if (putPerson.getFirstName().equals(medical.getFirstName()) && putPerson.getLastName().equals(medical.getLastName())) {
+                MedicalRecords medicalRecords = new MedicalRecords();
+
+                List<String> medicationsList = new ArrayList<>();
+                List<String> allergiesList = new ArrayList<>();
+
+                medicalRecords.setFirstName(medical.getFirstName());
+                medicalRecords.setLastName(medical.getLastName());
+                medicalRecords.setBirthdate(putPerson.getBirthdate());
+                medicalRecords.setMedications(medicationsList);
+                //todo faire en sorte de gérer plusieur string
+                if (putPerson.getMedications() != null) {
+                    medicationsList.add(putPerson.getMedications());
+                    medicalRecords.setMedications(medicationsList);
+                }
+                medicalRecords.setAllergies(allergiesList);
+                if (putPerson.getAllergies() != null) {
+                    allergiesList.add(putPerson.getAllergies());
+                    medicalRecords.setAllergies(allergiesList);
+                }
+                medicalRecordsList.add(medicalRecords);
+            } else {
+                MedicalRecords medicalRecords = new MedicalRecords();
+
+                medicalRecords.setFirstName(medical.getFirstName());
+                medicalRecords.setLastName(medical.getLastName());
+                medicalRecords.setBirthdate(medical.getBirthdate());
+                medicalRecords.setMedications(medical.getMedications());
+                medicalRecords.setAllergies(medical.getAllergies());
+                medicalRecordsList.add(medicalRecords);
+
+            }
+        }
+        for (FireStations fireStation : dataFireStation) {
+            FireStations firestations = new FireStations();
+
+            firestations.setAddress(fireStation.getAddress());
+            firestations.setStation(fireStation.getStation());
+            fireStationsList.add(firestations);
+        }
+
 
         listSafety.setPersons(personsList);
         listSafety.setFirestations(fireStationsList);

@@ -40,5 +40,9 @@ public class SafetyNetPersonController {
         ListSafety listSafety = safetyNetPersonService.deletePerson(deletePerson);
         safetyNetRepository.writeData(listSafety);
     }
-
+    @PutMapping("/person")
+    public void putPerson(@RequestBody NewPerson putPerson){
+        ListSafety listSafety = safetyNetPersonService.putPerson(putPerson);
+        safetyNetRepository.writeData(listSafety);
+    }
 }

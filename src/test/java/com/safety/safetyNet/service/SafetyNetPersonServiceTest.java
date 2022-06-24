@@ -49,13 +49,11 @@ class SafetyNetPersonServiceTest {
         }
     }
     @Test
-    @Disabled
-    //todo a faire avec la méthode
     public void testPutPerson(){
         try {
             mockMvc.perform(put("/person")
                             .contentType(MediaType.APPLICATION_JSON)
-                            .content("{\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\"}"))
+                            .content("{\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"address\":\"521 chemin d'enbiane\",\"city\":\"Figeac\",\"zip\":\"46100\",\"phone\":\"841-874-5584\",\"email\":\"toto@toto.fr\",\"birthdate\":\"20/12/1981\",\"medications\":null,\"allergies\":\"nillacilan\"}"))
                     .andExpect(status().isOk());
         } catch (Exception e) {
             log.error("error :", e);

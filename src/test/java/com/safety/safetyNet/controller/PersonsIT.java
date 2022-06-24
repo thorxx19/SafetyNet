@@ -15,8 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @Slf4j
@@ -60,8 +59,40 @@ public class PersonsIT {
         }
     }
     @Test
-    @DisplayName("Teste la suppression d'une personne grâce à son nom et prénom.")
+    @DisplayName("teste la mise a jour d'une fiche person")
     public void testPerson2(){
+        NewPerson putPerson = new NewPerson();
+
+        putPerson.setFirstName("Olivier");
+        putPerson.setLastName("Froidefond");
+        putPerson.setAddress("521 chemin d'enbiane");
+        putPerson.setCity("Figeac");
+        putPerson.setZip("46100");
+        putPerson.setPhone("841-874-5584");
+        putPerson.setEmail("toto@toto.fr");
+        putPerson.setBirthdate("20/12/1981");
+        putPerson.setMedications(null);
+        putPerson.setAllergies("nillacilan");
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
+        ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
+
+        try {
+            String requestJson = ow.writeValueAsString(putPerson);
+
+            mockMvc.perform(put("/person")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .accept(MediaType.APPLICATION_JSON)
+                            .content(requestJson))
+                    .andExpect(status().isOk());
+        } catch (Exception e) {
+            log.error("error :", e);
+        }
+    }
+    @Test
+    @DisplayName("Teste la suppression d'une personne grâce à son nom et prénom.")
+    public void testPerson3(){
         DeletePerson deletePerson = new DeletePerson();
 
         deletePerson.setFirstName("Olivier");
