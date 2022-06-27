@@ -27,7 +27,7 @@ public class SafetyNetPhoneService {
         List<Persons> dataPersons = data.getPersons();
         List<FireStations> dataFireStations = data.getFirestations();
 
-        ArrayList<String> listPhone = new ArrayList<>();
+        List<Phone> listPhone = new ArrayList<>();
         TreeSet<String> treePhone = new TreeSet<>();
         ResponsePhone responsePhone = new ResponsePhone();
 
@@ -44,9 +44,8 @@ public class SafetyNetPhoneService {
         }
         for (String phone : treePhone) {
             Phone phoneTree = new Phone();
-
-            listPhone.add(phone);
-            phoneTree.setPhone(listPhone);
+            phoneTree.setPhone(phone);
+            listPhone.add(phoneTree);
         }
 
         responsePhone.setPhone(listPhone);
