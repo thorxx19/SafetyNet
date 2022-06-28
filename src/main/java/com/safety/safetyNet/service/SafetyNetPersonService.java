@@ -185,48 +185,23 @@ public class SafetyNetPersonService {
         List<Persons> dataPersons = data.getPersons();
         List<MedicalRecords> dataMedicalRecords = data.getMedicalrecords();
         List<FireStations> dataFireStation = data.getFirestations();
-
-
-        ArrayList<Persons> personsList = new ArrayList<>();
-        ArrayList<FireStations> fireStationsList = new ArrayList<>();
-        ArrayList<MedicalRecords> medicalRecordsList = new ArrayList<>();
-
+        List<Persons> personsList = new ArrayList<>();
+        List<FireStations> fireStationsList = new ArrayList<>();
+        List<MedicalRecords> medicalRecordsList = new ArrayList<>();
         ListSafety listSafety = new ListSafety();
-        for (Persons person : dataPersons) {
-            if (!deletePerson.getFirstName().equals(person.getFirstName()) && !deletePerson.getLastName().equals(person.getLastName())) {
 
-                Persons persons = new Persons();
+        List<Persons> personsStream = dataPersons.stream().filter(x -> !deletePerson.getFirstName().equals(x.getFirstName())
+                && !deletePerson.getLastName().equals(x.getLastName())).collect(Collectors.toList());
 
-                persons.setFirstName(person.getFirstName());
-                persons.setLastName(person.getLastName());
-                persons.setAddress(person.getAddress());
-                persons.setCity(person.getCity());
-                persons.setZip(person.getZip());
-                persons.setPhone(person.getPhone());
-                persons.setEmail(person.getEmail());
-                personsList.add(persons);
+        List<MedicalRecords> medicalStream = dataMedicalRecords.stream().filter(x -> !deletePerson.getFirstName().equals(x.getFirstName())
+                && !deletePerson.getLastName().equals(x.getLastName())).collect(Collectors.toList());
 
-            }
-        }
-        for (MedicalRecords medical : dataMedicalRecords) {
-            if (!deletePerson.getFirstName().equals(medical.getFirstName()) && !deletePerson.getLastName().equals(medical.getLastName())) {
-                MedicalRecords medicalRecords = new MedicalRecords();
+        List<FireStations> fireStationsStream = dataFireStation.stream().collect(Collectors.toList());
 
-                medicalRecords.setFirstName(medical.getFirstName());
-                medicalRecords.setLastName(medical.getLastName());
-                medicalRecords.setBirthdate(medical.getBirthdate());
-                medicalRecords.setMedications(medical.getMedications());
-                medicalRecords.setAllergies(medical.getAllergies());
-                medicalRecordsList.add(medicalRecords);
-            }
-        }
-        for (FireStations fireStation : dataFireStation) {
-            FireStations firestations = new FireStations();
+                personsStream.forEach(persons -> personsList.add(persons));
+                medicalStream.forEach(medicalRecords -> medicalRecordsList.add(medicalRecords));
+                fireStationsStream.forEach(fireStations -> fireStationsList.add(fireStations));
 
-            firestations.setAddress(fireStation.getAddress());
-            firestations.setStation(fireStation.getStation());
-            fireStationsList.add(firestations);
-        }
 
         listSafety.setPersons(personsList);
         listSafety.setFirestations(fireStationsList);
