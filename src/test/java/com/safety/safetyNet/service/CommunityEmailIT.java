@@ -1,4 +1,4 @@
-package com.safety.safetyNet.controller;
+package com.safety.safetyNet.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.hamcrest.Matchers;
@@ -29,7 +29,7 @@ public class CommunityEmailIT {
     public void testGetCommunityEmail() {
         try {
             mockMvc.perform(get("/communityEmail?city=Culver")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$.mail[0]", is("aly@imail.com")));
+                    .isOk()).andExpect(jsonPath("$[0]", is("aly@imail.com")));
         } catch (Exception e) {
             log.error("error :", e);
         }
@@ -40,7 +40,7 @@ public class CommunityEmailIT {
     public void testGetCommunityEmailEmpty() {
         try {
             mockMvc.perform(get("/communityEmail?city=Culve")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$.mail", Matchers.empty()));
+                    .isOk()).andExpect(jsonPath("$", Matchers.empty()));
         } catch (Exception e) {
             log.error("error :", e);
         }

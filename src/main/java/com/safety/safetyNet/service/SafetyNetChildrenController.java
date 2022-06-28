@@ -1,7 +1,7 @@
-package com.safety.safetyNet.controller;
+package com.safety.safetyNet.service;
 
 import com.safety.safetyNet.model.ResponsePersonsChildren;
-import com.safety.safetyNet.service.SafetyNetChildrenService;
+import com.safety.safetyNet.controller.SafetyNetChildrenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

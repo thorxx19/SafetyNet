@@ -1,11 +1,13 @@
-package com.safety.safetyNet.controller;
+package com.safety.safetyNet.service;
 
-import com.safety.safetyNet.model.ResponseEmail;
-import com.safety.safetyNet.service.SafetyNetMailService;
+
+import com.safety.safetyNet.controller.SafetyNetMailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.TreeSet;
 
 @RestController
 public class SafetyNetMailController {
@@ -20,8 +22,8 @@ public class SafetyNetMailController {
      * @return les mail des habitants
      */
     @GetMapping("/communityEmail")
-    public ResponseEmail getMailAllPersons(@RequestParam String city) {
-        ResponseEmail listEmail = safetyNetMailService.getAllMail(city);
+    public TreeSet<String> getMailAllPersons(@RequestParam String city) {
+        TreeSet<String> listEmail = safetyNetMailService.getAllMail(city);
         return listEmail;
     }
 }

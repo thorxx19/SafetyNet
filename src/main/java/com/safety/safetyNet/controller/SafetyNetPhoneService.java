@@ -1,4 +1,4 @@
-package com.safety.safetyNet.service;
+package com.safety.safetyNet.controller;
 
 import com.safety.safetyNet.model.*;
 import com.safety.safetyNet.repository.SafetyNetRepository;
@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -22,15 +21,12 @@ public class SafetyNetPhoneService {
      * @param stationNumber numéro de la caserne de pompier
      * @return liste de numéro de téléphone unique
      */
-    public ResponsePhone getNumberPhoneThisFireStation(int stationNumber) {
+    public TreeSet<String> getNumberPhoneThisFireStation(int stationNumber) {
         ListSafety data = safetyNetRepository.getData();
         List<Persons> dataPersons = data.getPersons();
         List<FireStations> dataFireStations = data.getFirestations();
 
-        List<Phone> listPhone = new ArrayList<>();
         TreeSet<String> treePhone = new TreeSet<>();
-        ResponsePhone responsePhone = new ResponsePhone();
-
 
         for (FireStations firestation : dataFireStations) {
             int station = Integer.parseInt(firestation.getStation());
@@ -42,13 +38,9 @@ public class SafetyNetPhoneService {
                 }
             }
         }
-        for (String phone : treePhone) {
-            Phone phoneTree = new Phone();
-            phoneTree.setPhone(phone);
-            listPhone.add(phoneTree);
-        }
 
-        responsePhone.setPhone(listPhone);
-        return responsePhone;
+
+
+        return treePhone;
     }
 }

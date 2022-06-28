@@ -1,11 +1,11 @@
-package com.safety.safetyNet.controller;
+package com.safety.safetyNet.service;
 
 import com.safety.safetyNet.model.DeletePerson;
 import com.safety.safetyNet.model.ListSafety;
 import com.safety.safetyNet.model.NewPerson;
 import com.safety.safetyNet.model.ResponsePersonInfo;
 import com.safety.safetyNet.repository.SafetyNetRepository;
-import com.safety.safetyNet.service.SafetyNetPersonService;
+import com.safety.safetyNet.controller.SafetyNetPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,6 +1,6 @@
-package com.safety.safetyNet.service;
+package com.safety.safetyNet.controller;
 
-import com.safety.safetyNet.controller.SafetyNetPhoneController;
+import com.safety.safetyNet.service.SafetyNetMailController;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,20 +11,19 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(controllers = SafetyNetPhoneController.class)
+@WebMvcTest(controllers = SafetyNetMailController.class)
 @Slf4j
-class SafetyNetPhoneServiceTest {
-
+class SafetyNetMailControllerTest {
     @Autowired
     private MockMvc mockMvc;
-
     @MockBean
-    private SafetyNetPhoneService safetyNetPhoneService;
+    private SafetyNetMailService safetyNetMailService;
+
 
     @Test
-    public void testGetFireStation() {
+    public void testGetMail() {
         try {
-            mockMvc.perform(get("http://localhost:9000/phoneAlert?firestation=4")).andExpect(status().isOk());
+            mockMvc.perform(get("/communityEmail?city=Culver")).andExpect(status().isOk());
         } catch (Exception e) {
             log.error("error :", e);
         }

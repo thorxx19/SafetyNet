@@ -1,4 +1,4 @@
-package com.safety.safetyNet.controller;
+package com.safety.safetyNet.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
@@ -6,8 +6,9 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.safety.safetyNet.model.DeletePerson;
 import com.safety.safetyNet.model.NewPerson;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -23,8 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class PersonsIT {
     @Autowired
-    private MockMvc mockMvc;
-
+    private  MockMvc mockMvc;
     @Test
     @DisplayName("test l'intégration d'une nouvelle personne")
     public void testPerson1() {

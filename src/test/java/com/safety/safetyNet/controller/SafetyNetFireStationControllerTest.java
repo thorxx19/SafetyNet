@@ -1,7 +1,7 @@
-package com.safety.safetyNet.service;
+package com.safety.safetyNet.controller;
 
 
-import com.safety.safetyNet.controller.SafetyNetFireStationController;
+import com.safety.safetyNet.service.SafetyNetFireStationController;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(controllers = SafetyNetFireStationController.class)
 @Slf4j
-public class SafetyNetFireStationServiceTest {
+public class SafetyNetFireStationControllerTest {
 
     @Autowired
     private MockMvc mockMvc;

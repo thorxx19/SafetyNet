@@ -1,9 +1,8 @@
-package com.safety.safetyNet.service;
+package com.safety.safetyNet.controller;
 
-import com.safety.safetyNet.controller.SafetyNetPersonController;
+import com.safety.safetyNet.service.SafetyNetPersonController;
 import com.safety.safetyNet.repository.SafetyNetRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -16,7 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(controllers = SafetyNetPersonController.class)
 @Slf4j
-class SafetyNetPersonServiceTest {
+class SafetyNetPersonControllerTest {
 
     @Autowired
     private MockMvc mockMvc;

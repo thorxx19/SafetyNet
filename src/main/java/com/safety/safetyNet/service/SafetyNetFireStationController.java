@@ -1,9 +1,9 @@
-package com.safety.safetyNet.controller;
+package com.safety.safetyNet.service;
 
 import com.safety.safetyNet.model.ResponsePersonsFireStation;
 import com.safety.safetyNet.model.ResponsePersonsMedical;
 import com.safety.safetyNet.model.ResponsePersonsStation;
-import com.safety.safetyNet.service.SafetyNetFireStationService;
+import com.safety.safetyNet.controller.SafetyNetFireStationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

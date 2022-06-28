@@ -1,5 +1,4 @@
-package com.safety.safetyNet.controller;
-
+package com.safety.safetyNet.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -16,23 +15,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @Slf4j
-public class FireStationIT {
+public class ChildAlertIT {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    public void testGetFireStation() {
+    public void getChildAlert() {
         try {
-            mockMvc.perform(get("/firestation?stationNumber=3")).andExpect(status()
-                            .isOk())
-                    .andExpect(jsonPath("$.personsStationList[0].firstName", is("John")))
-                    .andExpect(jsonPath("$.personsStationList[0].lastName", is("Boyd")))
-                    .andExpect(jsonPath("$.personsStationList[0].address", is("1509 Culver St")))
-                    .andExpect(jsonPath("$.personsStationList[0].phone", is("841-874-6512")));
+            mockMvc.perform(get("/childAlert?address=1509 Culver St")).andExpect(status()
+                    .isOk()).andExpect(jsonPath("$.children[0].firstName", is("Tenley")));
         } catch (Exception e) {
             log.error("error :", e);
         }
     }
+
 
 }
