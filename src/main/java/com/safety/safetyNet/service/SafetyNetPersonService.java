@@ -181,27 +181,24 @@ public class SafetyNetPersonService {
     }
 
     public ListSafety deletePerson(DeletePerson deletePerson) {
+        //donner brut
         ListSafety data = safetyNetRepository.getData();
+        //donner trier
         List<Persons> dataPersons = data.getPersons();
         List<MedicalRecords> dataMedicalRecords = data.getMedicalrecords();
         List<FireStations> dataFireStation = data.getFirestations();
+
         List<Persons> personsList = new ArrayList<>();
-        List<FireStations> fireStationsList = new ArrayList<>();
         List<MedicalRecords> medicalRecordsList = new ArrayList<>();
         ListSafety listSafety = new ListSafety();
 
-        List<Persons> personsStream = dataPersons.stream().filter(x -> !deletePerson.getFirstName().equals(x.getFirstName())
-                && !deletePerson.getLastName().equals(x.getLastName())).collect(Collectors.toList());
+        dataPersons.stream().filter(x -> !deletePerson.getFirstName().equals(x.getFirstName())
+                && !deletePerson.getLastName().equals(x.getLastName())).forEach(personsList::add);
 
-        List<MedicalRecords> medicalStream = dataMedicalRecords.stream().filter(x -> !deletePerson.getFirstName().equals(x.getFirstName())
-                && !deletePerson.getLastName().equals(x.getLastName())).collect(Collectors.toList());
+        dataMedicalRecords.stream().filter(x -> !deletePerson.getFirstName().equals(x.getFirstName())
+                && !deletePerson.getLastName().equals(x.getLastName())).forEach(medicalRecordsList::add);
 
-        List<FireStations> fireStationsStream = dataFireStation.stream().collect(Collectors.toList());
-
-                personsStream.forEach(persons -> personsList.add(persons));
-                medicalStream.forEach(medicalRecords -> medicalRecordsList.add(medicalRecords));
-                fireStationsStream.forEach(fireStations -> fireStationsList.add(fireStations));
-
+        List<FireStations> fireStationsList = new ArrayList<>(dataFireStation);
 
         listSafety.setPersons(personsList);
         listSafety.setFirestations(fireStationsList);
