@@ -1,6 +1,6 @@
 package com.safety.safetyNet.controller;
 
-import com.safety.safetyNet.model.ResponsePersonsFireStation;
+import com.safety.safetyNet.model.PersonsFireStation;
 import com.safety.safetyNet.model.ResponsePersonsMedical;
 import com.safety.safetyNet.model.ResponsePersonsStation;
 import com.safety.safetyNet.service.SafetyNetFireStationService;
@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @author o.froidefond
@@ -53,8 +55,8 @@ public class SafetyNetFireStationController {
      * @return liste de foyer
      */
     @GetMapping("/flood/stations")
-    public ResponsePersonsFireStation getHomesAtThisStationNumber(@RequestParam int stations) {
-        ResponsePersonsFireStation persons = safetyNetFireStationService.getHouseServeFireStation(stations);
+    public List<PersonsFireStation> getHomesAtThisStationNumber(@RequestParam int stations) {
+        List<PersonsFireStation> persons = safetyNetFireStationService.getHouseServeFireStation(stations);
         return persons;
     }
 }

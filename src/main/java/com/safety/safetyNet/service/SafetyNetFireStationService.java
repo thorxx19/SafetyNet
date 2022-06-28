@@ -149,14 +149,13 @@ public class SafetyNetFireStationService {
      * @param fireStation n° de caserne de pompier
      * @return une liste de personnes
      */
-    public ResponsePersonsFireStation getHouseServeFireStation(int fireStation) {
+    public List<PersonsFireStation> getHouseServeFireStation(int fireStation) {
         ListSafety data = safetyNetRepository.getData();
         List<Persons> dataPersons = data.getPersons();
         List<FireStations> dataFireStations = data.getFirestations();
         List<MedicalRecords> dateMedicalRecords = data.getMedicalrecords();
-        List<PersonsFireStation> TabListPersons = new ArrayList<>();
+        List<PersonsFireStation> tabListPersons = new ArrayList<>();
         TreeSet<String> listLastName = new TreeSet<>();
-        ResponsePersonsFireStation responsePersonsFirestation = new ResponsePersonsFireStation();
 
         for (FireStations firestation : dataFireStations) {
             int station = Integer.parseInt(firestation.getStation());
@@ -184,7 +183,7 @@ public class SafetyNetFireStationService {
                                     persons.setEmail(person.getEmail());
                                     persons.setAllergies(medic.getAllergies());
                                     persons.setMedications(medic.getMedications());
-                                    TabListPersons.add(persons);
+                                    tabListPersons.add(persons);
 
                                 } catch (Exception e) {
                                     log.error("error :", e);
@@ -195,7 +194,7 @@ public class SafetyNetFireStationService {
                 }
             }
         }
-        responsePersonsFirestation.setPersonsFireStations(TabListPersons);
-        return responsePersonsFirestation;
+
+        return tabListPersons;
     }
 }
