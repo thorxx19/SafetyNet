@@ -1,6 +1,6 @@
 package com.safety.safetyNet.controller;
 
-import com.safety.safetyNet.service.SafetyNetMedicalRecordController;
+import com.safety.safetyNet.service.SafetyNetMedicalRecordService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,7 @@ class SafetyNetMedicalRecordControllerTest {
     //todo a finir
     @Test
     @Disabled
-    public void testGetMedicalRecord() {
+    public void testPostMedicalRecord() {
         try {
             mockMvc.perform(get("")).andExpect(status().isOk());
         } catch (Exception e) {

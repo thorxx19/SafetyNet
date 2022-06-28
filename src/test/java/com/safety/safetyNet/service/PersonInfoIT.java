@@ -23,7 +23,7 @@ public class PersonInfoIT {
     public void testGetPersonInfo() {
         try {
             mockMvc.perform(get("/personInfo?firstName=Jonanathan&lastName=Marrack")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$.personInfo.lastName", is("Marrack")));
+                    .isOk()).andExpect(jsonPath("$[0].lastName", is("Marrack")));
         } catch (Exception e) {
             log.error("error :", e);
         }

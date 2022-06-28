@@ -1,7 +1,7 @@
-package com.safety.safetyNet.service;
+package com.safety.safetyNet.controller;
 
 
-import com.safety.safetyNet.controller.SafetyNetMailService;
+import com.safety.safetyNet.service.SafetyNetMailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

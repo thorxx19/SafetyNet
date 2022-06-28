@@ -1,13 +1,12 @@
-package com.safety.safetyNet.service;
+package com.safety.safetyNet.controller;
 
-import com.safety.safetyNet.model.DeletePerson;
-import com.safety.safetyNet.model.ListSafety;
-import com.safety.safetyNet.model.NewPerson;
-import com.safety.safetyNet.model.ResponsePersonInfo;
+import com.safety.safetyNet.model.*;
 import com.safety.safetyNet.repository.SafetyNetRepository;
-import com.safety.safetyNet.controller.SafetyNetPersonService;
+import com.safety.safetyNet.service.SafetyNetPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class SafetyNetPersonController {
@@ -26,8 +25,8 @@ public class SafetyNetPersonController {
      * @return la fiche de la personne compléte
      */
     @GetMapping("/personInfo")
-    public ResponsePersonInfo getMedicalRecordsOfThisPerson(@RequestParam String firstName, String lastName) {
-        ResponsePersonInfo persons = safetyNetPersonService.getPersonInfo(firstName, lastName);
+    public List<PersonInfo> getMedicalRecordsOfThisPerson(@RequestParam String firstName, String lastName) {
+        List<PersonInfo> persons = safetyNetPersonService.getPersonInfo(firstName, lastName);
         return persons;
     }
     @PostMapping("/person")

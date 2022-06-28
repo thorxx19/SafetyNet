@@ -1,4 +1,4 @@
-package com.safety.safetyNet.controller;
+package com.safety.safetyNet.service;
 
 import com.safety.safetyNet.model.*;
 import com.safety.safetyNet.repository.SafetyNetRepository;

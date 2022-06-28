@@ -1,17 +1,17 @@
-package com.safety.safetyNet.controller;
+package com.safety.safetyNet.service;
 
 import com.safety.safetyNet.model.*;
 import com.safety.safetyNet.repository.SafetyNetRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 @Slf4j
@@ -27,44 +27,45 @@ public class SafetyNetPersonService {
      * @param lastName  le nom de famille
      * @return une personne avec les infos
      */
-    public ResponsePersonInfo getPersonInfo(String firstname, String lastName) {
+    public List<PersonInfo> getPersonInfo(String firstname, String lastName) {
         ListSafety data = safetyNetRepository.getData();
         List<Persons> dataPersons = data.getPersons();
         List<MedicalRecords> dataMedicalRecords = data.getMedicalrecords();
 
         PersonInfo personInfo = new PersonInfo();
-        ResponsePersonInfo responsePersonInfo = new ResponsePersonInfo();
-        for (Persons person : dataPersons) {
-            if (firstname.equals(person.getFirstName()) && lastName.equals(person.getLastName())) {
-                for (MedicalRecords medic : dataMedicalRecords) {
-                    if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
-                            .equals(medic.getFirstName())) {
+        List<PersonInfo> personInfoList = new ArrayList<>();
+
+        Persons personsStream = dataPersons.stream().filter(x -> firstname.equals(x.getFirstName())
+                && lastName.equals(x.getLastName())).findAny().orElse(null);
+
+        MedicalRecords medicalStream = dataMedicalRecords.stream().filter(x -> firstname.equals(x.getFirstName())
+                && lastName.equals(x.getLastName())).findAny().orElse(null);
+
                         Calendar today = Calendar.getInstance();
                         SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
-                        try {
-                            Date birth = dateTimeFormatter.parse(medic.getBirthdate());
-                            Date todayParse = today.getTime();
-                            long result = todayParse.getTime() - birth.getTime();
-                            TimeUnit time = TimeUnit.DAYS;
-                            long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
-                            long yearBirth = resultDay / 365;
 
-                            personInfo.setLastName(person.getLastName());
-                            personInfo.setAddress(person.getAddress());
-                            personInfo.setAge(yearBirth);
-                            personInfo.setEmail(person.getEmail());
-                            personInfo.setMedications(medic.getMedications());
-                            personInfo.setAllergies(medic.getAllergies());
+                        if (personsStream != null && medicalStream != null) {
+                            try {
+                                Date birth = dateTimeFormatter.parse(medicalStream.getBirthdate());
+                                Date todayParse = today.getTime();
+                                long result = todayParse.getTime() - birth.getTime();
+                                TimeUnit time = TimeUnit.DAYS;
+                                long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
+                                long yearBirth = resultDay / 365;
 
-                        } catch (Exception e) {
-                            log.error("error :", e);
+                                personInfo.setLastName(personsStream.getLastName());
+                                personInfo.setAddress(personsStream.getAddress());
+                                personInfo.setAge(yearBirth);
+                                personInfo.setEmail(personsStream.getEmail());
+                                personInfo.setMedications(medicalStream.getMedications());
+                                personInfo.setAllergies(medicalStream.getAllergies());
+                                personInfoList.add(personInfo);
+                            } catch (Exception e) {
+                                log.error("error :", e);
+                            }
                         }
-                    }
-                }
-            }
-        }
-        responsePersonInfo.setPersonInfo(personInfo);
-        return responsePersonInfo;
+
+        return personInfoList;
     }
 
     public ListSafety postNewPerson(NewPerson newPerson) {
@@ -142,13 +143,14 @@ public class SafetyNetPersonService {
         if (!verifPerson || !verifMedical) {
             List<String> medicationsList = new ArrayList<>();
             List<String> allergiesList = new ArrayList<>();
-            //todo faire en sorte de gérer plusieur string
 
             if (newPerson.getMedications() != null) {
-                medicationsList.add(newPerson.getMedications());
+                String[] keySplittedMedications = newPerson.getMedications().split(",");
+                medicationsList.addAll(Arrays.asList(keySplittedMedications));
             }
             if (newPerson.getAllergies() != null) {
-                allergiesList.add(newPerson.getAllergies());
+                String[] keySplittedAllergies = newPerson.getAllergies().split(",");
+                allergiesList.addAll(Arrays.asList(keySplittedAllergies));
             }
             Persons persons = new Persons();
             MedicalRecords medicalRecords = new MedicalRecords();
@@ -230,7 +232,6 @@ public class SafetyNetPersonService {
         listSafety.setFirestations(fireStationsList);
         listSafety.setMedicalrecords(medicalRecordsList);
 
-
         return listSafety;
     }
 
@@ -239,7 +240,6 @@ public class SafetyNetPersonService {
         List<Persons> dataPersons = data.getPersons();
         List<MedicalRecords> dataMedicalRecords = data.getMedicalrecords();
         List<FireStations> dataFireStation = data.getFirestations();
-
 
         ArrayList<Persons> personsList = new ArrayList<>();
         ArrayList<FireStations> fireStationsList = new ArrayList<>();
@@ -285,16 +285,18 @@ public class SafetyNetPersonService {
                 medicalRecords.setLastName(medical.getLastName());
                 medicalRecords.setBirthdate(putPerson.getBirthdate());
                 medicalRecords.setMedications(medicationsList);
-                //todo faire en sorte de gérer plusieur string
+
                 if (putPerson.getMedications() != null) {
-                    medicationsList.add(putPerson.getMedications());
+                    String[] keySplittedMedications = putPerson.getMedications().split(",");
+                    medicationsList.addAll(Arrays.asList(keySplittedMedications));
                     medicalRecords.setMedications(medicationsList);
                 }
-                medicalRecords.setAllergies(allergiesList);
                 if (putPerson.getAllergies() != null) {
-                    allergiesList.add(putPerson.getAllergies());
+                    String[] keySplittedAllergies = putPerson.getAllergies().split(",");
+                    allergiesList.addAll(Arrays.asList(keySplittedAllergies));
                     medicalRecords.setAllergies(allergiesList);
                 }
+                medicalRecords.setAllergies(allergiesList);
                 medicalRecordsList.add(medicalRecords);
             } else {
                 MedicalRecords medicalRecords = new MedicalRecords();
@@ -305,7 +307,6 @@ public class SafetyNetPersonService {
                 medicalRecords.setMedications(medical.getMedications());
                 medicalRecords.setAllergies(medical.getAllergies());
                 medicalRecordsList.add(medicalRecords);
-
             }
         }
         for (FireStations fireStation : dataFireStation) {
@@ -315,8 +316,6 @@ public class SafetyNetPersonService {
             firestations.setStation(fireStation.getStation());
             fireStationsList.add(firestations);
         }
-
-
         listSafety.setPersons(personsList);
         listSafety.setFirestations(fireStationsList);
         listSafety.setMedicalrecords(medicalRecordsList);
