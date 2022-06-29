@@ -30,7 +30,7 @@ class SafetyNetPersonControllerTest {
         try {
             mockMvc.perform(post("/person")
                             .contentType(MediaType.APPLICATION_JSON)
-                            .content("{\"person\": {\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"address\":\"6 rue jacques prevert\",\"city\":\"culver\",\"zip\":\"97451\",\"phone\":\"841-874-5584\",\"email\":\"toto@toto.fr\"},\"medical\": {\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"birthdate\":\"20/12/1981\",\"medications\":[],\"allergies\":[]}}"))
+                            .content("{\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"address\":\"6 rue jacques prevert\",\"city\":\"culver\",\"zip\":\"97451\",\"phone\":\"841-874-5584\",\"email\":\"toto@toto.fr\"}"))
                     .andExpect(status().isOk());
         } catch (Exception e) {
             log.error("error :", e);
@@ -54,7 +54,7 @@ class SafetyNetPersonControllerTest {
         try {
             mockMvc.perform(put("/person")
                             .contentType(MediaType.APPLICATION_JSON)
-                            .content("{\"person\": {\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"address\":\"6 rue jacques prevert\",\"city\":\"culver\",\"zip\":\"97451\",\"phone\":\"841-874-5584\",\"email\":\"toto@toto.fr\"},\"medical\": {\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"birthdate\":\"20/12/1981\",\"medications\":[],\"allergies\":[\"nillacilan\",\"illisoxian\"]}}"))
+                            .content("{\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"address\":\"6 rue jacques prevert\",\"city\":\"culver\",\"zip\":\"97451\",\"phone\":\"841-874-5584\",\"email\":\"toto@toto.fr\"}"))
                     .andExpect(status().isOk());
         } catch (Exception e) {
             log.error("error :", e);

@@ -80,8 +80,15 @@ public class SafetyNetPersonService {
         List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
         List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
         List<Persons> personsList = safetyNetRepository.getData().getPersons();
+        boolean verifPerson = true;
 
-        if (!personsList.contains(newPerson)) {
+        for (Persons person : personsList) {
+            if (newPerson.getFirstName().equals(person.getFirstName()) && newPerson.getLastName().equals(person.getLastName())) {
+                verifPerson = false;
+                break;
+            }
+        }
+        if (verifPerson) {
             personsList.add(newPerson);
         }
 
@@ -129,12 +136,13 @@ public class SafetyNetPersonService {
         List<Persons> personsList = safetyNetRepository.getData().getPersons();
 
         for (Persons person : personsList) {
-            if (putPerson.getFirstName().equals(person.getFirstName()) && putPerson.getLastName().equals(person.getLastName())){
+            if (putPerson.getFirstName().equals(person.getFirstName()) && putPerson.getLastName().equals(person.getLastName())) {
                 person.setAddress(putPerson.getAddress());
                 person.setCity(putPerson.getCity());
                 person.setZip(putPerson.getZip());
                 person.setPhone(putPerson.getPhone());
                 person.setEmail(putPerson.getEmail());
+                break;
             }
         }
 
