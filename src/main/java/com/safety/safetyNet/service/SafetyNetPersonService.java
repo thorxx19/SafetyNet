@@ -76,24 +76,14 @@ public class SafetyNetPersonService {
      */
     public ListSafety postNewPerson(Persons newPerson) {
 
-        ArrayList<Persons> personsList = new ArrayList<>();
-
         ListSafety listSafety = new ListSafety();
         List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
         List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
-        Persons persons = new Persons();
+        List<Persons> personsList = safetyNetRepository.getData().getPersons();
 
-        safetyNetRepository.getData().getPersons().stream().filter(x -> !newPerson.getFirstName().equals(x.getFirstName())
-                && !newPerson.getFirstName().equals(x.getLastName())).forEach(x -> personsList.add(x));
-
-        persons.setFirstName(newPerson.getFirstName());
-        persons.setLastName(newPerson.getLastName());
-        persons.setAddress(newPerson.getAddress());
-        persons.setCity(newPerson.getCity());
-        persons.setZip(newPerson.getZip());
-        persons.setPhone(newPerson.getPhone());
-        persons.setEmail(newPerson.getEmail());
-        personsList.add(persons);
+        if (!personsList.contains(newPerson)) {
+            personsList.add(newPerson);
+        }
 
         listSafety.setPersons(personsList);
         listSafety.setFirestations(fireStationsList);
