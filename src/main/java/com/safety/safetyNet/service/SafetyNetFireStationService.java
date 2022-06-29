@@ -197,4 +197,27 @@ public class SafetyNetFireStationService {
 
         return tabListPersons;
     }
+    public ListSafety postNewFirestation(FireStations fireStations){
+        ListSafety listSafety = new ListSafety();
+        List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
+        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
+        List<FireStations> fireStationsList = safetyNetRepository.getData().getFirestations();
+        boolean verifFireStation = true;
+
+        for (FireStations fireStation:fireStationsList) {
+            if (fireStations.getAddress().equals(fireStation.getAddress())) {
+                verifFireStation = false;
+                break;
+            }
+        }
+        if (verifFireStation){
+            fireStationsList.add(fireStations);
+        }
+
+        listSafety.setPersons(personsList);
+        listSafety.setFirestations(fireStationsList);
+        listSafety.setMedicalrecords(medicalRecords);
+
+        return listSafety;
+    }
 }
