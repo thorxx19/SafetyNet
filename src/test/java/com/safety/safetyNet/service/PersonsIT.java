@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.safety.safetyNet.model.DeletePerson;
-import com.safety.safetyNet.model.MedicalRecords;
 import com.safety.safetyNet.model.Persons;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
@@ -15,9 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -26,7 +22,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class PersonsIT {
     @Autowired
-    private  MockMvc mockMvc;
+    private MockMvc mockMvc;
+
     @Test
     @DisplayName("test l'intégration d'une nouvelle personne")
     public void testPerson1() {
@@ -41,8 +38,6 @@ public class PersonsIT {
         person.setZip("97451");
         person.setPhone("841-874-5584");
         person.setEmail("toto@toto.fr");
-
-
 
 
         ObjectMapper mapper = new ObjectMapper();
@@ -61,9 +56,10 @@ public class PersonsIT {
             log.error("error :", e);
         }
     }
+
     @Test
     @DisplayName("teste la mise a jour d'une fiche person")
-    public void testPerson2(){
+    public void testPerson2() {
 
         Persons person = new Persons();
 
@@ -91,9 +87,10 @@ public class PersonsIT {
             log.error("error :", e);
         }
     }
+
     @Test
     @DisplayName("Teste la suppression d'une personne grâce à son nom et prénom.")
-    public void testPerson3(){
+    public void testPerson3() {
         DeletePerson deletePerson = new DeletePerson();
 
         deletePerson.setFirstName("Olivier");

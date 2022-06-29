@@ -36,8 +36,9 @@ class SafetyNetPersonControllerTest {
             log.error("error :", e);
         }
     }
+
     @Test
-    public void testDeletePerson(){
+    public void testDeletePerson() {
         try {
             mockMvc.perform(delete("/person")
                             .contentType(MediaType.APPLICATION_JSON)
@@ -47,8 +48,9 @@ class SafetyNetPersonControllerTest {
             log.error("error :", e);
         }
     }
+
     @Test
-    public void testPutPerson(){
+    public void testPutPerson() {
         try {
             mockMvc.perform(put("/person")
                             .contentType(MediaType.APPLICATION_JSON)

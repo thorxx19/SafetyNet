@@ -123,26 +123,20 @@ public class SafetyNetPersonService {
      */
     public ListSafety putPerson(Persons putPerson) {
 
-        List<Persons> personsList = new ArrayList<>();
         ListSafety listSafety = new ListSafety();
-
-        safetyNetRepository.getData().getPersons().stream().filter(x -> !putPerson.getFirstName().equals(x.getFirstName())
-                && !putPerson.getFirstName().equals(x.getLastName())).forEach(x -> personsList.add(x));
-
-        Persons personPut = new Persons();
-
-        personPut.setFirstName(putPerson.getFirstName());
-        personPut.setLastName(putPerson.getLastName());
-        personPut.setAddress(putPerson.getAddress());
-        personPut.setCity(putPerson.getCity());
-        personPut.setZip(putPerson.getZip());
-        personPut.setPhone(putPerson.getPhone());
-        personPut.setEmail(putPerson.getEmail());
-
-        personsList.add(personPut);
-
         List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
         List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
+        List<Persons> personsList = safetyNetRepository.getData().getPersons();
+
+        for (Persons person : personsList) {
+            if (putPerson.getFirstName().equals(person.getFirstName()) && putPerson.getLastName().equals(person.getLastName())){
+                person.setAddress(putPerson.getAddress());
+                person.setCity(putPerson.getCity());
+                person.setZip(putPerson.getZip());
+                person.setPhone(putPerson.getPhone());
+                person.setEmail(putPerson.getEmail());
+            }
+        }
 
         listSafety.setPersons(personsList);
         listSafety.setFirestations(fireStationsList);

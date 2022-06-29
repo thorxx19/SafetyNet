@@ -20,7 +20,7 @@ public class MedicalRecordIT {
     @Test
     @DisplayName("test l'intégration d'un dossier médical")
     @Disabled
-    public void testMedicalRecord1(){
+    public void testMedicalRecord1() {
 
     }
 
