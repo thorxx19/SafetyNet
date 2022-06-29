@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.safety.safetyNet.model.DeletePerson;
+import com.safety.safetyNet.model.MedicalRecords;
 import com.safety.safetyNet.model.NewPerson;
+import com.safety.safetyNet.model.Persons;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,6 +17,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -30,17 +35,29 @@ public class PersonsIT {
     public void testPerson1() {
 
         NewPerson newPerson = new NewPerson();
+        Persons person = new Persons();
+        MedicalRecords medical = new MedicalRecords();
 
-        newPerson.setFirstName("Olivier");
-        newPerson.setLastName("Froidefond");
-        newPerson.setAddress("6 rue jacques prevert");
-        newPerson.setCity("culver");
-        newPerson.setZip("97451");
-        newPerson.setPhone("841-874-5584");
-        newPerson.setEmail("toto@toto.fr");
-        newPerson.setBirthdate("20/12/1981");
-        newPerson.setMedications("dodoxadin:30mg");
-        newPerson.setAllergies("nillacilan");
+        List<String> medic = new ArrayList<>();
+        List<String> allergie = new ArrayList<>();
+        medic.add("tradoxidine:400mg");
+        allergie.add("nillacilan");
+
+        person.setFirstName("Olivier");
+        person.setLastName("Froidefond");
+        person.setAddress("6 rue jacques prevert");
+        person.setCity("culver");
+        person.setZip("97451");
+        person.setPhone("841-874-5584");
+        person.setEmail("toto@toto.fr");
+        medical.setFirstName("Olivier");
+        medical.setLastName("Froidefond");
+        medical.setBirthdate("20/12/1981");
+        medical.setMedications(medic);
+        medical.setAllergies(allergie);
+
+        newPerson.setPerson(person);
+        newPerson.setMedical(medical);
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
@@ -62,17 +79,28 @@ public class PersonsIT {
     @DisplayName("teste la mise a jour d'une fiche person")
     public void testPerson2(){
         NewPerson putPerson = new NewPerson();
+        Persons person = new Persons();
+        MedicalRecords medical = new MedicalRecords();
+        List<String> medic = new ArrayList<>();
+        List<String> allergie = new ArrayList<>();
+        allergie.add("nillacilan");
 
-        putPerson.setFirstName("Olivier");
-        putPerson.setLastName("Froidefond");
-        putPerson.setAddress("521 chemin d'enbiane");
-        putPerson.setCity("Figeac");
-        putPerson.setZip("46100");
-        putPerson.setPhone("841-874-5584");
-        putPerson.setEmail("toto@toto.fr");
-        putPerson.setBirthdate("20/12/1981");
-        putPerson.setMedications(null);
-        putPerson.setAllergies("nillacilan");
+        person.setFirstName("Olivier");
+        person.setLastName("Froidefond");
+        person.setAddress("521 chemin d'enbiane");
+        person.setCity("Figeac");
+        person.setZip("46100");
+        person.setPhone("841-874-5584");
+        person.setEmail("toto@toto.fr");
+        medical.setFirstName("Olivier");
+        medical.setLastName("Froidefond");
+        medical.setBirthdate("20/12/1981");
+        medical.setMedications(medic);
+        medical.setAllergies(allergie);
+
+        putPerson.setPerson(person);
+        putPerson.setMedical(medical);
+
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);

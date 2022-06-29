@@ -30,7 +30,7 @@ class SafetyNetPersonControllerTest {
         try {
             mockMvc.perform(post("/person")
                             .contentType(MediaType.APPLICATION_JSON)
-                            .content("{\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"address\":\"6 rue jacques prevert\",\"city\":\"culver\",\"zip\":\"97451\",\"phone\":\"841-874-5584\",\"email\":\"toto@toto.fr\",\"birthdate\":\"20/12/1981\",\"medications\":\"dodoxadin:30mg\",\"allergies\":\"nillacilan\"}"))
+                            .content("{\"person\": {\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"address\":\"6 rue jacques prevert\",\"city\":\"culver\",\"zip\":\"97451\",\"phone\":\"841-874-5584\",\"email\":\"toto@toto.fr\"},\"medical\": {\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"birthdate\":\"20/12/1981\",\"medications\":[],\"allergies\":[]}}"))
                     .andExpect(status().isOk());
         } catch (Exception e) {
             log.error("error :", e);
@@ -52,7 +52,7 @@ class SafetyNetPersonControllerTest {
         try {
             mockMvc.perform(put("/person")
                             .contentType(MediaType.APPLICATION_JSON)
-                            .content("{\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"address\":\"521 chemin d'enbiane\",\"city\":\"Figeac\",\"zip\":\"46100\",\"phone\":\"841-874-5584\",\"email\":\"toto@toto.fr\",\"birthdate\":\"20/12/1981\",\"medications\":null,\"allergies\":\"nillacilan\"}"))
+                            .content("{\"person\": {\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"address\":\"6 rue jacques prevert\",\"city\":\"culver\",\"zip\":\"97451\",\"phone\":\"841-874-5584\",\"email\":\"toto@toto.fr\"},\"medical\": {\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"birthdate\":\"20/12/1981\",\"medications\":[],\"allergies\":[\"nillacilan\",\"illisoxian\"]}}"))
                     .andExpect(status().isOk());
         } catch (Exception e) {
             log.error("error :", e);
