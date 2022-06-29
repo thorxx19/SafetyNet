@@ -1,6 +1,9 @@
 package com.safety.safetyNet.controller;
 
-import com.safety.safetyNet.model.*;
+import com.safety.safetyNet.model.DeletePerson;
+import com.safety.safetyNet.model.ListSafety;
+import com.safety.safetyNet.model.PersonInfo;
+import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.repository.SafetyNetRepository;
 import com.safety.safetyNet.service.SafetyNetPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,18 +32,21 @@ public class SafetyNetPersonController {
         List<PersonInfo> persons = safetyNetPersonService.getPersonInfo(firstName, lastName);
         return persons;
     }
+
     @PostMapping("/person")
-    public void postNewPerson(@RequestBody NewPerson newPerson) {
+    public void postNewPerson(@RequestBody Persons newPerson) {
         ListSafety listSafety = safetyNetPersonService.postNewPerson(newPerson);
         safetyNetRepository.writeData(listSafety);
     }
+
     @DeleteMapping("/person")
-    public void deletePerson(@RequestBody DeletePerson deletePerson){
+    public void deletePerson(@RequestBody DeletePerson deletePerson) {
         ListSafety listSafety = safetyNetPersonService.deletePerson(deletePerson);
         safetyNetRepository.writeData(listSafety);
     }
+
     @PutMapping("/person")
-    public void putPerson(@RequestBody NewPerson putPerson){
+    public void putPerson(@RequestBody Persons putPerson) {
         ListSafety listSafety = safetyNetPersonService.putPerson(putPerson);
         safetyNetRepository.writeData(listSafety);
     }

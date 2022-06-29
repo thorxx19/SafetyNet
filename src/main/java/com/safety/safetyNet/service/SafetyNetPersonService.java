@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 @Slf4j
@@ -41,139 +41,70 @@ public class SafetyNetPersonService {
         MedicalRecords medicalStream = dataMedicalRecords.stream().filter(x -> firstname.equals(x.getFirstName())
                 && lastName.equals(x.getLastName())).findAny().orElse(null);
 
-                        Calendar today = Calendar.getInstance();
-                        SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar today = Calendar.getInstance();
+        SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
-                        if (personsStream != null && medicalStream != null) {
-                            try {
-                                Date birth = dateTimeFormatter.parse(medicalStream.getBirthdate());
-                                Date todayParse = today.getTime();
-                                long result = todayParse.getTime() - birth.getTime();
-                                TimeUnit time = TimeUnit.DAYS;
-                                long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
-                                long yearBirth = resultDay / 365;
+        if (personsStream != null && medicalStream != null) {
+            try {
+                Date birth = dateTimeFormatter.parse(medicalStream.getBirthdate());
+                Date todayParse = today.getTime();
+                long result = todayParse.getTime() - birth.getTime();
+                TimeUnit time = TimeUnit.DAYS;
+                long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
+                long yearBirth = resultDay / 365;
 
-                                personInfo.setLastName(personsStream.getLastName());
-                                personInfo.setAddress(personsStream.getAddress());
-                                personInfo.setAge(yearBirth);
-                                personInfo.setEmail(personsStream.getEmail());
-                                personInfo.setMedications(medicalStream.getMedications());
-                                personInfo.setAllergies(medicalStream.getAllergies());
-                                personInfoList.add(personInfo);
-                            } catch (Exception e) {
-                                log.error("error :", e);
-                            }
-                        }
+                personInfo.setLastName(personsStream.getLastName());
+                personInfo.setAddress(personsStream.getAddress());
+                personInfo.setAge(yearBirth);
+                personInfo.setEmail(personsStream.getEmail());
+                personInfo.setMedications(medicalStream.getMedications());
+                personInfo.setAllergies(medicalStream.getAllergies());
+                personInfoList.add(personInfo);
+            } catch (Exception e) {
+                log.error("error :", e);
+            }
+        }
 
         return personInfoList;
     }
 
-    public ListSafety postNewPerson(NewPerson newPerson) {
-        ListSafety data = safetyNetRepository.getData();
-        List<Persons> dataPersons = data.getPersons();
-        List<MedicalRecords> dataMedicalRecords = data.getMedicalrecords();
-        List<FireStations> dataFireStation = data.getFirestations();
-
-        boolean verifPerson = false;
-        boolean verifMedical = false;
+    /**
+     * fonction ajout d'une personne
+     *
+     * @param newPerson object reçu
+     * @return le nouvelle object de type listSafety
+     */
+    public ListSafety postNewPerson(Persons newPerson) {
 
         ArrayList<Persons> personsList = new ArrayList<>();
-        ArrayList<FireStations> fireStationsList = new ArrayList<>();
-        ArrayList<MedicalRecords> medicalRecordsList = new ArrayList<>();
 
         ListSafety listSafety = new ListSafety();
-        for (Persons person : dataPersons) {
-            if (!newPerson.getPerson().getFirstName().equals(person.getFirstName()) && !newPerson.getPerson().getLastName().equals(person.getLastName())) {
+        List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
+        List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
+        Persons persons = new Persons();
 
-                Persons persons = new Persons();
+        safetyNetRepository.getData().getPersons().stream().filter(x -> !newPerson.getFirstName().equals(x.getFirstName())
+                && !newPerson.getFirstName().equals(x.getLastName())).forEach(x -> personsList.add(x));
 
-                persons.setFirstName(person.getFirstName());
-                persons.setLastName(person.getLastName());
-                persons.setAddress(person.getAddress());
-                persons.setCity(person.getCity());
-                persons.setZip(person.getZip());
-                persons.setPhone(person.getPhone());
-                persons.setEmail(person.getEmail());
-                personsList.add(persons);
-
-            } else {
-                Persons persons = new Persons();
-
-                persons.setFirstName(person.getFirstName());
-                persons.setLastName(person.getLastName());
-                persons.setAddress(person.getAddress());
-                persons.setCity(person.getCity());
-                persons.setZip(person.getZip());
-                persons.setPhone(person.getPhone());
-                persons.setEmail(person.getEmail());
-                personsList.add(persons);
-                verifPerson = true;
-            }
-        }
-        for (MedicalRecords medical : dataMedicalRecords) {
-            if (!newPerson.getMedical().getFirstName().equals(medical.getFirstName()) && !newPerson.getMedical().getLastName().equals(medical.getLastName())) {
-                MedicalRecords medicalRecords = new MedicalRecords();
-
-                medicalRecords.setFirstName(medical.getFirstName());
-                medicalRecords.setLastName(medical.getLastName());
-                medicalRecords.setBirthdate(medical.getBirthdate());
-                medicalRecords.setMedications(medical.getMedications());
-                medicalRecords.setAllergies(medical.getAllergies());
-                medicalRecordsList.add(medicalRecords);
-            } else {
-                MedicalRecords medicalRecords = new MedicalRecords();
-
-                medicalRecords.setFirstName(medical.getFirstName());
-                medicalRecords.setLastName(medical.getLastName());
-                medicalRecords.setBirthdate(medical.getBirthdate());
-                medicalRecords.setMedications(medical.getMedications());
-                medicalRecords.setAllergies(medical.getAllergies());
-                medicalRecordsList.add(medicalRecords);
-
-                verifMedical = true;
-            }
-        }
-        for (FireStations fireStation : dataFireStation) {
-            FireStations firestations = new FireStations();
-
-            firestations.setAddress(fireStation.getAddress());
-            firestations.setStation(fireStation.getStation());
-            fireStationsList.add(firestations);
-        }
-        if (!verifPerson || !verifMedical) {
-
-
-
-            Persons persons = new Persons();
-            MedicalRecords medicalRecords = new MedicalRecords();
-
-            persons.setFirstName(newPerson.getPerson().getFirstName());
-            persons.setLastName(newPerson.getPerson().getLastName());
-            persons.setAddress(newPerson.getPerson().getAddress());
-            persons.setCity(newPerson.getPerson().getCity());
-            persons.setZip(newPerson.getPerson().getZip());
-            persons.setPhone(newPerson.getPerson().getPhone());
-            persons.setEmail(newPerson.getPerson().getEmail());
-            personsList.add(persons);
-
-            medicalRecords.setFirstName(newPerson.getMedical().getFirstName());
-            medicalRecords.setLastName(newPerson.getMedical().getLastName());
-            medicalRecords.setBirthdate(newPerson.getMedical().getBirthdate());
-            medicalRecords.setMedications(newPerson.getMedical().getMedications());
-            medicalRecords.setAllergies(newPerson.getMedical().getAllergies());
-            medicalRecordsList.add(medicalRecords);
-        }
+        persons.setFirstName(newPerson.getFirstName());
+        persons.setLastName(newPerson.getLastName());
+        persons.setAddress(newPerson.getAddress());
+        persons.setCity(newPerson.getCity());
+        persons.setZip(newPerson.getZip());
+        persons.setPhone(newPerson.getPhone());
+        persons.setEmail(newPerson.getEmail());
+        personsList.add(persons);
 
         listSafety.setPersons(personsList);
         listSafety.setFirestations(fireStationsList);
-        listSafety.setMedicalrecords(medicalRecordsList);
-
+        listSafety.setMedicalrecords(medicalRecords);
 
         return listSafety;
     }
 
     /**
      * fonction qui supprime une personne en fonction du nom et prénom
+     *
      * @param deletePerson object de type DeletePerson
      * @return le nouvelle object de type listSafety
      */
@@ -184,10 +115,10 @@ public class SafetyNetPersonService {
         ListSafety listSafety = new ListSafety();
 
         safetyNetRepository.getData().getPersons().stream().filter(x -> !deletePerson.getFirstName().equals(x.getFirstName())
-                && !deletePerson.getLastName().equals(x.getLastName())).forEach(personsList::add);
+                && !deletePerson.getLastName().equals(x.getLastName())).forEach(x -> personsList.add(x));
 
         safetyNetRepository.getData().getMedicalrecords().stream().filter(x -> !deletePerson.getFirstName().equals(x.getFirstName())
-                && !deletePerson.getLastName().equals(x.getLastName())).forEach(medicalRecordsList::add);
+                && !deletePerson.getLastName().equals(x.getLastName())).forEach(x -> medicalRecordsList.add(x));
 
         List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
 
@@ -198,44 +129,38 @@ public class SafetyNetPersonService {
         return listSafety;
     }
 
-    public ListSafety putPerson(NewPerson putPerson) {
+    /**
+     * fonction pour modifier une personne
+     *
+     * @param putPerson l'object reçu
+     * @return le nouvelle object de type listSafety
+     */
+    public ListSafety putPerson(Persons putPerson) {
 
         List<Persons> personsList = new ArrayList<>();
-        List<MedicalRecords> medicalRecordsList = new ArrayList<>();
         ListSafety listSafety = new ListSafety();
 
-        safetyNetRepository.getData().getPersons().stream().filter(x -> !putPerson.getPerson().getFirstName().equals(x.getFirstName())
-        && !putPerson.getPerson().getFirstName().equals(x.getLastName())).forEach(personsList::add);
+        safetyNetRepository.getData().getPersons().stream().filter(x -> !putPerson.getFirstName().equals(x.getFirstName())
+                && !putPerson.getFirstName().equals(x.getLastName())).forEach(x -> personsList.add(x));
 
-                Persons personPut = new Persons();
+        Persons personPut = new Persons();
 
-                personPut.setFirstName(putPerson.getPerson().getFirstName());
-                personPut.setLastName(putPerson.getPerson().getLastName());
-                personPut.setAddress(putPerson.getPerson().getAddress());
-                personPut.setCity(putPerson.getPerson().getCity());
-                personPut.setZip(putPerson.getPerson().getZip());
-                personPut.setPhone(putPerson.getPerson().getPhone());
-                personPut.setEmail(putPerson.getPerson().getEmail());
+        personPut.setFirstName(putPerson.getFirstName());
+        personPut.setLastName(putPerson.getLastName());
+        personPut.setAddress(putPerson.getAddress());
+        personPut.setCity(putPerson.getCity());
+        personPut.setZip(putPerson.getZip());
+        personPut.setPhone(putPerson.getPhone());
+        personPut.setEmail(putPerson.getEmail());
 
-                personsList.add(personPut);
-        safetyNetRepository.getData().getMedicalrecords().stream().filter(x -> !putPerson.getMedical().getFirstName().equals(x.getFirstName())
-                && !putPerson.getMedical().getLastName().equals(x.getLastName())).forEach(medicalRecordsList::add);
+        personsList.add(personPut);
 
-                MedicalRecords medicalRecords = new MedicalRecords();
-
-                medicalRecords.setFirstName(putPerson.getMedical().getFirstName());
-                medicalRecords.setLastName(putPerson.getMedical().getLastName());
-                medicalRecords.setBirthdate(putPerson.getMedical().getBirthdate());
-                medicalRecords.setMedications(putPerson.getMedical().getMedications());
-                medicalRecords.setAllergies(putPerson.getMedical().getAllergies());
-
-                medicalRecordsList.add(medicalRecords);
-
+        List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
         List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
 
         listSafety.setPersons(personsList);
         listSafety.setFirestations(fireStationsList);
-        listSafety.setMedicalrecords(medicalRecordsList);
+        listSafety.setMedicalrecords(medicalRecords);
 
         return listSafety;
     }

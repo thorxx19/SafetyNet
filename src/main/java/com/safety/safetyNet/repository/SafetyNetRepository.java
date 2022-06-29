@@ -25,6 +25,7 @@ public class SafetyNetRepository {
         }
         return null;
     }
+
     public void writeData(ListSafety listSafety) {
         ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
         try {

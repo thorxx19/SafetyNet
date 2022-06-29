@@ -1,6 +1,8 @@
 package com.safety.safetyNet.service;
 
-import com.safety.safetyNet.model.*;
+import com.safety.safetyNet.model.FireStations;
+import com.safety.safetyNet.model.ListSafety;
+import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.repository.SafetyNetRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +40,6 @@ public class SafetyNetPhoneService {
                 }
             }
         }
-
 
 
         return treePhone;
