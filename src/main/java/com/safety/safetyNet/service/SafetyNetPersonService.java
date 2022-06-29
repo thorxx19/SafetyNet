@@ -111,20 +111,16 @@ public class SafetyNetPersonService {
     public ListSafety deletePerson(DeletePerson deletePerson) {
 
         List<Persons> personsList = new ArrayList<>();
-        List<MedicalRecords> medicalRecordsList = new ArrayList<>();
         ListSafety listSafety = new ListSafety();
 
         safetyNetRepository.getData().getPersons().stream().filter(x -> !deletePerson.getFirstName().equals(x.getFirstName())
                 && !deletePerson.getLastName().equals(x.getLastName())).forEach(x -> personsList.add(x));
 
-        safetyNetRepository.getData().getMedicalrecords().stream().filter(x -> !deletePerson.getFirstName().equals(x.getFirstName())
-                && !deletePerson.getLastName().equals(x.getLastName())).forEach(x -> medicalRecordsList.add(x));
-
         List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
-
+        List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
         listSafety.setPersons(personsList);
         listSafety.setFirestations(fireStationsList);
-        listSafety.setMedicalrecords(medicalRecordsList);
+        listSafety.setMedicalrecords(medicalRecords);
 
         return listSafety;
     }
