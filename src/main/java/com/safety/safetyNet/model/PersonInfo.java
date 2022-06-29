@@ -1,15 +1,18 @@
 package com.safety.safetyNet.model;
 
-
 import lombok.Data;
 
+import java.util.List;
+
 @Data
-public class Persons {
-    private String firstName;
+public class PersonInfo {
+
     private String lastName;
     private String address;
-    private String city;
-    private String zip;
-    private String phone;
+    private long age;
     private String email;
+    private List<String> medications;
+    private List<String> allergies;
+
+
 }
