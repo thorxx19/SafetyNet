@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.safety.safetyNet.model.MedicalRecords;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +19,9 @@ import java.util.List;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * @author o.froidefond
+ */
 @Slf4j
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -29,7 +31,7 @@ public class MedicalRecordIT {
 
 
     @Test
-    @DisplayName("test l'intégration d'un dossier médical")
+    @DisplayName("test le end point post /medicalRecord .")
     public void testMedicalRecord1() {
         MedicalRecords medicalRecords = new MedicalRecords();
         List<String> medicationList = new ArrayList<>();
@@ -62,8 +64,10 @@ public class MedicalRecordIT {
             log.error("error :", e);
         }
     }
+
     @Test
-    public void testMedicalRecord2(){
+    @DisplayName("test le end point put /medicalRecord .")
+    public void testMedicalRecord2() {
         MedicalRecords medicalRecords = new MedicalRecords();
         List<String> medicationList = new ArrayList<>();
         List<String> allergiesList = new ArrayList<>();
@@ -95,8 +99,10 @@ public class MedicalRecordIT {
             log.error("error :", e);
         }
     }
+
     @Test
-    public void testMedicalRecord3(){
+    @DisplayName("test le end point delete /medicalRecord .")
+    public void testMedicalRecord3() {
         MedicalRecords medicalRecords = new MedicalRecords();
         List<String> medicationList = new ArrayList<>();
         List<String> allergiesList = new ArrayList<>();

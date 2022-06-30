@@ -48,7 +48,7 @@ public class SafetyNetFireStationController {
     }
 
     /**
-     * retourner une liste de tous les foyers desservis par la caserne
+     * Retourne une liste de tous les foyers desservis par la caserne.
      *
      * @param stations n° de la caserne de pompier
      * @return liste de foyer
@@ -58,18 +58,36 @@ public class SafetyNetFireStationController {
         List<PersonsFireStation> persons = safetyNetFireStationService.getHouseServeFireStation(stations);
         return persons;
     }
+
+    /**
+     * Retourne une listSafety modifiée vers "safetyNetRepository.writeData()" avec une nouvelle caserne de pompiers.
+     *
+     * @param postFirestations un object de type FireStations.
+     */
     @PostMapping("/firestation")
-    public void postFireStation(@RequestBody FireStations postFirestations){
+    public void postFireStation(@RequestBody FireStations postFirestations) {
         ListSafety listSafety = safetyNetFireStationService.postNewFireStation(postFirestations);
         safetyNetRepository.writeData(listSafety);
     }
+
+    /**
+     * Retourne une listSafety modifiée vers "safetyNetRepository.writeData()" avec une caserne de pompiers en moins.
+     *
+     * @param deleteFireStations un object de type FireStations.
+     */
     @DeleteMapping("/firestation")
-    public void deleteFireStation(@RequestBody FireStations deleteFireStations){
+    public void deleteFireStation(@RequestBody FireStations deleteFireStations) {
         ListSafety listSafety = safetyNetFireStationService.deleteFireStation(deleteFireStations);
         safetyNetRepository.writeData(listSafety);
     }
+
+    /**
+     * Retourne une listSafety modifiée vers "safetyNetRepository.writeData()" avec une caserne de pompiers modifiée.
+     *
+     * @param putFireStations un object de type FireStations.
+     */
     @PutMapping("/firestation")
-    public void putFireStation(@RequestBody FireStations putFireStations){
+    public void putFireStation(@RequestBody FireStations putFireStations) {
         ListSafety listSafety = safetyNetFireStationService.putFireStation(putFireStations);
         safetyNetRepository.writeData(listSafety);
     }

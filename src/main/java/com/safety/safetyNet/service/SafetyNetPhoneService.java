@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.TreeSet;
 
+/**
+ * @author o.froidefond
+ */
 @Service
 @Slf4j
 public class SafetyNetPhoneService {

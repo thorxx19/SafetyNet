@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.TreeSet;
 
+/**
+ * @author o.froidefond
+ */
 @RestController
 public class SafetyNetPhoneController {
     @Autowired

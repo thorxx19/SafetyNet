@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * @author o.froidefond
+ */
 @RestController
 public class SafetyNetPersonController {
 
@@ -33,18 +36,33 @@ public class SafetyNetPersonController {
         return persons;
     }
 
+    /**
+     * Retourne une listSafety modifiée vers "safetyNetRepository.writeData()" avec une nouvelle personne.
+     *
+     * @param newPerson un object de type Persons.
+     */
     @PostMapping("/person")
     public void postNewPerson(@RequestBody Persons newPerson) {
         ListSafety listSafety = safetyNetPersonService.postNewPerson(newPerson);
         safetyNetRepository.writeData(listSafety);
     }
 
+    /**
+     * Retourne une listSafety modifiée vers "safetyNetRepository.writeData()" avec une personne en moins.
+     *
+     * @param deletePerson un object de type Persons.
+     */
     @DeleteMapping("/person")
     public void deletePerson(@RequestBody DeletePerson deletePerson) {
         ListSafety listSafety = safetyNetPersonService.deletePerson(deletePerson);
         safetyNetRepository.writeData(listSafety);
     }
 
+    /**
+     * Retourne une listSafety modifiée vers "safetyNetRepository.writeData()" avec une personne modifiée.
+     *
+     * @param putPerson un object de type Persons.
+     */
     @PutMapping("/person")
     public void putPerson(@RequestBody Persons putPerson) {
         ListSafety listSafety = safetyNetPersonService.putPerson(putPerson);

@@ -11,11 +11,18 @@ import java.io.File;
 
 import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
+/**
+ * @author o.froidefond
+ */
 
 @Slf4j
 @Repository
 public class SafetyNetRepository {
-
+    /**
+     * Fonction pour lire le fichier de données.
+     *
+     * @return un object de type listSafety.
+     */
     public ListSafety getData() {
         ObjectMapper mapper = new ObjectMapper();
         try {
@@ -26,6 +33,11 @@ public class SafetyNetRepository {
         return null;
     }
 
+    /**
+     * Fonction pour écrire un objet de type listSafety dans le fichier.
+     *
+     * @param listSafety un object de type listSafety.
+     */
     public void writeData(ListSafety listSafety) {
         ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
         try {

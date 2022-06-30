@@ -10,6 +10,9 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author o.froidefond
+ */
 @Slf4j
 @Service
 public class SafetyNetFireStationService {
@@ -197,20 +200,27 @@ public class SafetyNetFireStationService {
 
         return tabListPersons;
     }
-    public ListSafety postNewFireStation(FireStations fireStations){
+
+    /**
+     * Fonction pour ajouter une nouvelle caserne de pompiers dans l'objet listSafety.
+     *
+     * @param fireStations un objet de type FireStations.
+     * @return un objet de type ListSafety.
+     */
+    public ListSafety postNewFireStation(FireStations fireStations) {
         ListSafety listSafety = new ListSafety();
         List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
         List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
         List<FireStations> fireStationsList = safetyNetRepository.getData().getFirestations();
         boolean verifFireStation = true;
 
-        for (FireStations fireStation:fireStationsList) {
+        for (FireStations fireStation : fireStationsList) {
             if (fireStations.getAddress().equals(fireStation.getAddress())) {
                 verifFireStation = false;
                 break;
             }
         }
-        if (verifFireStation){
+        if (verifFireStation) {
             fireStationsList.add(fireStations);
         }
 
@@ -220,7 +230,14 @@ public class SafetyNetFireStationService {
 
         return listSafety;
     }
-    public ListSafety deleteFireStation(FireStations deleteFireStations){
+
+    /**
+     * Fonction pour supprimer une caserne de pompiers dans l'objet listSafety.
+     *
+     * @param deleteFireStations un objet de type FireStations.
+     * @return un objet de type ListSafety.
+     */
+    public ListSafety deleteFireStation(FireStations deleteFireStations) {
         ListSafety listSafety = new ListSafety();
         List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
         List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
@@ -235,14 +252,21 @@ public class SafetyNetFireStationService {
 
         return listSafety;
     }
-    public ListSafety putFireStation(FireStations putFireStation){
+
+    /**
+     * Fonction pour modifier une caserne de pompier dans l'objet listSafety.
+     *
+     * @param putFireStation un objet de type FireStations.
+     * @return un objet de type ListSafety.
+     */
+    public ListSafety putFireStation(FireStations putFireStation) {
         ListSafety listSafety = new ListSafety();
         List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
         List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
         List<FireStations> fireStationsList = safetyNetRepository.getData().getFirestations();
 
-        for (FireStations fireStation: fireStationsList) {
-            if (putFireStation.getAddress().equals(fireStation.getAddress())){
+        for (FireStations fireStation : fireStationsList) {
+            if (putFireStation.getAddress().equals(fireStation.getAddress())) {
                 fireStation.setStation(putFireStation.getStation());
                 break;
             }

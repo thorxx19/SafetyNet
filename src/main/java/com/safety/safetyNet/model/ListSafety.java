@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * @author o.froidefond
+ */
 @Data
 public class ListSafety {
 

@@ -12,26 +12,35 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author o.froidefond
+ */
 @Service
 @Slf4j
 public class SafetyNetMedicalRecordService {
     @Autowired
     SafetyNetRepository safetyNetRepository;
 
-    public ListSafety postMedicalRecord(MedicalRecords postMedicalRecord){
+    /**
+     * Fonction pour ajouter un dossier médical a l'objet listSafety.
+     *
+     * @param postMedicalRecord un objet de type MedicalRecords.
+     * @return un object de type ListSafety.
+     */
+    public ListSafety postMedicalRecord(MedicalRecords postMedicalRecord) {
         ListSafety listSafety = new ListSafety();
         List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
         List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
         List<MedicalRecords> medicalRecordsList = safetyNetRepository.getData().getMedicalrecords();
         boolean verifMedicalRecord = true;
 
-        for (MedicalRecords medicalRecord: medicalRecordsList){
-            if (postMedicalRecord.getFirstName().equals(medicalRecord.getFirstName()) && postMedicalRecord.getLastName().equals(medicalRecord.getLastName())){
+        for (MedicalRecords medicalRecord : medicalRecordsList) {
+            if (postMedicalRecord.getFirstName().equals(medicalRecord.getFirstName()) && postMedicalRecord.getLastName().equals(medicalRecord.getLastName())) {
                 verifMedicalRecord = false;
                 break;
             }
         }
-        if (verifMedicalRecord){
+        if (verifMedicalRecord) {
             medicalRecordsList.add(postMedicalRecord);
         }
 
@@ -41,41 +50,55 @@ public class SafetyNetMedicalRecordService {
 
         return listSafety;
     }
-public ListSafety putMedicalRecord(MedicalRecords putMedicalRecord){
-    ListSafety listSafety = new ListSafety();
-    List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
-    List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
-    List<MedicalRecords> medicalRecordsList = safetyNetRepository.getData().getMedicalrecords();
 
-    for (MedicalRecords medicalRecord:medicalRecordsList) {
-        if (putMedicalRecord.getFirstName().equals(medicalRecord.getFirstName()) && putMedicalRecord.getLastName().equals(medicalRecord.getLastName())){
-            medicalRecord.setBirthdate(putMedicalRecord.getBirthdate());
-            medicalRecord.setMedications(putMedicalRecord.getMedications());
-            medicalRecord.setAllergies(putMedicalRecord.getAllergies());
-            break;
+    /**
+     * Fonction pour modifier un dossier médical dans l'objet listSafety.
+     *
+     * @param putMedicalRecord un objet de type MedicalRecords.
+     * @return un objet de type ListSafety.
+     */
+    public ListSafety putMedicalRecord(MedicalRecords putMedicalRecord) {
+        ListSafety listSafety = new ListSafety();
+        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
+        List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
+        List<MedicalRecords> medicalRecordsList = safetyNetRepository.getData().getMedicalrecords();
+
+        for (MedicalRecords medicalRecord : medicalRecordsList) {
+            if (putMedicalRecord.getFirstName().equals(medicalRecord.getFirstName()) && putMedicalRecord.getLastName().equals(medicalRecord.getLastName())) {
+                medicalRecord.setBirthdate(putMedicalRecord.getBirthdate());
+                medicalRecord.setMedications(putMedicalRecord.getMedications());
+                medicalRecord.setAllergies(putMedicalRecord.getAllergies());
+                break;
+            }
         }
+
+        listSafety.setPersons(personsList);
+        listSafety.setFirestations(fireStationsList);
+        listSafety.setMedicalrecords(medicalRecordsList);
+
+        return listSafety;
     }
 
-    listSafety.setPersons(personsList);
-    listSafety.setFirestations(fireStationsList);
-    listSafety.setMedicalrecords(medicalRecordsList);
+    /**
+     * Fonction pour supprimer un dossier médical dans l'objet listSafety.
+     *
+     * @param deleteMedicalrecord un objet de type MedicalRecord.
+     * @return un objet de type ListSafety.
+     */
+    public ListSafety deleteMedicalRecord(MedicalRecords deleteMedicalrecord) {
+        ListSafety listSafety = new ListSafety();
+        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
+        List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
+        List<MedicalRecords> medicalRecordsList = new ArrayList<>();
 
-    return listSafety;
-}
-public ListSafety deleteMedicalRecord(MedicalRecords deleteMedicalrecord){
-    ListSafety listSafety = new ListSafety();
-    List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
-    List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
-    List<MedicalRecords> medicalRecordsList = new ArrayList<>();
-
-    safetyNetRepository.getData().getMedicalrecords().stream().filter(x -> !deleteMedicalrecord.getFirstName().equals(x.getFirstName())
-                    && !deleteMedicalrecord.getLastName().equals(x.getLastName())).forEach(x -> medicalRecordsList.add(x));
+        safetyNetRepository.getData().getMedicalrecords().stream().filter(x -> !deleteMedicalrecord.getFirstName().equals(x.getFirstName())
+                && !deleteMedicalrecord.getLastName().equals(x.getLastName())).forEach(x -> medicalRecordsList.add(x));
 
 
-    listSafety.setPersons(personsList);
-    listSafety.setFirestations(fireStationsList);
-    listSafety.setMedicalrecords(medicalRecordsList);
+        listSafety.setPersons(personsList);
+        listSafety.setFirestations(fireStationsList);
+        listSafety.setMedicalrecords(medicalRecordsList);
 
-    return listSafety;
-}
+        return listSafety;
+    }
 }

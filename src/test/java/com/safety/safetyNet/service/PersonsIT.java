@@ -17,6 +17,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * @author o.froidefond
+ */
 @Slf4j
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -25,7 +28,7 @@ public class PersonsIT {
     private MockMvc mockMvc;
 
     @Test
-    @DisplayName("test l'intégration d'une nouvelle personne")
+    @DisplayName("test le end point post /person.")
     public void testPerson1() {
 
         Persons person = new Persons();
@@ -57,7 +60,7 @@ public class PersonsIT {
     }
 
     @Test
-    @DisplayName("teste la mise a jour d'une fiche person")
+    @DisplayName("test le end point put /person.")
     public void testPerson2() {
 
         Persons person = new Persons();
@@ -88,7 +91,7 @@ public class PersonsIT {
     }
 
     @Test
-    @DisplayName("Teste la suppression d'une personne grâce à son nom et prénom.")
+    @DisplayName("test le end point delete /person.")
     public void testPerson3() {
         DeletePerson deletePerson = new DeletePerson();
 

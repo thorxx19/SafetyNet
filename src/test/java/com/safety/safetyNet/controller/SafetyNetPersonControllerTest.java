@@ -3,6 +3,7 @@ package com.safety.safetyNet.controller;
 import com.safety.safetyNet.repository.SafetyNetRepository;
 import com.safety.safetyNet.service.SafetyNetPersonService;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -13,19 +14,22 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+/**
+ * @author o.froidefond
+ */
 @WebMvcTest(controllers = SafetyNetPersonController.class)
 @Slf4j
 class SafetyNetPersonControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
     @MockBean
     private SafetyNetPersonService safetyNetPersonService;
     @MockBean
     private SafetyNetRepository safetyNetRepository;
 
     @Test
+    @DisplayName("test le end point post /person")
     public void testPostPerson() {
         try {
             mockMvc.perform(post("/person")
@@ -38,6 +42,7 @@ class SafetyNetPersonControllerTest {
     }
 
     @Test
+    @DisplayName("test le end point delete /person")
     public void testDeletePerson() {
         try {
             mockMvc.perform(delete("/person")
@@ -50,6 +55,7 @@ class SafetyNetPersonControllerTest {
     }
 
     @Test
+    @DisplayName("test le end point put /person")
     public void testPutPerson() {
         try {
             mockMvc.perform(put("/person")

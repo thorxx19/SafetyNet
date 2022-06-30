@@ -13,6 +13,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author o.froidefond
+ */
 @Service
 @Slf4j
 public class SafetyNetPersonService {

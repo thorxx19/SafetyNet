@@ -25,7 +25,7 @@ public class CommunityEmailIT {
     private MockMvc mockMvc;
 
     @Test
-    @DisplayName("Test la récupération de tous les mails pour une ville en paramètre")
+    @DisplayName("test le end point /communityEmail?city=Culver et vérifie le résultat retourné.")
     public void testGetCommunityEmail() {
         try {
             mockMvc.perform(get("/communityEmail?city=Culver")).andExpect(status()
@@ -36,7 +36,7 @@ public class CommunityEmailIT {
     }
 
     @Test
-    @DisplayName("Test la récupération de tous les mails pour une ville inconnue avec retour d'un objet vide")
+    @DisplayName("test le end point /communityEmail?city=Culve et vérifie que le résultat retourné soit vide.")
     public void testGetCommunityEmailEmpty() {
         try {
             mockMvc.perform(get("/communityEmail?city=Culve")).andExpect(status()
