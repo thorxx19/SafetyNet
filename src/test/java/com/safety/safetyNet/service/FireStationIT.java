@@ -61,4 +61,26 @@ public class FireStationIT {
             log.error("error :", e);
         }
     }
+    @Test
+    public void testDeleteFireStation(){
+        FireStations fireStations =new FireStations();
+
+        fireStations.setAddress("chemin d'enbiane");
+        fireStations.setStation("");
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
+        ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
+
+        try {
+            String requestJson = ow.writeValueAsString(fireStations);
+            mockMvc.perform(delete("/firestation")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .accept(MediaType.APPLICATION_JSON)
+                            .content(requestJson))
+                    .andExpect(status().isOk());
+        } catch (Exception e) {
+            log.error("error :", e);
+        }
+    }
 }

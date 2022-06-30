@@ -11,8 +11,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(controllers = SafetyNetFireStationController.class)
@@ -61,6 +60,17 @@ public class SafetyNetFireStationControllerTest {
                            .contentType(MediaType.APPLICATION_JSON)
                            .content("{\"address\" : \"chemin d'enbiane\",\"station\" : \"2\"}"))
                    .andExpect(status().isOk());
+        } catch (Exception e) {
+            log.error("error :", e);
+        }
+    }
+    @Test
+    public void testDeleteFireStation(){
+        try {
+            mockMvc.perform(delete("http://localhost:9000/firestation")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content("{\"address\" : \"chemin d'enbiane\",\"station\" : \"\"}"))
+                    .andExpect(status().isOk());
         } catch (Exception e) {
             log.error("error :", e);
         }

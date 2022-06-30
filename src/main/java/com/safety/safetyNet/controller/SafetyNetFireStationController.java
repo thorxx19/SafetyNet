@@ -59,8 +59,13 @@ public class SafetyNetFireStationController {
         return persons;
     }
     @PostMapping("/firestation")
-    private void postNewFirestation(@RequestBody FireStations newFirestation){
-        ListSafety listSafety = safetyNetFireStationService.postNewFirestation(newFirestation);
+    public void postFireStation(@RequestBody FireStations postFirestations){
+        ListSafety listSafety = safetyNetFireStationService.postNewFireStation(postFirestations);
+        safetyNetRepository.writeData(listSafety);
+    }
+    @DeleteMapping("/firestation")
+    public void deleteFireStation(@RequestBody FireStations deleteFireStations){
+        ListSafety listSafety = safetyNetFireStationService.deleteFireStation(deleteFireStations);
         safetyNetRepository.writeData(listSafety);
     }
 }

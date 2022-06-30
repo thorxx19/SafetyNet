@@ -197,7 +197,7 @@ public class SafetyNetFireStationService {
 
         return tabListPersons;
     }
-    public ListSafety postNewFirestation(FireStations fireStations){
+    public ListSafety postNewFireStation(FireStations fireStations){
         ListSafety listSafety = new ListSafety();
         List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
         List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
@@ -213,6 +213,21 @@ public class SafetyNetFireStationService {
         if (verifFireStation){
             fireStationsList.add(fireStations);
         }
+
+        listSafety.setPersons(personsList);
+        listSafety.setFirestations(fireStationsList);
+        listSafety.setMedicalrecords(medicalRecords);
+
+        return listSafety;
+    }
+    public ListSafety deleteFireStation(FireStations deleteFireStations){
+        ListSafety listSafety = new ListSafety();
+        List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
+        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
+        List<FireStations> fireStationsList = new ArrayList<>();
+
+        safetyNetRepository.getData().getFirestations().stream().filter(x -> !deleteFireStations.getAddress().equals(x.getAddress()))
+                .forEach(x -> fireStationsList.add(x));
 
         listSafety.setPersons(personsList);
         listSafety.setFirestations(fireStationsList);
