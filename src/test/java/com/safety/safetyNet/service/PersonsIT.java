@@ -28,7 +28,6 @@ public class PersonsIT {
     @DisplayName("test l'intégration d'une nouvelle personne")
     public void testPerson1() {
 
-
         Persons person = new Persons();
 
         person.setFirstName("Olivier");
