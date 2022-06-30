@@ -6,6 +6,7 @@ import com.safety.safetyNet.repository.SafetyNetRepository;
 import com.safety.safetyNet.service.SafetyNetMedicalRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,9 @@ public class SafetyNetMedicalRecordController {
         ListSafety listSafety = safetyNetMedicalRecordService.postMedicalRecord(postMedicalRecord);
         safetyNetRepository.writeData(listSafety);
     }
-
+    @PutMapping("/medicalRecord")
+    public void putMedicalRecord(@RequestBody MedicalRecords putMedicalRecord){
+        ListSafety listSafety = safetyNetMedicalRecordService.putMedicalRecord(putMedicalRecord);
+        safetyNetRepository.writeData(listSafety);
+    }
 }

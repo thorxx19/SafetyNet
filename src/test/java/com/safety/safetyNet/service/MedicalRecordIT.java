@@ -43,7 +43,7 @@ public class MedicalRecordIT {
 
         medicalRecords.setFirstName("Olivier");
         medicalRecords.setLastName("Froidefond");
-        medicalRecords.setBirthdate("20/12/1981");
+        medicalRecords.setBirthdate("04/06/1985");
         medicalRecords.setMedications(medicationList);
         medicalRecords.setAllergies(allergiesList);
 
@@ -63,6 +63,38 @@ public class MedicalRecordIT {
             log.error("error :", e);
         }
     }
+    @Test
+    public void testMedicalRecord2(){
+        MedicalRecords medicalRecords = new MedicalRecords();
+        List<String> medicationList = new ArrayList<>();
+        List<String> allergiesList = new ArrayList<>();
+        medicationList.add("aznol:350mg");
 
+
+        allergiesList.add("nillacilan");
+
+
+        medicalRecords.setFirstName("Olivier");
+        medicalRecords.setLastName("Froidefond");
+        medicalRecords.setBirthdate("20/12/1981");
+        medicalRecords.setMedications(medicationList);
+        medicalRecords.setAllergies(allergiesList);
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
+        ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
+
+        try {
+            String requestJson = ow.writeValueAsString(medicalRecords);
+
+            mockMvc.perform(put("/medicalRecord")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .accept(MediaType.APPLICATION_JSON)
+                            .content(requestJson))
+                    .andExpect(status().isOk());
+        } catch (Exception e) {
+            log.error("error :", e);
+        }
+    }
 
 }

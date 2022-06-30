@@ -41,5 +41,25 @@ public class SafetyNetMedicalRecordService {
 
         return listSafety;
     }
+public ListSafety putMedicalRecord(MedicalRecords putMedicalRecord){
+    ListSafety listSafety = new ListSafety();
+    List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
+    List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
+    List<MedicalRecords> medicalRecordsList = safetyNetRepository.getData().getMedicalrecords();
 
+    for (MedicalRecords medicalRecord:medicalRecordsList) {
+        if (putMedicalRecord.getFirstName().equals(medicalRecord.getFirstName()) && putMedicalRecord.getLastName().equals(medicalRecord.getLastName())){
+            medicalRecord.setBirthdate(putMedicalRecord.getBirthdate());
+            medicalRecord.setMedications(putMedicalRecord.getMedications());
+            medicalRecord.setAllergies(putMedicalRecord.getAllergies());
+            break;
+        }
+    }
+
+    listSafety.setPersons(personsList);
+    listSafety.setFirestations(fireStationsList);
+    listSafety.setMedicalrecords(medicalRecordsList);
+
+    return listSafety;
+}
 }
