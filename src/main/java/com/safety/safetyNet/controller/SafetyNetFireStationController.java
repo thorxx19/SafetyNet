@@ -1,13 +1,10 @@
 package com.safety.safetyNet.controller;
 
-import com.safety.safetyNet.model.PersonsFireStation;
-import com.safety.safetyNet.model.ResponsePersonsMedical;
-import com.safety.safetyNet.model.ResponsePersonsStation;
+import com.safety.safetyNet.model.*;
+import com.safety.safetyNet.repository.SafetyNetRepository;
 import com.safety.safetyNet.service.SafetyNetFireStationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +18,8 @@ public class SafetyNetFireStationController {
 
     @Autowired
     SafetyNetFireStationService safetyNetFireStationService;
+    @Autowired
+    SafetyNetRepository safetyNetRepository;
 
 
     /**
@@ -58,5 +57,20 @@ public class SafetyNetFireStationController {
     public List<PersonsFireStation> getHomesAtThisStationNumber(@RequestParam int stations) {
         List<PersonsFireStation> persons = safetyNetFireStationService.getHouseServeFireStation(stations);
         return persons;
+    }
+    @PostMapping("/firestation")
+    public void postFireStation(@RequestBody FireStations postFirestations){
+        ListSafety listSafety = safetyNetFireStationService.postNewFireStation(postFirestations);
+        safetyNetRepository.writeData(listSafety);
+    }
+    @DeleteMapping("/firestation")
+    public void deleteFireStation(@RequestBody FireStations deleteFireStations){
+        ListSafety listSafety = safetyNetFireStationService.deleteFireStation(deleteFireStations);
+        safetyNetRepository.writeData(listSafety);
+    }
+    @PutMapping("/firestation")
+    public void putFireStation(@RequestBody FireStations putFireStations){
+        ListSafety listSafety = safetyNetFireStationService.putFireStation(putFireStations);
+        safetyNetRepository.writeData(listSafety);
     }
 }

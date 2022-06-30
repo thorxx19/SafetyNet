@@ -197,4 +197,61 @@ public class SafetyNetFireStationService {
 
         return tabListPersons;
     }
+    public ListSafety postNewFireStation(FireStations fireStations){
+        ListSafety listSafety = new ListSafety();
+        List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
+        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
+        List<FireStations> fireStationsList = safetyNetRepository.getData().getFirestations();
+        boolean verifFireStation = true;
+
+        for (FireStations fireStation:fireStationsList) {
+            if (fireStations.getAddress().equals(fireStation.getAddress())) {
+                verifFireStation = false;
+                break;
+            }
+        }
+        if (verifFireStation){
+            fireStationsList.add(fireStations);
+        }
+
+        listSafety.setPersons(personsList);
+        listSafety.setFirestations(fireStationsList);
+        listSafety.setMedicalrecords(medicalRecords);
+
+        return listSafety;
+    }
+    public ListSafety deleteFireStation(FireStations deleteFireStations){
+        ListSafety listSafety = new ListSafety();
+        List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
+        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
+        List<FireStations> fireStationsList = new ArrayList<>();
+
+        safetyNetRepository.getData().getFirestations().stream().filter(x -> !deleteFireStations.getAddress().equals(x.getAddress()))
+                .forEach(x -> fireStationsList.add(x));
+
+        listSafety.setPersons(personsList);
+        listSafety.setFirestations(fireStationsList);
+        listSafety.setMedicalrecords(medicalRecords);
+
+        return listSafety;
+    }
+    public ListSafety putFireStation(FireStations putFireStation){
+        ListSafety listSafety = new ListSafety();
+        List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
+        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
+        List<FireStations> fireStationsList = safetyNetRepository.getData().getFirestations();
+
+        for (FireStations fireStation: fireStationsList) {
+            if (putFireStation.getAddress().equals(fireStation.getAddress())){
+                fireStation.setStation(putFireStation.getStation());
+                break;
+            }
+        }
+
+        listSafety.setPersons(personsList);
+        listSafety.setFirestations(fireStationsList);
+        listSafety.setMedicalrecords(medicalRecords);
+
+        return listSafety;
+    }
 }
