@@ -47,4 +47,14 @@ class SafetyNetMedicalRecordControllerTest {
             log.error("error :", e);
         }
     }
+    @Test
+    public void testDeleteMedicalRecord(){
+        try {
+            mockMvc.perform(delete("/medicalRecord").contentType(MediaType.APPLICATION_JSON)
+                            .content("{\"firstName\" : \"Olivier\",\"lastName\" : \"Froidefond\",\"birthdate\" : \"20/12/1981\",\"medications\" : [],\"allergies\" : []}"))
+                    .andExpect(status().isOk());
+        } catch (Exception e) {
+            log.error("error :", e);
+        }
+    }
 }

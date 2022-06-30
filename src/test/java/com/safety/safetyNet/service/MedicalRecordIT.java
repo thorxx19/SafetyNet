@@ -17,8 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @Slf4j
@@ -96,5 +95,32 @@ public class MedicalRecordIT {
             log.error("error :", e);
         }
     }
+    @Test
+    public void testMedicalRecord3(){
+        MedicalRecords medicalRecords = new MedicalRecords();
+        List<String> medicationList = new ArrayList<>();
+        List<String> allergiesList = new ArrayList<>();
 
+        medicalRecords.setFirstName("Olivier");
+        medicalRecords.setLastName("Froidefond");
+        medicalRecords.setBirthdate("20/12/1981");
+        medicalRecords.setMedications(medicationList);
+        medicalRecords.setAllergies(allergiesList);
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
+        ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
+
+        try {
+            String requestJson = ow.writeValueAsString(medicalRecords);
+
+            mockMvc.perform(delete("/medicalRecord")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .accept(MediaType.APPLICATION_JSON)
+                            .content(requestJson))
+                    .andExpect(status().isOk());
+        } catch (Exception e) {
+            log.error("error :", e);
+        }
+    }
 }

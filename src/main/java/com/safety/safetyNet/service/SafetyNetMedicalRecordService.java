@@ -62,4 +62,20 @@ public ListSafety putMedicalRecord(MedicalRecords putMedicalRecord){
 
     return listSafety;
 }
+public ListSafety deleteMedicalRecord(MedicalRecords deleteMedicalrecord){
+    ListSafety listSafety = new ListSafety();
+    List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
+    List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
+    List<MedicalRecords> medicalRecordsList = new ArrayList<>();
+
+    safetyNetRepository.getData().getMedicalrecords().stream().filter(x -> !deleteMedicalrecord.getFirstName().equals(x.getFirstName())
+                    && !deleteMedicalrecord.getLastName().equals(x.getLastName())).forEach(x -> medicalRecordsList.add(x));
+
+
+    listSafety.setPersons(personsList);
+    listSafety.setFirestations(fireStationsList);
+    listSafety.setMedicalrecords(medicalRecordsList);
+
+    return listSafety;
+}
 }
