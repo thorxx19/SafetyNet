@@ -56,7 +56,7 @@ public class SafetyNetFireStationControllerTest {
     @Test
     public void testPostNewFireStation(){
         try {
-           mockMvc.perform(post("http://localhost:9000/firestation")
+           mockMvc.perform(post("/firestation")
                            .contentType(MediaType.APPLICATION_JSON)
                            .content("{\"address\" : \"chemin d'enbiane\",\"station\" : \"2\"}"))
                    .andExpect(status().isOk());
@@ -67,9 +67,20 @@ public class SafetyNetFireStationControllerTest {
     @Test
     public void testDeleteFireStation(){
         try {
-            mockMvc.perform(delete("http://localhost:9000/firestation")
+            mockMvc.perform(delete("/firestation")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content("{\"address\" : \"chemin d'enbiane\",\"station\" : \"\"}"))
+                    .andExpect(status().isOk());
+        } catch (Exception e) {
+            log.error("error :", e);
+        }
+    }
+    @Test
+    public void testPutFireStation(){
+        try {
+            mockMvc.perform(put("/firestation")
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .content("{\"address\" : \"chemin d'enbiane\",\"station\" : \"5\"}"))
                     .andExpect(status().isOk());
         } catch (Exception e) {
             log.error("error :", e);

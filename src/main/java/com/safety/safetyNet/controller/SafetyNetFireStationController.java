@@ -68,4 +68,9 @@ public class SafetyNetFireStationController {
         ListSafety listSafety = safetyNetFireStationService.deleteFireStation(deleteFireStations);
         safetyNetRepository.writeData(listSafety);
     }
+    @PutMapping("/firestation")
+    public void putFireStation(@RequestBody FireStations putFireStations){
+        ListSafety listSafety = safetyNetFireStationService.putFireStation(putFireStations);
+        safetyNetRepository.writeData(listSafety);
+    }
 }
