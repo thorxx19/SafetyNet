@@ -60,7 +60,7 @@ public class SafetyNetFireStationService {
                                         countAdult++;
                                     }
                                 } catch (Exception e) {
-                                    log.info(e.getMessage());
+                                    log.info("error :", e);
                                 }
                             }
                         }

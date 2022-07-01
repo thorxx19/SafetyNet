@@ -6,6 +6,7 @@ import com.safety.safetyNet.model.PersonInfo;
 import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.repository.SafetyNetRepository;
 import com.safety.safetyNet.service.SafetyNetPersonService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @author o.froidefond
  */
 @RestController
+@Slf4j
 public class SafetyNetPersonController {
 
     @Autowired
@@ -33,6 +35,8 @@ public class SafetyNetPersonController {
     @GetMapping("/personInfo")
     public List<PersonInfo> getMedicalRecordsOfThisPerson(@RequestParam String firstName, String lastName) {
         List<PersonInfo> persons = safetyNetPersonService.getPersonInfo(firstName, lastName);
+        log.info("Requête reçue -> getFireStationNumber :Prénom:{},Nom:{}",firstName,lastName );
+        log.info("Objet retourné -> getFireStationNumber :{}",persons);
         return persons;
     }
 
@@ -45,6 +49,7 @@ public class SafetyNetPersonController {
     public void postNewPerson(@RequestBody Persons newPerson) {
         ListSafety listSafety = safetyNetPersonService.postNewPerson(newPerson);
         safetyNetRepository.writeData(listSafety);
+        log.info("Requête reçue -> getFireStationNumber :{}",newPerson);
     }
 
     /**
@@ -56,6 +61,7 @@ public class SafetyNetPersonController {
     public void deletePerson(@RequestBody DeletePerson deletePerson) {
         ListSafety listSafety = safetyNetPersonService.deletePerson(deletePerson);
         safetyNetRepository.writeData(listSafety);
+        log.info("Requête reçue -> getFireStationNumber :{}",deletePerson);
     }
 
     /**
@@ -67,5 +73,7 @@ public class SafetyNetPersonController {
     public void putPerson(@RequestBody Persons putPerson) {
         ListSafety listSafety = safetyNetPersonService.putPerson(putPerson);
         safetyNetRepository.writeData(listSafety);
+        log.info("Requête reçue -> getFireStationNumber :{}",putPerson);
+
     }
 }

@@ -4,6 +4,7 @@ import com.safety.safetyNet.model.ListSafety;
 import com.safety.safetyNet.model.MedicalRecords;
 import com.safety.safetyNet.repository.SafetyNetRepository;
 import com.safety.safetyNet.service.SafetyNetMedicalRecordService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @RestController
+@Slf4j
 public class SafetyNetMedicalRecordController {
     @Autowired
     SafetyNetMedicalRecordService safetyNetMedicalRecordService;
@@ -27,6 +29,7 @@ public class SafetyNetMedicalRecordController {
     public void postMedicalRecord(@RequestBody MedicalRecords postMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.postMedicalRecord(postMedicalRecord);
         safetyNetRepository.writeData(listSafety);
+        log.info("Requête POST medicalRecord : {}",postMedicalRecord);
     }
 
     /**
@@ -38,6 +41,7 @@ public class SafetyNetMedicalRecordController {
     public void putMedicalRecord(@RequestBody MedicalRecords putMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.putMedicalRecord(putMedicalRecord);
         safetyNetRepository.writeData(listSafety);
+        log.info("Requête PUT medicalRecord : {}",putMedicalRecord);
     }
 
     /**
@@ -49,5 +53,6 @@ public class SafetyNetMedicalRecordController {
     public void deleteMedicalRecord(@RequestBody MedicalRecords deleteMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.deleteMedicalRecord(deleteMedicalRecord);
         safetyNetRepository.writeData(listSafety);
+        log.info("Requête DELETE medicalRecord : {}",deleteMedicalRecord);
     }
 }

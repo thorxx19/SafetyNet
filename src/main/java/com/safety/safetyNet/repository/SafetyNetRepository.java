@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
@@ -27,8 +28,10 @@ public class SafetyNetRepository {
         ObjectMapper mapper = new ObjectMapper();
         try {
             return mapper.readValue(new File(PATH_FILE), ListSafety.class);
-        } catch (Exception e) {
-            log.error("error :", e);
+        } catch (FileNotFoundException e) {
+            log.error("Error :{}", e.getMessage());
+        } catch (Exception ex){
+            log.info("Error :{}", ex.getMessage());
         }
         return null;
     }

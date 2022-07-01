@@ -1,16 +1,20 @@
 package com.safety.safetyNet.controller;
 
-import com.safety.safetyNet.model.ResponsePersonsChildren;
+import com.safety.safetyNet.model.PersonsChildren;
 import com.safety.safetyNet.service.SafetyNetChildrenService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author o.froidefond
  */
 @RestController
+@Slf4j
 public class SafetyNetChildrenController {
 
     @Autowired
@@ -23,8 +27,10 @@ public class SafetyNetChildrenController {
      * @return la liste des enfant trouver a l'adresse
      */
     @GetMapping("/childAlert")
-    public ResponsePersonsChildren getAddressChild(@RequestParam String address) {
-        ResponsePersonsChildren children = safetyNetChildrenService.getChildrenThisAddress(address);
+    public List<PersonsChildren> getAddressChild(@RequestParam String address) {
+        List<PersonsChildren> children = safetyNetChildrenService.getChildrenThisAddress(address);
+        log.info("Requête reçue -> getAddressChild :{}",address);
+        log.info("Objet retourné -> getAddressChild :{}",children);
         return children;
     }
 }

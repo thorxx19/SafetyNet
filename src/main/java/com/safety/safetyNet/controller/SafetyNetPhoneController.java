@@ -2,6 +2,7 @@ package com.safety.safetyNet.controller;
 
 
 import com.safety.safetyNet.service.SafetyNetPhoneService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +14,7 @@ import java.util.TreeSet;
  * @author o.froidefond
  */
 @RestController
+@Slf4j
 public class SafetyNetPhoneController {
     @Autowired
     SafetyNetPhoneService safetyNetPhoneService;
@@ -26,6 +28,8 @@ public class SafetyNetPhoneController {
     @GetMapping("/phoneAlert")
     public TreeSet<String> getNumberPhone(@RequestParam int firestation) {
         TreeSet<String> phone = safetyNetPhoneService.getNumberPhoneThisFireStation(firestation);
+        log.info("Requête reçue -> getFireStationNumber :{}",firestation);
+        log.info("Objet retourné -> getFireStationNumber :{}",phone);
         return phone;
     }
 }

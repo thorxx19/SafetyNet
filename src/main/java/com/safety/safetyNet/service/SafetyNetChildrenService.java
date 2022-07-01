@@ -29,13 +29,12 @@ public class SafetyNetChildrenService {
      * @param address l'adresse de la résidence
      * @return liste de mineur
      */
-    public ResponsePersonsChildren getChildrenThisAddress(String address) {
+    public List<PersonsChildren> getChildrenThisAddress(String address) {
         ListSafety data = safetyNetRepository.getData();
         List<MedicalRecords> dataMedical = data.getMedicalrecords();
         List<Persons> dataPersons = data.getPersons();
-
         List<PersonsChildren> listMineur = new ArrayList<>();
-        ResponsePersonsChildren responsePersonsChildren = new ResponsePersonsChildren();
+
 
         for (MedicalRecords medic : dataMedical) {
             Calendar today = Calendar.getInstance();
@@ -60,10 +59,10 @@ public class SafetyNetChildrenService {
                     }
                 }
             } catch (Exception e) {
-                log.error(e.getMessage());
+                log.error("error :",e);
             }
         }
-        responsePersonsChildren.setChildren(listMineur);
-        return responsePersonsChildren;
+
+        return listMineur;
     }
 }

@@ -3,6 +3,7 @@ package com.safety.safetyNet.controller;
 import com.safety.safetyNet.model.*;
 import com.safety.safetyNet.repository.SafetyNetRepository;
 import com.safety.safetyNet.service.SafetyNetFireStationService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ import java.util.List;
  */
 
 @RestController
+@Slf4j
 public class SafetyNetFireStationController {
 
 
@@ -31,6 +33,8 @@ public class SafetyNetFireStationController {
     @GetMapping("/firestation")
     public ResponsePersonsStation getFireStationNumber(@RequestParam int stationNumber) {
         ResponsePersonsStation persons = safetyNetFireStationService.getAllPersonsWithStationNumber(stationNumber);
+        log.info("Requête reçue -> getFireStationNumber :{}",stationNumber);
+        log.info("Objet retourné -> getFireStationNumber :{}",persons);
         return persons;
     }
 
@@ -44,6 +48,8 @@ public class SafetyNetFireStationController {
     @GetMapping("/fire")
     public ResponsePersonsMedical getHabitantAtThisAdrdress(@RequestParam String address) {
         ResponsePersonsMedical persons = safetyNetFireStationService.getPersonsThisAddressPlusStationNumber(address);
+        log.info("Requête reçue -> getFireStationNumber :{}",address);
+        log.info("Objet retourné -> getFireStationNumber :{}",persons);
         return persons;
     }
 
@@ -56,6 +62,8 @@ public class SafetyNetFireStationController {
     @GetMapping("/flood/stations")
     public List<PersonsFireStation> getHomesAtThisStationNumber(@RequestParam int stations) {
         List<PersonsFireStation> persons = safetyNetFireStationService.getHouseServeFireStation(stations);
+        log.info("Requête reçue -> getFireStationNumber :{}",stations);
+        log.info("Objet retourné -> getFireStationNumber :{}",persons);
         return persons;
     }
 
@@ -68,6 +76,7 @@ public class SafetyNetFireStationController {
     public void postFireStation(@RequestBody FireStations postFirestations) {
         ListSafety listSafety = safetyNetFireStationService.postNewFireStation(postFirestations);
         safetyNetRepository.writeData(listSafety);
+        log.info("Requête reçue -> getFireStationNumber :{}",postFirestations);
     }
 
     /**
@@ -79,6 +88,7 @@ public class SafetyNetFireStationController {
     public void deleteFireStation(@RequestBody FireStations deleteFireStations) {
         ListSafety listSafety = safetyNetFireStationService.deleteFireStation(deleteFireStations);
         safetyNetRepository.writeData(listSafety);
+        log.info("Requête reçue -> getFireStationNumber :{}",deleteFireStations);
     }
 
     /**
@@ -90,5 +100,6 @@ public class SafetyNetFireStationController {
     public void putFireStation(@RequestBody FireStations putFireStations) {
         ListSafety listSafety = safetyNetFireStationService.putFireStation(putFireStations);
         safetyNetRepository.writeData(listSafety);
+        log.info("Requête reçue -> getFireStationNumber :{}",putFireStations);
     }
 }

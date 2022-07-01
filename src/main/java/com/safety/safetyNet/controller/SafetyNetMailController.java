@@ -2,6 +2,7 @@ package com.safety.safetyNet.controller;
 
 
 import com.safety.safetyNet.service.SafetyNetMailService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +14,7 @@ import java.util.TreeSet;
  * @author o.froidefond
  */
 @RestController
+@Slf4j
 public class SafetyNetMailController {
 
     @Autowired
@@ -27,6 +29,8 @@ public class SafetyNetMailController {
     @GetMapping("/communityEmail")
     public TreeSet<String> getMailAllPersons(@RequestParam String city) {
         TreeSet<String> listEmail = safetyNetMailService.getAllMail(city);
+        log.info("Requête reçue -> getMailAllPersons :{}",city);
+        log.info("Objet retourné -> getMailAllPersons :{}",listEmail);
         return listEmail;
     }
 }
