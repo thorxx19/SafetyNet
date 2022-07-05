@@ -29,7 +29,7 @@ public class SafetyNetMedicalRecordController {
     public void postMedicalRecord(@RequestBody MedicalRecords postMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.postMedicalRecord(postMedicalRecord);
         safetyNetRepository.writeData(listSafety);
-        log.info("Requête POST medicalRecord : {}",postMedicalRecord);
+        log.info("Requête POST postMedicalRecord : {}",postMedicalRecord);
     }
 
     /**
@@ -41,7 +41,7 @@ public class SafetyNetMedicalRecordController {
     public void putMedicalRecord(@RequestBody MedicalRecords putMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.putMedicalRecord(putMedicalRecord);
         safetyNetRepository.writeData(listSafety);
-        log.info("Requête PUT medicalRecord : {}",putMedicalRecord);
+        log.info("Requête PUT putMedicalRecord : {}",putMedicalRecord);
     }
 
     /**
@@ -53,6 +53,6 @@ public class SafetyNetMedicalRecordController {
     public void deleteMedicalRecord(@RequestBody MedicalRecords deleteMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.deleteMedicalRecord(deleteMedicalRecord);
         safetyNetRepository.writeData(listSafety);
-        log.info("Requête DELETE medicalRecord : {}",deleteMedicalRecord);
+        log.info("Requête DELETE deleteMedicalRecord : {}",deleteMedicalRecord);
     }
 }

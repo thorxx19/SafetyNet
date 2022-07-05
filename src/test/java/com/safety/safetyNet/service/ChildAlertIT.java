@@ -30,7 +30,7 @@ public class ChildAlertIT {
     public void getChildAlert() {
         try {
             mockMvc.perform(get("/childAlert?address=1509 Culver St")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$.children[0].firstName", is("Tenley")));
+                    .isOk()).andExpect(jsonPath("$[0].firstName", is("Tenley")));
         } catch (Exception e) {
             log.error("error :", e);
         }
@@ -41,7 +41,7 @@ public class ChildAlertIT {
     public void getChildAlertEmpty() {
         try {
             mockMvc.perform(get("/childAlert?address=1509 Culver ")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$.children", Matchers.empty()));
+                    .isOk()).andExpect(jsonPath("$", Matchers.empty()));
         } catch (Exception e) {
             log.error("error :", e);
         }

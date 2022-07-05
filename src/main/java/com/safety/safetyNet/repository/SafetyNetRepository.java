@@ -28,10 +28,8 @@ public class SafetyNetRepository {
         ObjectMapper mapper = new ObjectMapper();
         try {
             return mapper.readValue(new File(PATH_FILE), ListSafety.class);
-        } catch (FileNotFoundException e) {
-            log.error("Error :{}", e.getMessage());
-        } catch (Exception ex){
-            log.info("Error :{}", ex.getMessage());
+        }catch (Exception ex){
+            log.info("Error :", ex);
         }
         return null;
     }

@@ -1,0 +1,29 @@
+server:
+  port: 9000
+logging:
+    path: logs
+    file:
+      name: safetyNet.log
+    level:
+      root: ERROR
+      org:
+        springframework:
+          web: ERROR
+      com:
+        safety:
+          safetyNet:
+            repository: ERROR
+            service: INFO
+            controller: INFO
+            SafetyNetApplication: ERROR
+    pattern:
+      console: "%red(%d{dd/MM/yyyy}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %msg%n%throwable"
+      file: "%n%d{dd/MM/yyyy HH:MM:ss} %p %C{1.}%n %m%n"
+spring:
+  main:
+    banner-mode: off
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

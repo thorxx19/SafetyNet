@@ -35,8 +35,8 @@ public class SafetyNetPersonController {
     @GetMapping("/personInfo")
     public List<PersonInfo> getMedicalRecordsOfThisPerson(@RequestParam String firstName, String lastName) {
         List<PersonInfo> persons = safetyNetPersonService.getPersonInfo(firstName, lastName);
-        log.info("Requête reçue -> getFireStationNumber :Prénom:{},Nom:{}",firstName,lastName );
-        log.info("Objet retourné -> getFireStationNumber :{}",persons);
+        log.info("Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:{},Nom:{}",firstName,lastName );
+        log.info("Objet retourné -> getMedicalRecordsOfThisPerson :{}",persons);
         return persons;
     }
 
@@ -49,7 +49,7 @@ public class SafetyNetPersonController {
     public void postNewPerson(@RequestBody Persons newPerson) {
         ListSafety listSafety = safetyNetPersonService.postNewPerson(newPerson);
         safetyNetRepository.writeData(listSafety);
-        log.info("Requête reçue -> getFireStationNumber :{}",newPerson);
+        log.info("Requête reçue -> postNewPerson :{}",newPerson);
     }
 
     /**
@@ -61,7 +61,7 @@ public class SafetyNetPersonController {
     public void deletePerson(@RequestBody DeletePerson deletePerson) {
         ListSafety listSafety = safetyNetPersonService.deletePerson(deletePerson);
         safetyNetRepository.writeData(listSafety);
-        log.info("Requête reçue -> getFireStationNumber :{}",deletePerson);
+        log.info("Requête reçue -> deletePerson :{}",deletePerson);
     }
 
     /**
@@ -73,7 +73,7 @@ public class SafetyNetPersonController {
     public void putPerson(@RequestBody Persons putPerson) {
         ListSafety listSafety = safetyNetPersonService.putPerson(putPerson);
         safetyNetRepository.writeData(listSafety);
-        log.info("Requête reçue -> getFireStationNumber :{}",putPerson);
+        log.info("Requête reçue -> putPerson :{}",putPerson);
 
     }
 }

@@ -31,19 +31,18 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<version>2.6.8</version>
+			<version>2.7.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
+			<version>1.18.24</version>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<version>2.6.8</version>
+			<version>2.7.0</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -76,7 +75,7 @@
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-junit-jupiter</artifactId>
-			<version>${mockito.version}</version>
+			<version>4.6.1</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -92,12 +91,12 @@
 		<dependency>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-jxr-plugin</artifactId>
-			<version>2.3</version>
+			<version>3.2.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-javadoc-plugin</artifactId>
-			<version>3.3.2</version>
+			<version>3.4.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.maven.plugins</groupId>
@@ -119,6 +118,11 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -188,7 +192,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>3.7.1</version>
+				<version>4.0.0-M2</version>
 				<configuration>
 					<locales>fr</locales>
 				</configuration>
@@ -243,7 +247,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
 	</build>
 	<!-- =============================================================== -->
 	<!-- Gestion des rapports -->
@@ -269,7 +272,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>${maven-javadoc-plugin.version}</version>
+				<version>3.4.0</version>
 				<configuration>
 					<quiet>true</quiet>
 					<locale>fr</locale>
@@ -294,6 +297,13 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>**/model/*</exclude>
+						<exclude>**/constantes/*</exclude>
+						<exclude>**/config/*</exclude>
+					</excludes>
+				</configuration>
 				<reportSets>
 					<reportSet>
 						<reports>
@@ -320,11 +330,7 @@
 				<artifactId>spotbugs-maven-plugin</artifactId>
 				<version>4.7.0.0</version>
 			</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-jxr-plugin</artifactId>
-						<version>2.3</version>
-					</plugin>
 		</plugins>
 	</reporting>
+
 </project>
