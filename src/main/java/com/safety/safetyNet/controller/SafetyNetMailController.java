@@ -29,8 +29,8 @@ public class SafetyNetMailController {
     @GetMapping("/communityEmail")
     public TreeSet<String> getMailAllPersons(@RequestParam String city) {
         TreeSet<String> listEmail = safetyNetMailService.getAllMail(city);
-        log.info("Requête reçue -> getMailAllPersons :{}",city);
-        log.info("Objet retourné -> getMailAllPersons :{}",listEmail);
+        log.info("Requête reçue -> getMailAllPersons :{}", city);
+        log.info("Objet retourné -> getMailAllPersons :{}", listEmail);
         return listEmail;
     }
 }

@@ -6,9 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeSet;
 
 /**
  * @author o.froidefond
@@ -19,6 +19,8 @@ public class SafetyNetFireStationService {
 
     @Autowired
     SafetyNetRepository safetyNetRepository;
+    @Autowired
+    SafetyNetCalculatorAgeBirthdate safetyNetCalculatorAgeBirthdate;
 
     /**
      * fonction pour triée les habitant en fonction de la caserne de pompier.
@@ -45,22 +47,12 @@ public class SafetyNetFireStationService {
                     if (person.getAddress().equals(firestation.getAddress())) {
                         for (MedicalRecords medic : dataMedical) {
                             if (person.getLastName().equals(medic.getLastName()) && person.getFirstName().equals(medic.getFirstName())) {
-                                Calendar today = Calendar.getInstance();
-                                SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
-                                try {
-                                    Date birth = dateTimeFormatter.parse(medic.getBirthdate());
-                                    Date todayParse = today.getTime();
-                                    long result = todayParse.getTime() - birth.getTime();
-                                    TimeUnit time = TimeUnit.DAYS;
-                                    long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
-                                    long yearBirth = resultDay / 365;
-                                    if (yearBirth <= 18) {
-                                        countChildren++;
-                                    } else {
-                                        countAdult++;
-                                    }
-                                } catch (Exception e) {
-                                    log.info("error :", e);
+
+                                long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic);
+                                if (yearBirth <= 18) {
+                                    countChildren++;
+                                } else {
+                                    countAdult++;
                                 }
                             }
                         }
@@ -108,26 +100,15 @@ public class SafetyNetFireStationService {
                 for (MedicalRecords medic : dateMedicalRecords) {
                     if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
                             .equals(medic.getFirstName())) {
-                        Calendar today = Calendar.getInstance();
-                        SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
-                        try {
-                            Date birth = dateTimeFormatter.parse(medic.getBirthdate());
-                            Date todayParse = today.getTime();
-                            long result = todayParse.getTime() - birth.getTime();
-                            TimeUnit time = TimeUnit.DAYS;
-                            long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
-                            long yearBirth = resultDay / 365;
-                            PersonsMedical persons = new PersonsMedical();
-                            persons.setLastName(person.getLastName());
-                            persons.setPhone(person.getPhone());
-                            persons.setAge(yearBirth);
-                            persons.setAllergies(medic.getAllergies());
-                            persons.setMedications(medic.getMedications());
-                            listPersons.add(persons);
 
-                        } catch (Exception e) {
-                            log.error("error :", e);
-                        }
+                        long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic);
+                        PersonsMedical persons = new PersonsMedical();
+                        persons.setLastName(person.getLastName());
+                        persons.setPhone(person.getPhone());
+                        persons.setAge(yearBirth);
+                        persons.setAllergies(medic.getAllergies());
+                        persons.setMedications(medic.getMedications());
+                        listPersons.add(persons);
 
                     }
                 }
@@ -169,28 +150,17 @@ public class SafetyNetFireStationService {
                         for (MedicalRecords medic : dateMedicalRecords) {
                             if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
                                     .equals(medic.getFirstName())) {
-                                Calendar today = Calendar.getInstance();
-                                SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
-                                try {
-                                    Date birth = dateTimeFormatter.parse(medic.getBirthdate());
-                                    Date todayParse = today.getTime();
-                                    long result = todayParse.getTime() - birth.getTime();
-                                    TimeUnit time = TimeUnit.DAYS;
-                                    long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
-                                    long yearBirth = resultDay / 365;
 
-                                    PersonsFireStation persons = new PersonsFireStation();
-                                    persons.setLastName(person.getLastName());
-                                    persons.setAddress(person.getAddress());
-                                    persons.setAge(yearBirth);
-                                    persons.setEmail(person.getEmail());
-                                    persons.setAllergies(medic.getAllergies());
-                                    persons.setMedications(medic.getMedications());
-                                    tabListPersons.add(persons);
+                                long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic);
 
-                                } catch (Exception e) {
-                                    log.error("error :", e);
-                                }
+                                PersonsFireStation persons = new PersonsFireStation();
+                                persons.setLastName(person.getLastName());
+                                persons.setAddress(person.getAddress());
+                                persons.setAge(yearBirth);
+                                persons.setEmail(person.getEmail());
+                                persons.setAllergies(medic.getAllergies());
+                                persons.setMedications(medic.getMedications());
+                                tabListPersons.add(persons);
                             }
                         }
                     }

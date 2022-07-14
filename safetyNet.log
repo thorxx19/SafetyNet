@@ -1,8 +1,20 @@
 
-05/07/2022 08:07:13 ERROR org.apache.juli.logging.DirectJDKLog
+14/07/2022 22:07:46 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ RequÃªte POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03-06-2010, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+14/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ RequÃªte reÃ§ue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 22:07:08 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ RequÃªte reÃ§ue -> getHabitantAtThisAdrdress :1509 Culver St
+
+14/07/2022 22:07:08 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retournÃ© -> getHabitantAtThisAdrdress :ResponsePersonsMedical(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=35, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))
+
+14/07/2022 22:07:36 ERROR org.apache.juli.logging.DirectJDKLog
  Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
 java.lang.NullPointerException: null
-	at com.safety.safetyNet.service.SafetyNetChildrenService.getChildrenThisAddress(SafetyNetChildrenService.java:34)
+	at com.safety.safetyNet.service.SafetyNetChildrenService.getChildrenThisAddress(SafetyNetChildrenService.java:40)
 	at com.safety.safetyNet.controller.SafetyNetChildrenController.getAddressChild(SafetyNetChildrenController.java:31)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -58,3 +70,857 @@ java.lang.NullPointerException: null
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:829)
+
+14/07/2022 22:07:30 ERROR org.apache.juli.logging.DirectJDKLog
+ Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.safety.safetyNet.service.SafetyNetChildrenService.getChildrenThisAddress(SafetyNetChildrenService.java:40)
+	at com.safety.safetyNet.controller.SafetyNetChildrenController.getAddressChild(SafetyNetChildrenController.java:31)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+14/07/2022 22:07:20 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ RequÃªte reÃ§ue -> getAddressChild :1509 Culver St
+
+14/07/2022 22:07:20 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retournÃ© -> getAddressChild :[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]
+
+14/07/2022 22:07:24 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ RequÃªte reÃ§ue -> getAddressChild :1509 Culver St
+
+14/07/2022 22:07:24 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retournÃ© -> getAddressChild :[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]
+
+14/07/2022 22:07:46 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter
+ 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field safetyNetCalculatorAgeBirthdate in com.safety.safetyNet.repository.SafetyNetChildrenRepository required a bean of type 'com.safety.safetyNet.service.SafetyNetCalculatorAgeBirthdate' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.safety.safetyNet.service.SafetyNetCalculatorAgeBirthdate' in your configuration.
+
+
+14/07/2022 22:07:23 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ RequÃªte reÃ§ue -> getAddressChild :1509 Culver St
+
+14/07/2022 22:07:23 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retournÃ© -> getAddressChild :[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]
+
+14/07/2022 22:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ RequÃªte reÃ§ue -> getFireStationNumber :4
+
+14/07/2022 22:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retournÃ© -> getFireStationNumber :ResponsePersonsStation(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))
+
+14/07/2022 22:07:13 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ RequÃªte reÃ§ue -> getAddressChild :1509 Culver St
+
+14/07/2022 22:07:13 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retournÃ© -> getAddressChild :[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]
+
+14/07/2022 22:07:16 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ RequÃªte reÃ§ue -> getNumberPhone :4
+
+14/07/2022 22:07:16 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retournÃ© -> getNumberPhone :[841-874-6874, 841-874-8888, 841-874-9845, 841-874-9888]
+
+14/07/2022 22:07:21 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ RequÃªte reÃ§ue -> getHabitantAtThisAdrdress :1509 Culver St
+
+14/07/2022 22:07:21 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retournÃ© -> getHabitantAtThisAdrdress :ResponsePersonsMedical(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=35, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))
+
+14/07/2022 22:07:26 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ RequÃªte reÃ§ue -> getHomesAtThisStationNumber :4
+
+14/07/2022 22:07:26 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retournÃ© -> getHomesAtThisStationNumber :[PersonsFireStation(lastName=Cooper, address=489 Manchester St, age=28, email=lily@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Cooper, address=112 Steppes Pl, age=28, email=tcoop@ymail.com, medications=[hydrapermazol:300mg, dodoxadin:30mg], allergies=[shellfish]), PersonsFireStation(lastName=Peters, address=112 Steppes Pl, age=57, email=jpeter@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Boyd, address=112 Steppes Pl, age=56, email=aly@imail.com, medications=[aznol:200mg], allergies=[nillacilan])]
+
+14/07/2022 22:07:34 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ RequÃªte reÃ§ue -> getMedicalRecordsOfThisPerson :PrÃ©nom:Olivier,Nom:Froidefond
+
+14/07/2022 22:07:34 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retournÃ© -> getMedicalRecordsOfThisPerson :[PersonInfo(lastName=Froidefond, address=6 rue jacques prevert, age=12, email=toto@toto.fr, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])]
+
+14/07/2022 22:07:37 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ RequÃªte reÃ§ue -> getMedicalRecordsOfThisPerson :PrÃ©nom:Olivier,Nom:Froidefond
+
+14/07/2022 22:07:37 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retournÃ© -> getMedicalRecordsOfThisPerson :[PersonInfo(lastName=Froidefond, address=6 rue jacques prevert, age=12, email=toto@toto.fr, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])]
+
+14/07/2022 22:07:18 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ RequÃªte reÃ§ue -> getMedicalRecordsOfThisPerson :PrÃ©nom:Olivier,Nom:Froidefond
+
+14/07/2022 22:07:18 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retournÃ© -> getMedicalRecordsOfThisPerson :[PersonInfo(lastName=Froidefond, address=6 rue jacques prevert, age=12, email=toto@toto.fr, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])]
+
+14/07/2022 22:07:06 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetChildrenControllerTest using Java 11.0.15 on MSI with PID 19976 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:06 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:09 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetChildrenControllerTest in 4.112 seconds (JVM running for 6.615)
+
+14/07/2022 22:07:10 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+14/07/2022 22:07:10 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+14/07/2022 22:07:10 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetFireStationControllerTest using Java 11.0.15 on MSI with PID 19976 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:10 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:11 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetFireStationControllerTest in 0.862 seconds (JVM running for 7.851)
+
+14/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+14/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+14/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :null
+
+14/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :3
+
+14/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[]
+
+14/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+14/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+14/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+14/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :null
+
+14/07/2022 22:07:11 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMailControllerTest using Java 11.0.15 on MSI with PID 19976 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:11 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:12 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMailControllerTest in 0.712 seconds (JVM running for 8.948)
+
+14/07/2022 22:07:12 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+14/07/2022 22:07:12 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+14/07/2022 22:07:12 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMedicalRecordControllerTest using Java 11.0.15 on MSI with PID 19976 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:12 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:12 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMedicalRecordControllerTest in 0.701 seconds (JVM running for 9.699)
+
+14/07/2022 22:07:13 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+14/07/2022 22:07:13 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03/06/1984, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+14/07/2022 22:07:13 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[], allergies=[])
+
+14/07/2022 22:07:13 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPersonControllerTest using Java 11.0.15 on MSI with PID 19976 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:13 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:13 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPersonControllerTest in 0.724 seconds (JVM running for 10.516)
+
+14/07/2022 22:07:13 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 22:07:13 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+14/07/2022 22:07:13 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 22:07:13 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPhoneControllerTest using Java 11.0.15 on MSI with PID 19976 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:13 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:14 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPhoneControllerTest in 0.585 seconds (JVM running for 11.201)
+
+14/07/2022 22:07:14 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+14/07/2022 22:07:14 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+14/07/2022 22:07:01 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetChildrenControllerTest using Java 11.0.15 on MSI with PID 23788 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:01 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:05 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetChildrenControllerTest in 4.953 seconds (JVM running for 7.813)
+
+14/07/2022 22:07:05 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+14/07/2022 22:07:05 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+14/07/2022 22:07:05 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetFireStationControllerTest using Java 11.0.15 on MSI with PID 23788 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:05 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:06 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetFireStationControllerTest in 0.929 seconds (JVM running for 9.051)
+
+14/07/2022 22:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+14/07/2022 22:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+14/07/2022 22:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :null
+
+14/07/2022 22:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :3
+
+14/07/2022 22:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[]
+
+14/07/2022 22:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+14/07/2022 22:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+14/07/2022 22:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+14/07/2022 22:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :null
+
+14/07/2022 22:07:06 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMailControllerTest using Java 11.0.15 on MSI with PID 23788 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:06 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:07 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMailControllerTest in 0.769 seconds (JVM running for 10.144)
+
+14/07/2022 22:07:07 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+14/07/2022 22:07:07 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+14/07/2022 22:07:07 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMedicalRecordControllerTest using Java 11.0.15 on MSI with PID 23788 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:07 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:08 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMedicalRecordControllerTest in 0.716 seconds (JVM running for 10.906)
+
+14/07/2022 22:07:08 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+14/07/2022 22:07:08 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03/06/1984, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+14/07/2022 22:07:08 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[], allergies=[])
+
+14/07/2022 22:07:08 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPersonControllerTest using Java 11.0.15 on MSI with PID 23788 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:08 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:09 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPersonControllerTest in 0.682 seconds (JVM running for 11.687)
+
+14/07/2022 22:07:09 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 22:07:09 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+14/07/2022 22:07:09 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 22:07:09 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPhoneControllerTest using Java 11.0.15 on MSI with PID 23788 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:09 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:09 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPhoneControllerTest in 0.654 seconds (JVM running for 12.442)
+
+14/07/2022 22:07:09 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+14/07/2022 22:07:09 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+14/07/2022 22:07:52 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetChildrenControllerTest using Java 11.0.15 on MSI with PID 21720 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:52 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:56 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetChildrenControllerTest in 5.034 seconds (JVM running for 7.863)
+
+14/07/2022 22:07:56 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+14/07/2022 22:07:56 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+14/07/2022 22:07:56 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetFireStationControllerTest using Java 11.0.15 on MSI with PID 21720 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:56 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:57 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetFireStationControllerTest in 0.919 seconds (JVM running for 9.093)
+
+14/07/2022 22:07:57 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+14/07/2022 22:07:57 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+14/07/2022 22:07:57 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :null
+
+14/07/2022 22:07:57 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :3
+
+14/07/2022 22:07:57 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[]
+
+14/07/2022 22:07:57 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+14/07/2022 22:07:57 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+14/07/2022 22:07:57 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+14/07/2022 22:07:57 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :null
+
+14/07/2022 22:07:58 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMailControllerTest using Java 11.0.15 on MSI with PID 21720 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:58 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:58 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMailControllerTest in 0.738 seconds (JVM running for 10.167)
+
+14/07/2022 22:07:58 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+14/07/2022 22:07:58 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+14/07/2022 22:07:58 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMedicalRecordControllerTest using Java 11.0.15 on MSI with PID 21720 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:58 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:59 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMedicalRecordControllerTest in 0.709 seconds (JVM running for 10.937)
+
+14/07/2022 22:07:59 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+14/07/2022 22:07:59 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03/06/1984, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+14/07/2022 22:07:59 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[], allergies=[])
+
+14/07/2022 22:07:59 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPersonControllerTest using Java 11.0.15 on MSI with PID 21720 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:59 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:00 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPersonControllerTest in 0.76 seconds (JVM running for 11.79)
+
+14/07/2022 22:07:00 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 22:07:00 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+14/07/2022 22:07:00 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 22:07:00 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPhoneControllerTest using Java 11.0.15 on MSI with PID 21720 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 22:07:00 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 22:07:01 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPhoneControllerTest in 0.659 seconds (JVM running for 12.581)
+
+14/07/2022 22:07:01 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+14/07/2022 22:07:01 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+14/07/2022 23:07:03 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetChildrenControllerTest using Java 11.0.15 on MSI with PID 22444 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 23:07:03 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 23:07:06 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetChildrenControllerTest in 4.058 seconds (JVM running for 6.446)
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+14/07/2022 23:07:06 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetFireStationControllerTest using Java 11.0.15 on MSI with PID 22444 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 23:07:06 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 23:07:07 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetFireStationControllerTest in 0.746 seconds (JVM running for 7.463)
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :null
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :3
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[]
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :null
+
+14/07/2022 23:07:07 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMailControllerTest using Java 11.0.15 on MSI with PID 22444 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 23:07:07 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 23:07:08 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMailControllerTest in 0.732 seconds (JVM running for 8.434)
+
+14/07/2022 23:07:08 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+14/07/2022 23:07:08 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+14/07/2022 23:07:08 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMedicalRecordControllerTest using Java 11.0.15 on MSI with PID 22444 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 23:07:08 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 23:07:09 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMedicalRecordControllerTest in 0.647 seconds (JVM running for 9.132)
+
+14/07/2022 23:07:09 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+14/07/2022 23:07:09 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03/06/1984, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+14/07/2022 23:07:09 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[], allergies=[])
+
+14/07/2022 23:07:09 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPersonControllerTest using Java 11.0.15 on MSI with PID 22444 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 23:07:09 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 23:07:09 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPersonControllerTest in 0.626 seconds (JVM running for 9.833)
+
+14/07/2022 23:07:09 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 23:07:09 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+14/07/2022 23:07:09 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 23:07:10 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPhoneControllerTest using Java 11.0.15 on MSI with PID 22444 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 23:07:10 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 23:07:10 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPhoneControllerTest in 0.706 seconds (JVM running for 10.633)
+
+14/07/2022 23:07:10 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+14/07/2022 23:07:10 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+14/07/2022 23:07:48 INFO org.springframework.boot.StartupInfoLogger
+ Starting ChildAlertIT using Java 11.0.15 on MSI with PID 16528 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 23:07:48 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 23:07:53 INFO org.springframework.boot.StartupInfoLogger
+ Started ChildAlertIT in 5.996 seconds (JVM running for 9.034)
+
+14/07/2022 23:07:54 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver 
+
+14/07/2022 23:07:54 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+14/07/2022 23:07:54 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+14/07/2022 23:07:54 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]
+
+14/07/2022 23:07:54 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+14/07/2022 23:07:54 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[aly@imail.com, bstel@email.com, clivfd@ymail.com, drk@email.com, gramps@email.com, jaboyd@email.com, jpeter@email.com, lily@email.com, reg@email.com, soph@email.com, ssanw@email.com, tcoop@ymail.com, tenz@email.com, ward@email.com, zarc@email.com]
+
+14/07/2022 23:07:54 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culve
+
+14/07/2022 23:07:54 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+14/07/2022 23:07:54 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+14/07/2022 23:07:54 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :ResponsePersonsMedical(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=35, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :ResponsePersonsMedical(personsMedicals=[], station=Station(station=null))
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :ResponsePersonsStation(personsStationList=[], countPeople=CountPeople(children=0, adult=0))
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :ResponsePersonsStation(personsStationList=[PersonsStation(firstName=John, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Jacob, lastName=Boyd, address=1509 Culver St, phone=841-874-6513), PersonsStation(firstName=Tenley, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Roger, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Felicia, lastName=Boyd, address=1509 Culver St, phone=841-874-6544), PersonsStation(firstName=Tessa, lastName=Carman, address=834 Binoc Ave, phone=841-874-6512), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741)], countPeople=CountPeople(children=3, adult=10))
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :1
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[PersonsFireStation(lastName=Duncan, address=644 Gershwin Cir, age=22, email=jaboyd@email.com, medications=[], allergies=[shellfish]), PersonsFireStation(lastName=Walker, address=908 73rd St, age=41, email=reg@email.com, medications=[thradox:700mg], allergies=[illisoxian]), PersonsFireStation(lastName=Peters, address=908 73rd St, age=40, email=jpeter@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Stelzer, address=947 E. Rose Dr, age=47, email=bstel@email.com, medications=[ibupurin:200mg, hydrapermazol:400mg], allergies=[nillacilan]), PersonsFireStation(lastName=Stelzer, address=947 E. Rose Dr, age=41, email=ssanw@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Stelzer, address=947 E. Rose Dr, age=8, email=bstel@email.com, medications=[noxidian:100mg, pharmacol:2500mg], allergies=[])]
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :5
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[]
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=04/06/1985, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[], allergies=[])
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonanathan,Nom:Marrack
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[PersonInfo(lastName=Marrack, address=29 15th St, age=33, email=drk@email.com, medications=[], allergies=[])]
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonan,Nom:Marrac
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[]
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=521 chemin d'enbiane, city=Figeac, zip=46100, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :5
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+14/07/2022 23:07:55 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[841-874-6874, 841-874-8888, 841-874-9845, 841-874-9888]
+
+14/07/2022 23:07:00 INFO org.springframework.boot.StartupInfoLogger
+ Starting ChildAlertIT using Java 11.0.15 on MSI with PID 22620 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+14/07/2022 23:07:00 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+14/07/2022 23:07:04 INFO org.springframework.boot.StartupInfoLogger
+ Started ChildAlertIT in 5.586 seconds (JVM running for 8.161)
+
+14/07/2022 23:07:05 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver 
+
+14/07/2022 23:07:05 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[aly@imail.com, bstel@email.com, clivfd@ymail.com, drk@email.com, gramps@email.com, jaboyd@email.com, jpeter@email.com, lily@email.com, reg@email.com, soph@email.com, ssanw@email.com, tcoop@ymail.com, tenz@email.com, ward@email.com, zarc@email.com]
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culve
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :ResponsePersonsMedical(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=35, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :ResponsePersonsMedical(personsMedicals=[], station=Station(station=null))
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :ResponsePersonsStation(personsStationList=[], countPeople=CountPeople(children=0, adult=0))
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :ResponsePersonsStation(personsStationList=[PersonsStation(firstName=John, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Jacob, lastName=Boyd, address=1509 Culver St, phone=841-874-6513), PersonsStation(firstName=Tenley, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Roger, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Felicia, lastName=Boyd, address=1509 Culver St, phone=841-874-6544), PersonsStation(firstName=Tessa, lastName=Carman, address=834 Binoc Ave, phone=841-874-6512), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741)], countPeople=CountPeople(children=3, adult=10))
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :1
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[PersonsFireStation(lastName=Duncan, address=644 Gershwin Cir, age=22, email=jaboyd@email.com, medications=[], allergies=[shellfish]), PersonsFireStation(lastName=Walker, address=908 73rd St, age=41, email=reg@email.com, medications=[thradox:700mg], allergies=[illisoxian]), PersonsFireStation(lastName=Peters, address=908 73rd St, age=40, email=jpeter@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Stelzer, address=947 E. Rose Dr, age=47, email=bstel@email.com, medications=[ibupurin:200mg, hydrapermazol:400mg], allergies=[nillacilan]), PersonsFireStation(lastName=Stelzer, address=947 E. Rose Dr, age=41, email=ssanw@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Stelzer, address=947 E. Rose Dr, age=8, email=bstel@email.com, medications=[noxidian:100mg, pharmacol:2500mg], allergies=[])]
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :5
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[]
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=04/06/1985, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[], allergies=[])
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonanathan,Nom:Marrack
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[PersonInfo(lastName=Marrack, address=29 15th St, age=33, email=drk@email.com, medications=[], allergies=[])]
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonan,Nom:Marrac
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[]
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=521 chemin d'enbiane, city=Figeac, zip=46100, phone=841-874-5584, email=toto@toto.fr)
+
+14/07/2022 23:07:06 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :5
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+14/07/2022 23:07:07 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[841-874-6874, 841-874-8888, 841-874-9845, 841-874-9888]

@@ -6,12 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author o.froidefond
@@ -22,6 +18,8 @@ public class SafetyNetPersonService {
 
     @Autowired
     SafetyNetRepository safetyNetRepository;
+    @Autowired
+    SafetyNetCalculatorAgeBirthdate safetyNetCalculatorAgeBirthdate;
 
     /**
      * fonction pour récupérer une personne avec les antécédant médicaux
@@ -44,28 +42,18 @@ public class SafetyNetPersonService {
         MedicalRecords medicalStream = dataMedicalRecords.stream().filter(x -> firstname.equals(x.getFirstName())
                 && lastName.equals(x.getLastName())).findAny().orElse(null);
 
-        Calendar today = Calendar.getInstance();
-        SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
         if (personsStream != null && medicalStream != null) {
-            try {
-                Date birth = dateTimeFormatter.parse(medicalStream.getBirthdate());
-                Date todayParse = today.getTime();
-                long result = todayParse.getTime() - birth.getTime();
-                TimeUnit time = TimeUnit.DAYS;
-                long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
-                long yearBirth = resultDay / 365;
 
-                personInfo.setLastName(personsStream.getLastName());
-                personInfo.setAddress(personsStream.getAddress());
-                personInfo.setAge(yearBirth);
-                personInfo.setEmail(personsStream.getEmail());
-                personInfo.setMedications(medicalStream.getMedications());
-                personInfo.setAllergies(medicalStream.getAllergies());
-                personInfoList.add(personInfo);
-            } catch (Exception e) {
-                log.error("error :", e);
-            }
+            long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medicalStream);
+
+            personInfo.setLastName(personsStream.getLastName());
+            personInfo.setAddress(personsStream.getAddress());
+            personInfo.setAge(yearBirth);
+            personInfo.setEmail(personsStream.getEmail());
+            personInfo.setMedications(medicalStream.getMedications());
+            personInfo.setAllergies(medicalStream.getAllergies());
+            personInfoList.add(personInfo);
         }
 
         return personInfoList;

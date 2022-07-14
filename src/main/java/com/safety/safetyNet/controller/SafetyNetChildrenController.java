@@ -29,8 +29,8 @@ public class SafetyNetChildrenController {
     @GetMapping("/childAlert")
     public List<PersonsChildren> getAddressChild(@RequestParam String address) {
         List<PersonsChildren> children = safetyNetChildrenService.getChildrenThisAddress(address);
-        log.info("Requête reçue -> getAddressChild :{}",address);
-        log.info("Objet retourné -> getAddressChild :{}",children);
+        log.info("Requête reçue -> getAddressChild :{}", address);
+        log.info("Objet retourné -> getAddressChild :{}", children);
         return children;
     }
 }

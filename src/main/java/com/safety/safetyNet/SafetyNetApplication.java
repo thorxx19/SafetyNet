@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SafetyNetApplication {
     /**
      * fonction principal
+     *
      * @param args non utilisé
      */
     public static void main(String[] args) {

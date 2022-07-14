@@ -28,8 +28,8 @@ public class SafetyNetPhoneController {
     @GetMapping("/phoneAlert")
     public TreeSet<String> getNumberPhone(@RequestParam int firestation) {
         TreeSet<String> phone = safetyNetPhoneService.getNumberPhoneThisFireStation(firestation);
-        log.info("Requête reçue -> getNumberPhone :{}",firestation);
-        log.info("Objet retourné -> getNumberPhone :{}",phone);
+        log.info("Requête reçue -> getNumberPhone :{}", firestation);
+        log.info("Objet retourné -> getNumberPhone :{}", phone);
         return phone;
     }
 }
