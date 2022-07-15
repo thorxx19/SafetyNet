@@ -21,24 +21,25 @@ public class SafetyNetCalculatorAgeBirthdate {
      * @param date object de type MedicalRecords
      * @return l'age calculer
      */
-    public long calculeDateBirthdate(MedicalRecords date) {
+    public long calculeDateBirthdate(String date) {
 
-        try {
+
             Calendar today = Calendar.getInstance();
             SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
-            Date birth = dateTimeFormatter.parse(date.getBirthdate());
-            Date todayParse = today.getTime();
+        Date birth = null;
+        try {
+            birth = dateTimeFormatter.parse(date);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        Date todayParse = today.getTime();
             long result = todayParse.getTime() - birth.getTime();
             TimeUnit time = TimeUnit.DAYS;
             long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
-            long resultAge = resultDay / 365;
-            return resultAge;
-        } catch (ParseException e) {
 
-            log.error("Error :", e);
-        }
-        return Long.parseLong(null);
+
+        return resultDay / 365;
     }
 
 

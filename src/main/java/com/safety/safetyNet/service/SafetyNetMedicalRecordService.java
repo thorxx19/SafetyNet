@@ -4,13 +4,16 @@ import com.safety.safetyNet.model.FireStations;
 import com.safety.safetyNet.model.ListSafety;
 import com.safety.safetyNet.model.MedicalRecords;
 import com.safety.safetyNet.model.Persons;
-import com.safety.safetyNet.repository.SafetyNetRepository;
+import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
+import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
+import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
 /**
  * @author o.froidefond
@@ -19,7 +22,14 @@ import java.util.List;
 @Slf4j
 public class SafetyNetMedicalRecordService {
     @Autowired
-    SafetyNetRepository safetyNetRepository;
+    SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository;
+    @Autowired
+    SafetyNetPersonsRepository safetyNetPersonsRepository;
+    @Autowired
+    SafetyNetFireStationRepository safetyNetFireStationRepository;
+
+
+
 
     /**
      * Fonction pour ajouter un dossier médical a l'objet listSafety.
@@ -29,24 +39,24 @@ public class SafetyNetMedicalRecordService {
      */
     public ListSafety postMedicalRecord(MedicalRecords postMedicalRecord) {
         ListSafety listSafety = new ListSafety();
-        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
-        List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
-        List<MedicalRecords> medicalRecordsList = safetyNetRepository.getData().getMedicalrecords();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
         boolean verifMedicalRecord = true;
 
-        for (MedicalRecords medicalRecord : medicalRecordsList) {
+        for (MedicalRecords medicalRecord : dataMedical) {
             if (postMedicalRecord.getFirstName().equals(medicalRecord.getFirstName()) && postMedicalRecord.getLastName().equals(medicalRecord.getLastName())) {
                 verifMedicalRecord = false;
                 break;
             }
         }
         if (verifMedicalRecord) {
-            medicalRecordsList.add(postMedicalRecord);
+            dataMedical.add(postMedicalRecord);
         }
 
-        listSafety.setPersons(personsList);
-        listSafety.setFirestations(fireStationsList);
-        listSafety.setMedicalrecords(medicalRecordsList);
+        listSafety.setPersons(dataPersons);
+        listSafety.setFirestations(dataFireStations);
+        listSafety.setMedicalrecords(dataMedical);
 
         return listSafety;
     }
@@ -59,11 +69,11 @@ public class SafetyNetMedicalRecordService {
      */
     public ListSafety putMedicalRecord(MedicalRecords putMedicalRecord) {
         ListSafety listSafety = new ListSafety();
-        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
-        List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
-        List<MedicalRecords> medicalRecordsList = safetyNetRepository.getData().getMedicalrecords();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
 
-        for (MedicalRecords medicalRecord : medicalRecordsList) {
+        for (MedicalRecords medicalRecord : dataMedical) {
             if (putMedicalRecord.getFirstName().equals(medicalRecord.getFirstName()) && putMedicalRecord.getLastName().equals(medicalRecord.getLastName())) {
                 medicalRecord.setBirthdate(putMedicalRecord.getBirthdate());
                 medicalRecord.setMedications(putMedicalRecord.getMedications());
@@ -72,9 +82,9 @@ public class SafetyNetMedicalRecordService {
             }
         }
 
-        listSafety.setPersons(personsList);
-        listSafety.setFirestations(fireStationsList);
-        listSafety.setMedicalrecords(medicalRecordsList);
+        listSafety.setPersons(dataPersons);
+        listSafety.setFirestations(dataFireStations);
+        listSafety.setMedicalrecords(dataMedical);
 
         return listSafety;
     }
@@ -87,17 +97,16 @@ public class SafetyNetMedicalRecordService {
      */
     public ListSafety deleteMedicalRecord(MedicalRecords deleteMedicalrecord) {
         ListSafety listSafety = new ListSafety();
-        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
-        List<FireStations> fireStationsList = new ArrayList<>(safetyNetRepository.getData().getFirestations());
-        List<MedicalRecords> medicalRecordsList = new ArrayList<>();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+        dataMedical.stream().filter(x -> !deleteMedicalrecord.getFirstName().equals(x.getFirstName())
+                && !deleteMedicalrecord.getLastName().equals(x.getLastName())).forEach(x -> dataMedical.add(x));
 
-        safetyNetRepository.getData().getMedicalrecords().stream().filter(x -> !deleteMedicalrecord.getFirstName().equals(x.getFirstName())
-                && !deleteMedicalrecord.getLastName().equals(x.getLastName())).forEach(x -> medicalRecordsList.add(x));
 
-
-        listSafety.setPersons(personsList);
-        listSafety.setFirestations(fireStationsList);
-        listSafety.setMedicalrecords(medicalRecordsList);
+        listSafety.setPersons(dataPersons);
+        listSafety.setFirestations(dataFireStations);
+        listSafety.setMedicalrecords(dataMedical);
 
         return listSafety;
     }

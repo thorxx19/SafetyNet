@@ -1,11 +1,13 @@
 package com.safety.safetyNet.controller;
 
+
 import com.safety.safetyNet.model.*;
-import com.safety.safetyNet.repository.SafetyNetRepository;
+import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetFireStationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import static com.safety.safetyNet.constantes.SafetyNetConstantes.*;
 
 import java.util.List;
 
@@ -21,7 +23,8 @@ public class SafetyNetFireStationController {
     @Autowired
     SafetyNetFireStationService safetyNetFireStationService;
     @Autowired
-    SafetyNetRepository safetyNetRepository;
+    SafetyNetWriteFileRepository safetyNetWriteFileRepository;
+
 
 
     /**
@@ -75,7 +78,7 @@ public class SafetyNetFireStationController {
     @PostMapping("/firestation")
     public void postFireStation(@RequestBody FireStations postFirestations) {
         ListSafety listSafety = safetyNetFireStationService.postNewFireStation(postFirestations);
-        safetyNetRepository.writeData(listSafety);
+        safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête reçue -> postFireStation :{}", postFirestations);
     }
 
@@ -87,7 +90,7 @@ public class SafetyNetFireStationController {
     @DeleteMapping("/firestation")
     public void deleteFireStation(@RequestBody FireStations deleteFireStations) {
         ListSafety listSafety = safetyNetFireStationService.deleteFireStation(deleteFireStations);
-        safetyNetRepository.writeData(listSafety);
+        safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête reçue -> deleteFireStation :{}", deleteFireStations);
     }
 
@@ -99,7 +102,7 @@ public class SafetyNetFireStationController {
     @PutMapping("/firestation")
     public void putFireStation(@RequestBody FireStations putFireStations) {
         ListSafety listSafety = safetyNetFireStationService.putFireStation(putFireStations);
-        safetyNetRepository.writeData(listSafety);
+        safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête reçue -> putFireStation :{}", putFireStations);
     }
 }

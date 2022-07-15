@@ -2,14 +2,15 @@ package com.safety.safetyNet.service;
 
 import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.model.PersonsChildren;
+import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
 import com.safety.safetyNet.repository.SafetyNetChildrenRepository;
-import com.safety.safetyNet.repository.SafetyNetRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import static com.safety.safetyNet.constantes.SafetyNetConstantes.*;
 
 /**
  * @author o.froidefond
@@ -19,7 +20,7 @@ import java.util.List;
 public class SafetyNetChildrenService {
 
     @Autowired
-    SafetyNetRepository safetyNetRepository;
+    SafetyNetPersonsRepository safetyNetPersonsRepository;
     @Autowired
     SafetyNetChildrenRepository safetyNetChildrenRepository;
 
@@ -31,7 +32,7 @@ public class SafetyNetChildrenService {
      */
     public List<PersonsChildren> getChildrenThisAddress(String address) {
 
-        List<Persons> dataPersons = safetyNetRepository.getData().getPersons();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
         List<PersonsChildren> listMineur = new ArrayList<>();
         List<PersonsChildren> personsChildren = safetyNetChildrenRepository.getChildrenRepository();
 

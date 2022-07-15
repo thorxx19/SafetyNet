@@ -1,6 +1,6 @@
 package com.safety.safetyNet.controller;
 
-import com.safety.safetyNet.repository.SafetyNetRepository;
+import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetMedicalRecordService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
@@ -26,7 +26,7 @@ class SafetyNetMedicalRecordControllerTest {
     @MockBean
     private SafetyNetMedicalRecordService safetyNetMedicalRecordService;
     @MockBean
-    private SafetyNetRepository safetyNetRepository;
+    private SafetyNetWriteFileRepository safetyNetWriteFileRepository;
 
 
     @Test

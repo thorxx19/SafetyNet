@@ -1,15 +1,17 @@
 package com.safety.safetyNet.service;
 
 import com.safety.safetyNet.model.FireStations;
-import com.safety.safetyNet.model.ListSafety;
 import com.safety.safetyNet.model.Persons;
-import com.safety.safetyNet.repository.SafetyNetRepository;
+import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
+import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.TreeSet;
+
+import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
 /**
  * @author o.froidefond
@@ -18,7 +20,10 @@ import java.util.TreeSet;
 @Slf4j
 public class SafetyNetPhoneService {
     @Autowired
-    SafetyNetRepository safetyNetRepository;
+    SafetyNetPersonsRepository safetyNetPersonsRepository;
+    @Autowired
+    SafetyNetFireStationRepository safetyNetFireStationRepository;
+
 
     /**
      * fonction pour récupérer les numéro de téléphone en fonction de la caserne de pompier
@@ -27,9 +32,9 @@ public class SafetyNetPhoneService {
      * @return liste de numéro de téléphone unique
      */
     public TreeSet<String> getNumberPhoneThisFireStation(int stationNumber) {
-        ListSafety data = safetyNetRepository.getData();
-        List<Persons> dataPersons = data.getPersons();
-        List<FireStations> dataFireStations = data.getFirestations();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+
 
         TreeSet<String> treePhone = new TreeSet<>();
 
@@ -43,7 +48,6 @@ public class SafetyNetPhoneService {
                 }
             }
         }
-
 
         return treePhone;
     }

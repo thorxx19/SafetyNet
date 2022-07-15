@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;
+import java.io.IOException;
 
 import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
@@ -17,21 +18,7 @@ import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
 @Slf4j
 @Repository
-public class SafetyNetRepository {
-    /**
-     * Fonction pour lire le fichier de données.
-     *
-     * @return un object de type listSafety.
-     */
-    public ListSafety getData() {
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            return mapper.readValue(new File(PATH_FILE), ListSafety.class);
-        } catch (Exception ex) {
-            log.info("Error :", ex);
-        }
-        return null;
-    }
+public class SafetyNetWriteFileRepository {
 
     /**
      * Fonction pour écrire un objet de type listSafety dans le fichier.
@@ -42,8 +29,9 @@ public class SafetyNetRepository {
         ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
         try {
             mapper.writeValue(new File(PATH_FILE), listSafety);
-        } catch (Exception e) {
+        } catch (IOException e) {
             log.error("error :", e);
+            throw new RuntimeException("Error :", e);
         }
     }
 

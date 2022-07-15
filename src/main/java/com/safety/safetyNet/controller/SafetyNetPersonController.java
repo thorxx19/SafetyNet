@@ -4,11 +4,12 @@ import com.safety.safetyNet.model.DeletePerson;
 import com.safety.safetyNet.model.ListSafety;
 import com.safety.safetyNet.model.PersonInfo;
 import com.safety.safetyNet.model.Persons;
-import com.safety.safetyNet.repository.SafetyNetRepository;
+import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetPersonService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import static com.safety.safetyNet.constantes.SafetyNetConstantes.*;
 
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class SafetyNetPersonController {
     @Autowired
     SafetyNetPersonService safetyNetPersonService;
     @Autowired
-    SafetyNetRepository safetyNetRepository;
+    SafetyNetWriteFileRepository safetyNetWriteFileRepository;
 
     /**
      * retourner le nom, l'adresse, l'âge, l'adresse mail et les antécédents médicaux (médicaments,
@@ -48,7 +49,7 @@ public class SafetyNetPersonController {
     @PostMapping("/person")
     public void postNewPerson(@RequestBody Persons newPerson) {
         ListSafety listSafety = safetyNetPersonService.postNewPerson(newPerson);
-        safetyNetRepository.writeData(listSafety);
+        safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête reçue -> postNewPerson :{}", newPerson);
     }
 
@@ -60,7 +61,7 @@ public class SafetyNetPersonController {
     @DeleteMapping("/person")
     public void deletePerson(@RequestBody DeletePerson deletePerson) {
         ListSafety listSafety = safetyNetPersonService.deletePerson(deletePerson);
-        safetyNetRepository.writeData(listSafety);
+        safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête reçue -> deletePerson :{}", deletePerson);
     }
 
@@ -72,7 +73,7 @@ public class SafetyNetPersonController {
     @PutMapping("/person")
     public void putPerson(@RequestBody Persons putPerson) {
         ListSafety listSafety = safetyNetPersonService.putPerson(putPerson);
-        safetyNetRepository.writeData(listSafety);
+        safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête reçue -> putPerson :{}", putPerson);
 
     }

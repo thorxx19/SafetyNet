@@ -1,7 +1,7 @@
 package com.safety.safetyNet.controller;
 
 
-import com.safety.safetyNet.repository.SafetyNetRepository;
+import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetFireStationService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
@@ -27,7 +27,7 @@ public class SafetyNetFireStationControllerTest {
     @MockBean
     private SafetyNetFireStationService safetyNetFireStationService;
     @MockBean
-    private SafetyNetRepository safetyNetRepository;
+    private SafetyNetWriteFileRepository safetyNetWriteFileRepository;
 
     @Test
     @DisplayName("test de le end point /firestation?stationNumber=xxx")

@@ -362,11 +362,5 @@
     "birthdate" : "08/06/1945",
     "medications" : [ "tradoxidine:400mg" ],
     "allergies" : [ ]
-  }, {
-    "firstName" : "Olivier",
-    "lastName" : "Froidefond",
-    "birthdate" : "20/12/1981",
-    "medications" : [ "aznol:350mg" ],
-    "allergies" : [ "nillacilan" ]
   } ]
 }

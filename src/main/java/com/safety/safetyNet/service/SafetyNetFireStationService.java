@@ -1,14 +1,19 @@
 package com.safety.safetyNet.service;
 
 import com.safety.safetyNet.model.*;
-import com.safety.safetyNet.repository.SafetyNetRepository;
+import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
+import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
+import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
+import static com.safety.safetyNet.constantes.SafetyNetConstantes.*;
 
 /**
  * @author o.froidefond
@@ -18,9 +23,17 @@ import java.util.TreeSet;
 public class SafetyNetFireStationService {
 
     @Autowired
-    SafetyNetRepository safetyNetRepository;
-    @Autowired
     SafetyNetCalculatorAgeBirthdate safetyNetCalculatorAgeBirthdate;
+    @Autowired
+    SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository;
+    @Autowired
+    SafetyNetPersonsRepository safetyNetPersonsRepository;
+    @Autowired
+    SafetyNetFireStationRepository safetyNetFireStationRepository;
+
+
+
+
 
     /**
      * fonction pour triée les habitant en fonction de la caserne de pompier.
@@ -29,10 +42,10 @@ public class SafetyNetFireStationService {
      * @return la liste des personnes qui habite autour de la caserne de pompier.
      */
     public ResponsePersonsStation getAllPersonsWithStationNumber(int stationNumber) {
-        ListSafety data = safetyNetRepository.getData();
-        List<Persons> dataPersons = data.getPersons();
-        List<FireStations> dataFireStations = data.getFirestations();
-        List<MedicalRecords> dataMedical = data.getMedicalrecords();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+
         ArrayList<PersonsStation> listPersons = new ArrayList<>();
         ResponsePersonsStation responsePersonsStation = new ResponsePersonsStation();
         CountPeople countPeople = new CountPeople();
@@ -48,7 +61,7 @@ public class SafetyNetFireStationService {
                         for (MedicalRecords medic : dataMedical) {
                             if (person.getLastName().equals(medic.getLastName()) && person.getFirstName().equals(medic.getFirstName())) {
 
-                                long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic);
+                                long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic.getBirthdate());
                                 if (yearBirth <= 18) {
                                     countChildren++;
                                 } else {
@@ -86,10 +99,10 @@ public class SafetyNetFireStationService {
      * @return liste de personne
      */
     public ResponsePersonsMedical getPersonsThisAddressPlusStationNumber(String address) {
-        ListSafety data = safetyNetRepository.getData();
-        List<Persons> dataPersons = data.getPersons();
-        List<FireStations> dataFireStations = data.getFirestations();
-        List<MedicalRecords> dateMedicalRecords = data.getMedicalrecords();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+
         TreeSet<String> stationTree = new TreeSet<>();
         ResponsePersonsMedical responsePersonsMedical = new ResponsePersonsMedical();
         Station treeStation = new Station();
@@ -97,11 +110,11 @@ public class SafetyNetFireStationService {
         List<PersonsMedical> listPersons = new ArrayList<>();
         for (Persons person : dataPersons) {
             if (address.equals(person.getAddress())) {
-                for (MedicalRecords medic : dateMedicalRecords) {
+                for (MedicalRecords medic : dataMedical) {
                     if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
                             .equals(medic.getFirstName())) {
 
-                        long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic);
+                        long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic.getBirthdate());
                         PersonsMedical persons = new PersonsMedical();
                         persons.setLastName(person.getLastName());
                         persons.setPhone(person.getPhone());
@@ -134,10 +147,10 @@ public class SafetyNetFireStationService {
      * @return une liste de personnes
      */
     public List<PersonsFireStation> getHouseServeFireStation(int fireStation) {
-        ListSafety data = safetyNetRepository.getData();
-        List<Persons> dataPersons = data.getPersons();
-        List<FireStations> dataFireStations = data.getFirestations();
-        List<MedicalRecords> dateMedicalRecords = data.getMedicalrecords();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+
         List<PersonsFireStation> tabListPersons = new ArrayList<>();
         TreeSet<String> listLastName = new TreeSet<>();
 
@@ -147,11 +160,11 @@ public class SafetyNetFireStationService {
                 for (Persons person : dataPersons) {
                     listLastName.add(person.getLastName());
                     if (person.getAddress().equals(firestation.getAddress())) {
-                        for (MedicalRecords medic : dateMedicalRecords) {
+                        for (MedicalRecords medic : dataMedical) {
                             if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
                                     .equals(medic.getFirstName())) {
 
-                                long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic);
+                                long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic.getBirthdate());
 
                                 PersonsFireStation persons = new PersonsFireStation();
                                 persons.setLastName(person.getLastName());
@@ -179,24 +192,24 @@ public class SafetyNetFireStationService {
      */
     public ListSafety postNewFireStation(FireStations fireStations) {
         ListSafety listSafety = new ListSafety();
-        List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
-        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
-        List<FireStations> fireStationsList = safetyNetRepository.getData().getFirestations();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
         boolean verifFireStation = true;
 
-        for (FireStations fireStation : fireStationsList) {
+        for (FireStations fireStation : dataFireStations) {
             if (fireStations.getAddress().equals(fireStation.getAddress())) {
                 verifFireStation = false;
                 break;
             }
         }
         if (verifFireStation) {
-            fireStationsList.add(fireStations);
+            dataFireStations.add(fireStations);
         }
 
-        listSafety.setPersons(personsList);
-        listSafety.setFirestations(fireStationsList);
-        listSafety.setMedicalrecords(medicalRecords);
+        listSafety.setPersons(dataPersons);
+        listSafety.setFirestations(dataFireStations);
+        listSafety.setMedicalrecords(dataMedical);
 
         return listSafety;
     }
@@ -209,16 +222,17 @@ public class SafetyNetFireStationService {
      */
     public ListSafety deleteFireStation(FireStations deleteFireStations) {
         ListSafety listSafety = new ListSafety();
-        List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
-        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
         List<FireStations> fireStationsList = new ArrayList<>();
 
-        safetyNetRepository.getData().getFirestations().stream().filter(x -> !deleteFireStations.getAddress().equals(x.getAddress()))
+        dataFireStations.stream().filter(x -> !deleteFireStations.getAddress().equals(x.getAddress()))
                 .forEach(x -> fireStationsList.add(x));
 
-        listSafety.setPersons(personsList);
+        listSafety.setPersons(dataPersons);
         listSafety.setFirestations(fireStationsList);
-        listSafety.setMedicalrecords(medicalRecords);
+        listSafety.setMedicalrecords(dataMedical);
 
         return listSafety;
     }
@@ -230,21 +244,22 @@ public class SafetyNetFireStationService {
      * @return un objet de type ListSafety.
      */
     public ListSafety putFireStation(FireStations putFireStation) {
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
         ListSafety listSafety = new ListSafety();
-        List<MedicalRecords> medicalRecords = new ArrayList<>(safetyNetRepository.getData().getMedicalrecords());
-        List<Persons> personsList = new ArrayList<>(safetyNetRepository.getData().getPersons());
-        List<FireStations> fireStationsList = safetyNetRepository.getData().getFirestations();
 
-        for (FireStations fireStation : fireStationsList) {
+
+        for (FireStations fireStation : dataFireStations) {
             if (putFireStation.getAddress().equals(fireStation.getAddress())) {
                 fireStation.setStation(putFireStation.getStation());
                 break;
             }
         }
 
-        listSafety.setPersons(personsList);
-        listSafety.setFirestations(fireStationsList);
-        listSafety.setMedicalrecords(medicalRecords);
+        listSafety.setPersons(dataPersons);
+        listSafety.setFirestations(dataFireStations);
+        listSafety.setMedicalrecords(dataMedical);
 
         return listSafety;
     }
