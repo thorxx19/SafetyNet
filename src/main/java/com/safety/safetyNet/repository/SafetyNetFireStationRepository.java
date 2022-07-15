@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Repository
 @Slf4j
 public class SafetyNetFireStationRepository {
@@ -13,9 +14,9 @@ public class SafetyNetFireStationRepository {
     @Autowired
     SafetyNetReadFileRepository safetyNetReadFileRepository;
 
-    public List<FireStations> getFireStation(String file){
+    public List<FireStations> getFireStation(String file) {
 
-            return safetyNetReadFileRepository.readfile(file).getFirestations();
+        return safetyNetReadFileRepository.readfile(file).getFirestations();
 
     }
 }

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import java.io.File;
 import java.io.IOException;
-import static com.safety.safetyNet.constantes.SafetyNetConstantes.*;
 
 @Slf4j
 @Repository
@@ -17,7 +16,7 @@ public class SafetyNetReadFileRepository {
      *
      * @return un object de type listSafety.
      */
-    public ListSafety readfile(String file){
+    public ListSafety readfile(String file) {
 
         ObjectMapper mapper = new ObjectMapper();
 

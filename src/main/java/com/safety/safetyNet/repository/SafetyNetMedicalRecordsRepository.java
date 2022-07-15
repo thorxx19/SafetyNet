@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Repository
 @Slf4j
 public class SafetyNetMedicalRecordsRepository {
@@ -13,9 +14,9 @@ public class SafetyNetMedicalRecordsRepository {
     @Autowired
     SafetyNetReadFileRepository safetyNetReadFileRepository;
 
-    public List<MedicalRecords> getMedicalRecords(String file){
+    public List<MedicalRecords> getMedicalRecords(String file) {
 
-    return safetyNetReadFileRepository.readfile(file).getMedicalrecords();
+        return safetyNetReadFileRepository.readfile(file).getMedicalrecords();
 
     }
 

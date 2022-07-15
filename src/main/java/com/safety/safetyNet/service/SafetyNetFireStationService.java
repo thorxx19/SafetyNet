@@ -4,16 +4,15 @@ import com.safety.safetyNet.model.*;
 import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
 import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
-import static com.safety.safetyNet.constantes.SafetyNetConstantes.*;
+
+import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
 /**
  * @author o.froidefond
@@ -30,9 +29,6 @@ public class SafetyNetFireStationService {
     SafetyNetPersonsRepository safetyNetPersonsRepository;
     @Autowired
     SafetyNetFireStationRepository safetyNetFireStationRepository;
-
-
-
 
 
     /**

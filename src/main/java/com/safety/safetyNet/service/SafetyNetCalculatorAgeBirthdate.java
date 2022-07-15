@@ -1,6 +1,5 @@
 package com.safety.safetyNet.service;
 
-import com.safety.safetyNet.model.MedicalRecords;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +23,8 @@ public class SafetyNetCalculatorAgeBirthdate {
     public long calculeDateBirthdate(String date) {
 
 
-            Calendar today = Calendar.getInstance();
-            SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar today = Calendar.getInstance();
+        SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
         Date birth = null;
         try {
@@ -34,9 +33,9 @@ public class SafetyNetCalculatorAgeBirthdate {
             throw new RuntimeException(e);
         }
         Date todayParse = today.getTime();
-            long result = todayParse.getTime() - birth.getTime();
-            TimeUnit time = TimeUnit.DAYS;
-            long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
+        long result = todayParse.getTime() - birth.getTime();
+        TimeUnit time = TimeUnit.DAYS;
+        long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
 
 
         return resultDay / 365;

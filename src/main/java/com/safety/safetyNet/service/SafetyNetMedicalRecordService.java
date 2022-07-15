@@ -29,8 +29,6 @@ public class SafetyNetMedicalRecordService {
     SafetyNetFireStationRepository safetyNetFireStationRepository;
 
 
-
-
     /**
      * Fonction pour ajouter un dossier médical a l'objet listSafety.
      *

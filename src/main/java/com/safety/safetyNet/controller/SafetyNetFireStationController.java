@@ -7,7 +7,6 @@ import com.safety.safetyNet.service.SafetyNetFireStationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import static com.safety.safetyNet.constantes.SafetyNetConstantes.*;
 
 import java.util.List;
 
@@ -24,7 +23,6 @@ public class SafetyNetFireStationController {
     SafetyNetFireStationService safetyNetFireStationService;
     @Autowired
     SafetyNetWriteFileRepository safetyNetWriteFileRepository;
-
 
 
     /**

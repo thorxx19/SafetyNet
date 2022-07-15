@@ -31,9 +31,6 @@ public class SafetyNetPersonService {
     SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository;
 
 
-
-
-
     /**
      * fonction pour récupérer une personne avec les antécédant médicaux
      *
@@ -45,7 +42,6 @@ public class SafetyNetPersonService {
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
         List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
         List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
-
 
 
         PersonInfo personInfo = new PersonInfo();

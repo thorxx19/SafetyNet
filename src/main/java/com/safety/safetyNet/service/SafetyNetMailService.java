@@ -22,9 +22,6 @@ public class SafetyNetMailService {
     SafetyNetPersonsRepository safetyNetPersonsRepository;
 
 
-
-
-
     /**
      * Fonction pour récupérer tout les mails d'une ville.
      *
