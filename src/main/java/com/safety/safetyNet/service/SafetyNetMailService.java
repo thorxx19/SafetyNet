@@ -28,7 +28,7 @@ public class SafetyNetMailService {
      * @param city le nom de la ville
      * @return Une liste de mail trié
      */
-    public TreeSet<String> getAllMail(String city) {
+    public TreeSet<String> getMailByCity(String city) {
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
         TreeSet<String> treeMail = new TreeSet<>();
 

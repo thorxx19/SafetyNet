@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
@@ -32,38 +34,35 @@ public class SafetyNetPersonService {
 
 
     /**
-     * fonction pour récupérer une personne avec les antécédant médicaux
+     * fonction pour récupérer une liste de personnes avec les antécédant médicaux
      *
      * @param firstname le prénom
      * @param lastName  le nom de famille
-     * @return une personne avec les infos
+     * @return une liste de personnes qui ont le même nom de famille.
      */
-    public List<PersonInfo> getPersonInfo(String firstname, String lastName) {
+    public List<PersonInfo> getPersonCardInfoByName(String firstname, String lastName) {
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
-        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
         List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
 
 
-        PersonInfo personInfo = new PersonInfo();
+
         List<PersonInfo> personInfoList = new ArrayList<>();
 
-        Persons personsStream = dataPersons.stream().filter(x -> firstname.equals(x.getFirstName())
-                && lastName.equals(x.getLastName())).findAny().orElse(null);
+        List<Persons> personsStream = dataPersons.stream().filter(x -> lastName.equals(x.getLastName())).collect(Collectors.toList());
 
-        MedicalRecords medicalStream = dataMedical.stream().filter(x -> firstname.equals(x.getFirstName())
-                && lastName.equals(x.getLastName())).findAny().orElse(null);
+        List<MedicalRecords> medicalStream = dataMedical.stream().filter(x -> lastName.equals(x.getLastName())).collect(Collectors.toList());
 
 
-        if (personsStream != null && medicalStream != null) {
+        for (int i = 0; i <= personsStream.size() - 1 ; i++) {
+            PersonInfo personInfo = new PersonInfo();
+            long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medicalStream.get(i).getBirthdate());
 
-            long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medicalStream.getBirthdate());
-
-            personInfo.setLastName(personsStream.getLastName());
-            personInfo.setAddress(personsStream.getAddress());
+            personInfo.setLastName(personsStream.get(i).getLastName());
+            personInfo.setAddress(personsStream.get(i).getAddress());
             personInfo.setAge(yearBirth);
-            personInfo.setEmail(personsStream.getEmail());
-            personInfo.setMedications(medicalStream.getMedications());
-            personInfo.setAllergies(medicalStream.getAllergies());
+            personInfo.setEmail(personsStream.get(i).getEmail());
+            personInfo.setMedications(medicalStream.get(i).getMedications());
+            personInfo.setAllergies(medicalStream.get(i).getAllergies());
             personInfoList.add(personInfo);
         }
 

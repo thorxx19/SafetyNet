@@ -8,7 +8,7 @@ import java.util.List;
  * @author o.froidefond
  */
 @Data
-public class ResponsePersonsMedical {
+public class ResponsePersonsByAddress {
 
     private List<PersonsMedical> personsMedicals;
 

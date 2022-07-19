@@ -31,7 +31,7 @@ public class SafetyNetPhoneService {
      * @param stationNumber numéro de la caserne de pompier
      * @return liste de numéro de téléphone unique
      */
-    public TreeSet<String> getNumberPhoneThisFireStation(int stationNumber) {
+    public TreeSet<String> getNumberPhoneByFireStation(int stationNumber) {
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
         List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
 

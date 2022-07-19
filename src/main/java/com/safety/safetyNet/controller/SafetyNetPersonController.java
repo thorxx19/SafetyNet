@@ -33,8 +33,8 @@ public class SafetyNetPersonController {
      * @return la fiche de la personne compléte
      */
     @GetMapping("/personInfo")
-    public List<PersonInfo> getMedicalRecordsOfThisPerson(@RequestParam String firstName, String lastName) {
-        List<PersonInfo> persons = safetyNetPersonService.getPersonInfo(firstName, lastName);
+    public List<PersonInfo> getPatientCardByName(@RequestParam String firstName, String lastName) {
+        List<PersonInfo> persons = safetyNetPersonService.getPersonCardInfoByName(firstName, lastName);
         log.info("Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:{},Nom:{}", firstName, lastName);
         log.info("Objet retourné -> getMedicalRecordsOfThisPerson :{}", persons);
         return persons;

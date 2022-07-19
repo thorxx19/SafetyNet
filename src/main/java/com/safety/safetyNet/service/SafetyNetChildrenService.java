@@ -31,10 +31,10 @@ public class SafetyNetChildrenService {
      * @param address l'adresse de la résidence
      * @return liste de mineur
      */
-    public List<PersonsChildren> getChildrenThisAddress(String address) {
+    public List<PersonsChildren> getChildrenByAddress(String address) {
 
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
-        List<PersonsChildren> listMineur = new ArrayList<>();
+        List<PersonsChildren> responseChildByAddress = new ArrayList<>();
         List<PersonsChildren> personsChildren = safetyNetChildrenRepository.getChildrenRepository();
 
         for (PersonsChildren medic : personsChildren) {
@@ -45,10 +45,10 @@ public class SafetyNetChildrenService {
                     persons.setLastName(person.getLastName());
                     persons.setFirstName(person.getFirstName());
                     persons.setAge(medic.getAge());
-                    listMineur.add(persons);
+                    responseChildByAddress.add(persons);
                 }
             }
         }
-        return listMineur;
+        return responseChildByAddress;
     }
 }

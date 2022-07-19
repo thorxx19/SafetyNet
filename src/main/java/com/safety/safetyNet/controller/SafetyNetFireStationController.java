@@ -32,8 +32,8 @@ public class SafetyNetFireStationController {
      * @return les habitants couverts par la station numéro
      */
     @GetMapping("/firestation")
-    public ResponsePersonsStation getFireStationNumber(@RequestParam int stationNumber) {
-        ResponsePersonsStation persons = safetyNetFireStationService.getAllPersonsWithStationNumber(stationNumber);
+    public ResponseFireStationByNumber getFireStationByNumber(@RequestParam int stationNumber) {
+        ResponseFireStationByNumber persons = safetyNetFireStationService.getAllPersonsByStationNumber(stationNumber);
         log.info("Requête reçue -> getFireStationNumber :{}", stationNumber);
         log.info("Objet retourné -> getFireStationNumber :{}", persons);
         return persons;
@@ -47,8 +47,8 @@ public class SafetyNetFireStationController {
      * @return liste d'habitant
      */
     @GetMapping("/fire")
-    public ResponsePersonsMedical getHabitantAtThisAdrdress(@RequestParam String address) {
-        ResponsePersonsMedical persons = safetyNetFireStationService.getPersonsThisAddressPlusStationNumber(address);
+    public ResponsePersonsByAddress getGroupOfPersonsByAddress(@RequestParam String address) {
+        ResponsePersonsByAddress persons = safetyNetFireStationService.getPersonsByAddress(address);
         log.info("Requête reçue -> getHabitantAtThisAdrdress :{}", address);
         log.info("Objet retourné -> getHabitantAtThisAdrdress :{}", persons);
         return persons;
@@ -61,8 +61,8 @@ public class SafetyNetFireStationController {
      * @return liste de foyer
      */
     @GetMapping("/flood/stations")
-    public List<PersonsFireStation> getHomesAtThisStationNumber(@RequestParam int stations) {
-        List<PersonsFireStation> persons = safetyNetFireStationService.getHouseServeFireStation(stations);
+    public List<PersonsFireStation> getPersonsCardsByStationNumber(@RequestParam int stations) {
+        List<PersonsFireStation> persons = safetyNetFireStationService.getPersonsByStationNumber(stations);
         log.info("Requête reçue -> getHomesAtThisStationNumber :{}", stations);
         log.info("Objet retourné -> getHomesAtThisStationNumber :{}", persons);
         return persons;

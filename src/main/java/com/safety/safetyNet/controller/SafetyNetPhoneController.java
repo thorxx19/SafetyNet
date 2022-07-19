@@ -26,8 +26,8 @@ public class SafetyNetPhoneController {
      * @return liste de n° de tel des résident
      */
     @GetMapping("/phoneAlert")
-    public TreeSet<String> getNumberPhone(@RequestParam int firestation) {
-        TreeSet<String> phone = safetyNetPhoneService.getNumberPhoneThisFireStation(firestation);
+    public TreeSet<String> getNumberByPhone(@RequestParam int firestation) {
+        TreeSet<String> phone = safetyNetPhoneService.getNumberPhoneByFireStation(firestation);
         log.info("Requête reçue -> getNumberPhone :{}", firestation);
         log.info("Objet retourné -> getNumberPhone :{}", phone);
         return phone;
