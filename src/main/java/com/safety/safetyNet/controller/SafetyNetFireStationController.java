@@ -61,8 +61,8 @@ public class SafetyNetFireStationController {
      * @return liste de foyer
      */
     @GetMapping("/flood/stations")
-    public List<PersonsFireStation> getPersonsCardsByStationNumber(@RequestParam int stations) {
-        List<PersonsFireStation> persons = safetyNetFireStationService.getPersonsByStationNumber(stations);
+    public List<ResponsePersonsByStationNumber> getPersonsCardsByStationNumber(@RequestParam String stations) {
+        List<ResponsePersonsByStationNumber> persons = safetyNetFireStationService.getPersonsByStationNumber(stations);
         log.info("Requête reçue -> getHomesAtThisStationNumber :{}", stations);
         log.info("Objet retourné -> getHomesAtThisStationNumber :{}", persons);
         return persons;

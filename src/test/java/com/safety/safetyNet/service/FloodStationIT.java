@@ -29,7 +29,7 @@ public class FloodStationIT {
     public void testGetFloodStation() {
         try {
             mockMvc.perform(get("/flood/stations?stations=1")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$[0].lastName", is("Duncan")));
+                    .isOk()).andExpect(jsonPath("$.[0].personsByFireStations[0].lastName", is("Duncan")));
         } catch (Exception e) {
             log.error("error :", e);
         }

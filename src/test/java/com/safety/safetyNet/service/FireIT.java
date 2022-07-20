@@ -29,7 +29,7 @@ public class FireIT {
     public void testGetFire() {
         try {
             mockMvc.perform(get("/fire?address=1509 Culver St")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$.personsMedicals[0].lastName", is("Boyd")));
+                    .isOk()).andExpect(jsonPath("$.personsMedicals[1].lastName", is("Boyd")));
         } catch (Exception e) {
             log.error("error :", e);
         }

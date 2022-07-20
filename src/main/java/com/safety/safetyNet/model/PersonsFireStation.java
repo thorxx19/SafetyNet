@@ -9,8 +9,8 @@ import java.util.List;
  */
 @Data
 public class PersonsFireStation {
+
     private String lastName;
-    private String address;
     private long age;
     private String email;
     private List<String> medications;

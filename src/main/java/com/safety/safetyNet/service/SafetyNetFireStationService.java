@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
@@ -151,40 +152,39 @@ public class SafetyNetFireStationService {
      * @param fireStation n° de caserne de pompier
      * @return une liste de personnes
      */
-    public List<PersonsFireStation> getPersonsByStationNumber(int fireStation) {
+    public List<ResponsePersonsByStationNumber> getPersonsByStationNumber(String fireStation) {
+
+        List<ResponsePersonsByStationNumber> responseListPersonsByStationNumber = new ArrayList<>();
+        List<FireStations> fireStationsList = dataFireStations.stream().filter(fireStations -> fireStation.equals(fireStations.getStation())).collect(Collectors.toList());
 
 
-        List<PersonsFireStation> tabListPersons = new ArrayList<>();
-        TreeSet<String> listLastName = new TreeSet<>();
+        for (FireStations fireStations :fireStationsList) {
+            ResponsePersonsByStationNumber responsePersonsByStationNumber = new ResponsePersonsByStationNumber();
+            List<PersonsFireStation> tabListPersons = new ArrayList<>();
+            for (Persons person :dataPersons) {
+                if (fireStations.getAddress().equals(person.getAddress())) {
+                    PersonsFireStation personsFireStation = new PersonsFireStation();
+                    for (MedicalRecords medicalRecord : dataMedical) {
+                        if (medicalRecord.getLastName().equals(person.getLastName()) && medicalRecord.getFirstName().equals(person.getFirstName())) {
+                            long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medicalRecord.getBirthdate());
 
-        for (FireStations firestation : dataFireStations) {
-            int station = Integer.parseInt(firestation.getStation());
-            if (fireStation == station) {
-                for (Persons person : dataPersons) {
-                    listLastName.add(person.getLastName());
-                    if (person.getAddress().equals(firestation.getAddress())) {
-                        for (MedicalRecords medic : dataMedical) {
-                            if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
-                                    .equals(medic.getFirstName())) {
+                            responsePersonsByStationNumber.setAddress(person.getAddress());
+                            personsFireStation.setLastName(person.getLastName());
+                            personsFireStation.setEmail(person.getEmail());
+                            personsFireStation.setAge(yearBirth);
+                            personsFireStation.setMedications(medicalRecord.getMedications());
+                            personsFireStation.setAllergies(medicalRecord.getAllergies());
 
-                                long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic.getBirthdate());
-
-                                PersonsFireStation persons = new PersonsFireStation();
-                                persons.setLastName(person.getLastName());
-                                persons.setAddress(person.getAddress());
-                                persons.setAge(yearBirth);
-                                persons.setEmail(person.getEmail());
-                                persons.setAllergies(medic.getAllergies());
-                                persons.setMedications(medic.getMedications());
-                                tabListPersons.add(persons);
-                            }
                         }
                     }
+                    tabListPersons.add(personsFireStation);
                 }
             }
+            responsePersonsByStationNumber.setPersonsByFireStations(tabListPersons);
+            responseListPersonsByStationNumber.add(responsePersonsByStationNumber);
         }
 
-        return tabListPersons;
+        return responseListPersonsByStationNumber;
     }
 
     /**
