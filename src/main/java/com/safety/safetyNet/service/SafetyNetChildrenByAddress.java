@@ -26,7 +26,7 @@ public class SafetyNetChildrenByAddress {
     @Autowired
     SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository;
 
-    public List<PersonsChildren> getChildrenRepository(String address) {
+    public List<PersonsChildren> getChildrenByAddress(String address) {
         List<PersonsChildren> listMineur = new ArrayList<>();
 
         List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);

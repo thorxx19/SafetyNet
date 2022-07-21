@@ -21,8 +21,6 @@ import java.util.TreeSet;
 public class SafetyNetChildrenService {
 
     @Autowired
-    SafetyNetPersonsRepository safetyNetPersonsRepository;
-    @Autowired
     SafetyNetChildrenByAddress safetyNetChildrenByAddress;
     @Autowired
     SafetyNetAdultByAddress safetyNetAdultByAddress;
@@ -35,7 +33,7 @@ public class SafetyNetChildrenService {
      */
     public List<PersonsByAddress> getChildrenByAddress(String address) {
 
-        List<PersonsChildren> personsChildren = safetyNetChildrenByAddress.getChildrenRepository(address);
+        List<PersonsChildren> personsChildren = safetyNetChildrenByAddress.getChildrenByAddress(address);
         List<PersonsAdult> personsAdults = safetyNetAdultByAddress.getAdultByAddress(address);
         List<PersonsByAddress> responseChildByAddress = new ArrayList<>();
         List<Siblings> siblingsList = new ArrayList<>();
