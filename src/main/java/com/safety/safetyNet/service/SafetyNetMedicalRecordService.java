@@ -21,14 +21,17 @@ import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 @Service
 @Slf4j
 public class SafetyNetMedicalRecordService {
-    @Autowired
-    SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository;
-    @Autowired
-    SafetyNetPersonsRepository safetyNetPersonsRepository;
-    @Autowired
-    SafetyNetFireStationRepository safetyNetFireStationRepository;
 
+    List<Persons> dataPersons;
+    List<FireStations> dataFireStations;
+    List<MedicalRecords> dataMedical;
 
+    public SafetyNetMedicalRecordService(SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository, SafetyNetPersonsRepository safetyNetPersonsRepository, SafetyNetFireStationRepository safetyNetFireStationRepository) {
+
+        dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+    }
     /**
      * Fonction pour ajouter un dossier médical a l'objet listSafety.
      *
@@ -37,9 +40,7 @@ public class SafetyNetMedicalRecordService {
      */
     public ListSafety postMedicalRecord(MedicalRecords postMedicalRecord) {
         ListSafety listSafety = new ListSafety();
-        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
-        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
-        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+
         boolean verifMedicalRecord = true;
 
         for (MedicalRecords medicalRecord : dataMedical) {
@@ -67,9 +68,7 @@ public class SafetyNetMedicalRecordService {
      */
     public ListSafety putMedicalRecord(MedicalRecords putMedicalRecord) {
         ListSafety listSafety = new ListSafety();
-        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
-        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
-        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+
 
         for (MedicalRecords medicalRecord : dataMedical) {
             if (putMedicalRecord.getFirstName().equals(medicalRecord.getFirstName()) && putMedicalRecord.getLastName().equals(medicalRecord.getLastName())) {
@@ -95,9 +94,6 @@ public class SafetyNetMedicalRecordService {
      */
     public ListSafety deleteMedicalRecord(MedicalRecords deleteMedicalrecord) {
         ListSafety listSafety = new ListSafety();
-        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
-        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
-        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
         dataMedical.stream().filter(x -> !deleteMedicalrecord.getFirstName().equals(x.getFirstName())
                 && !deleteMedicalrecord.getLastName().equals(x.getLastName())).forEach(x -> dataMedical.add(x));
 

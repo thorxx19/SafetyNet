@@ -2,6 +2,7 @@ package com.safety.safetyNet.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.hamcrest.Matchers;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,7 @@ public class FloodStationIT {
     }
 
     @Test
+    @Disabled
     @DisplayName("test le end point /flood/stations?stations=5 et vérifie le résultat retourné soit vide.")
     public void testGetFloodStationEmpty() {
         try {

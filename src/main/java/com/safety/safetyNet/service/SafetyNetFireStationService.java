@@ -22,22 +22,14 @@ import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 public class SafetyNetFireStationService {
 
 
-   private SafetyNetCalculatorAgeBirthdate safetyNetCalculatorAgeBirthdate;
+   private final SafetyNetCalculatorAgeBirthdate safetyNetCalculatorAgeBirthdate;
 
-   private SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository;
-
-   private SafetyNetPersonsRepository safetyNetPersonsRepository;
-
-   private SafetyNetFireStationRepository safetyNetFireStationRepository;
     List<Persons> dataPersons;
     List<FireStations> dataFireStations;
     List<MedicalRecords> dataMedical;
 
     public SafetyNetFireStationService(SafetyNetCalculatorAgeBirthdate safetyNetCalculatorAgeBirthdate, SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository, SafetyNetPersonsRepository safetyNetPersonsRepository, SafetyNetFireStationRepository safetyNetFireStationRepository) {
         this.safetyNetCalculatorAgeBirthdate = safetyNetCalculatorAgeBirthdate;
-        this.safetyNetMedicalRecordsRepository = safetyNetMedicalRecordsRepository;
-        this.safetyNetPersonsRepository = safetyNetPersonsRepository;
-        this.safetyNetFireStationRepository = safetyNetFireStationRepository;
 
         dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
         dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
