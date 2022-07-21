@@ -37,10 +37,10 @@ public class FireStationIT {
         try {
             mockMvc.perform(get("/firestation?stationNumber=3")).andExpect(status()
                             .isOk())
-                    .andExpect(jsonPath("$.personsStationList[0].firstName", is("John")))
-                    .andExpect(jsonPath("$.personsStationList[0].lastName", is("Boyd")))
-                    .andExpect(jsonPath("$.personsStationList[0].address", is("1509 Culver St")))
-                    .andExpect(jsonPath("$.personsStationList[0].phone", is("841-874-6512")));
+                    .andExpect(jsonPath("$.[0].personsStationList[0].firstName", is("John")))
+                    .andExpect(jsonPath("$.[0].personsStationList[0].lastName", is("Boyd")))
+                    .andExpect(jsonPath("$.[0].personsStationList[0].address", is("1509 Culver St")))
+                    .andExpect(jsonPath("$.[0].personsStationList[0].phone", is("841-874-6512")));
         } catch (Exception e) {
             log.error("error :", e);
         }
@@ -48,11 +48,11 @@ public class FireStationIT {
 
     @Test
     @DisplayName("test le end point /firestation?stationNumber=5 et vérifie le résultat retourné soit vide.")
-    public void testGetFireStatioEmpty() {
+    public void testGetFireStationEmpty() {
         try {
             mockMvc.perform(get("/firestation?stationNumber=5")).andExpect(status()
                             .isOk())
-                    .andExpect(jsonPath("$.personsStationList", Matchers.empty()));
+                    .andExpect(jsonPath("$", Matchers.empty()));
         } catch (Exception e) {
             log.error("error :", e);
         }

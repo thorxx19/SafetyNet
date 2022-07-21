@@ -3138,3 +3138,96 @@ java.lang.NullPointerException: null
 
 21/07/2022 16:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
  Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 16:07:09 INFO org.springframework.boot.StartupInfoLogger
+ Starting FireStationIT using Java 11.0.16 on MSI with PID 5012 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+21/07/2022 16:07:09 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+21/07/2022 16:07:13 INFO org.springframework.boot.StartupInfoLogger
+ Started FireStationIT in 4.144 seconds (JVM running for 6.048)
+
+21/07/2022 16:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 16:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+21/07/2022 16:07:27 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 16:07:27 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+21/07/2022 16:07:40 INFO org.springframework.boot.StartupInfoLogger
+ Starting FireStationIT using Java 11.0.16 on MSI with PID 16444 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+21/07/2022 16:07:40 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+21/07/2022 16:07:44 INFO org.springframework.boot.StartupInfoLogger
+ Started FireStationIT in 3.834 seconds (JVM running for 5.606)
+
+21/07/2022 16:07:44 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 16:07:44 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+21/07/2022 16:07:05 INFO org.springframework.boot.StartupInfoLogger
+ Starting FireStationIT using Java 11.0.16 on MSI with PID 4548 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+21/07/2022 16:07:05 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+21/07/2022 16:07:08 INFO org.springframework.boot.StartupInfoLogger
+ Started FireStationIT in 3.992 seconds (JVM running for 5.759)
+
+21/07/2022 16:07:09 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 16:07:09 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+21/07/2022 16:07:22 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 16:07:22 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 16:07:29 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+21/07/2022 16:07:29 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=John, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Jacob, lastName=Boyd, address=1509 Culver St, phone=841-874-6513), PersonsStation(firstName=Tenley, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Roger, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Felicia, lastName=Boyd, address=1509 Culver St, phone=841-874-6544), PersonsStation(firstName=Tessa, lastName=Carman, address=834 Binoc Ave, phone=841-874-6512), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741)], countPeople=CountPeople(children=3, adult=10))]
+
+21/07/2022 16:07:49 INFO org.springframework.boot.StartupInfoLogger
+ Starting FireStationIT using Java 11.0.16 on MSI with PID 6744 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+21/07/2022 16:07:49 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+21/07/2022 16:07:55 INFO org.springframework.boot.StartupInfoLogger
+ Started FireStationIT in 8.128 seconds (JVM running for 11.28)
+
+21/07/2022 16:07:56 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+21/07/2022 16:07:56 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=John, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Jacob, lastName=Boyd, address=1509 Culver St, phone=841-874-6513), PersonsStation(firstName=Tenley, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Roger, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Felicia, lastName=Boyd, address=1509 Culver St, phone=841-874-6544), PersonsStation(firstName=Tessa, lastName=Carman, address=834 Binoc Ave, phone=841-874-6512), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741)], countPeople=CountPeople(children=3, adult=10))]
+
+21/07/2022 16:07:49 INFO org.springframework.boot.StartupInfoLogger
+ Starting FireStationIT using Java 11.0.16 on MSI with PID 6936 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+21/07/2022 16:07:49 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+21/07/2022 16:07:56 INFO org.springframework.boot.StartupInfoLogger
+ Started FireStationIT in 8.054 seconds (JVM running for 11.234)
+
+21/07/2022 16:07:57 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+21/07/2022 16:07:57 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=John, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Jacob, lastName=Boyd, address=1509 Culver St, phone=841-874-6513), PersonsStation(firstName=Tenley, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Roger, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Felicia, lastName=Boyd, address=1509 Culver St, phone=841-874-6544), PersonsStation(firstName=Tessa, lastName=Carman, address=834 Binoc Ave, phone=841-874-6512), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741)], countPeople=CountPeople(children=3, adult=10))]
