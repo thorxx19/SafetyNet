@@ -3,10 +3,9 @@ package com.safety.safetyNet.model;
 import lombok.Data;
 
 @Data
-public class PersonsChildren {
+public class PersonsAdult {
 
     private String firstName;
     private String lastName;
-    private long age;
 
 }

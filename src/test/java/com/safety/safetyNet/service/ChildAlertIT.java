@@ -30,7 +30,7 @@ public class ChildAlertIT {
     public void getChildAlert() {
         try {
             mockMvc.perform(get("/childAlert?address=1509 Culver St")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$[0].firstName", is("Tenley")));
+                    .isOk()).andExpect(jsonPath("$.[0].siblings.children[0].firstName", is("Tenley")));
         } catch (Exception e) {
             log.error("error :", e);
         }
