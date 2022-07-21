@@ -1,6 +1,9 @@
 package com.safety.safetyNet.service;
 
-import com.safety.safetyNet.model.*;
+import com.safety.safetyNet.model.PersonsAdult;
+import com.safety.safetyNet.model.PersonsByAddress;
+import com.safety.safetyNet.model.PersonsChildren;
+import com.safety.safetyNet.model.Siblings;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +42,7 @@ public class SafetyNetChildrenService {
 
         TreeSet treeSet = new TreeSet<>();
 
-        for (PersonsChildren children: personsChildren) {
+        for (PersonsChildren children : personsChildren) {
             treeSet.add(children.getLastName());
         }
         for (Object x : treeSet) {
@@ -61,11 +64,11 @@ public class SafetyNetChildrenService {
         }
         for (Siblings sibling : siblingsList) {
             PersonsByAddress persons = new PersonsByAddress();
-            for (PersonsChildren children: sibling.getChildren()) {
+            for (PersonsChildren children : sibling.getChildren()) {
                 List<PersonsAdult> personsAdultList = new ArrayList<>();
 
-                for (PersonsAdult adult: personsAdults) {
-                    if (children.getLastName().equals(adult.getLastName())){
+                for (PersonsAdult adult : personsAdults) {
+                    if (children.getLastName().equals(adult.getLastName())) {
                         PersonsAdult personsAdult = new PersonsAdult();
                         personsAdult.setFirstName(adult.getFirstName());
                         personsAdult.setLastName(adult.getLastName());

@@ -8,8 +8,8 @@ import java.util.List;
 public class ResponsePersonsByStationNumber {
 
 
-    private String address;
     List<PersonsFireStation> personsByFireStations;
+    private String address;
 
 
 }

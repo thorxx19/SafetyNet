@@ -2802,3 +2802,339 @@ Caused by: java.util.ConcurrentModificationException: null
 
 21/07/2022 12:07:40 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
  Objet retourn� -> getNumberPhone :[841-874-6874, 841-874-8888, 841-874-9845, 841-874-9888]
+
+21/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:24 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 14:07:24 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[], countPeople=CountPeople(children=0, adult=0))]
+
+21/07/2022 14:07:38 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:38 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:49 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:49 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 14:07:55 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+21/07/2022 14:07:00 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:00 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:27 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:27 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:39 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 14:07:39 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+21/07/2022 14:07:43 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:43 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:16 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:16 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:23 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:23 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:04 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:04 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:15 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 14:07:15 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=null, countPeople=null)]
+
+21/07/2022 14:07:10 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 14:07:10 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=null, countPeople=null)]
+
+21/07/2022 14:07:02 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 14:07:02 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[null]
+
+21/07/2022 14:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:19 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 14:07:19 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[null]
+
+21/07/2022 14:07:51 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 14:07:51 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+21/07/2022 14:07:24 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 14:07:24 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+21/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 14:07:26 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 14:07:26 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+21/07/2022 14:07:31 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 14:07:31 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 15:07:45 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 15:07:45 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 15:07:52 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 15:07:52 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 15:07:56 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 15:07:56 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 15:07:30 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 15:07:30 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 15:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 15:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 15:07:37 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 15:07:37 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 15:07:00 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 15:07:00 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4)), ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 15:07:58 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 15:07:58 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 15:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 15:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=null, countPeople=null)]
+
+21/07/2022 15:07:20 ERROR org.apache.juli.logging.DirectJDKLog
+ Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.safety.safetyNet.service.SafetyNetFireStationService.getAllPersonsByStationNumber(SafetyNetFireStationService.java:99)
+	at com.safety.safetyNet.controller.SafetyNetFireStationController.getFireStationByNumber(SafetyNetFireStationController.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+21/07/2022 15:07:49 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 15:07:49 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=null, countPeople=null)]
+
+21/07/2022 15:07:18 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 15:07:18 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=null, countPeople=null)]
+
+21/07/2022 15:07:20 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 15:07:20 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=null, countPeople=null)]
+
+21/07/2022 15:07:32 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 15:07:32 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 15:07:56 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 15:07:56 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 16:07:00 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 16:07:00 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 16:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 16:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+21/07/2022 16:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 16:07:11 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
+
+21/07/2022 16:07:20 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+21/07/2022 16:07:20 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+21/07/2022 16:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :4
+
+21/07/2022 16:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]

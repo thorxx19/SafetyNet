@@ -7,6 +7,6 @@ import java.util.List;
 @Data
 public class Siblings {
 
-private List<PersonsChildren> children;
+    private List<PersonsChildren> children;
 
 }

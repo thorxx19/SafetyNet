@@ -22,7 +22,7 @@ import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 public class SafetyNetFireStationService {
 
 
-   private final SafetyNetCalculatorAgeBirthdate safetyNetCalculatorAgeBirthdate;
+    private final SafetyNetCalculatorAgeBirthdate safetyNetCalculatorAgeBirthdate;
 
     List<Persons> dataPersons;
     List<FireStations> dataFireStations;
@@ -43,19 +43,21 @@ public class SafetyNetFireStationService {
      * @param stationNumber numéro de la caserne de pompier.
      * @return la liste des personnes qui habite autour de la caserne de pompier.
      */
-    public ResponseFireStationByNumber getAllPersonsByStationNumber(int stationNumber) {
+    public List<ResponseFireStationByNumber> getAllPersonsByStationNumber(int stationNumber) {
 
 
         ArrayList<PersonsStation> listPersons = new ArrayList<>();
-        ResponseFireStationByNumber responseFireStationByNumber = new ResponseFireStationByNumber();
-        CountPeople countPeople = new CountPeople();
 
+        List<ResponseFireStationByNumber> responseFireStationByNumberArrayList = new ArrayList<>();
+        CountPeople countPeople = new CountPeople();
+        ResponseFireStationByNumber responseFireStationByNumber = new ResponseFireStationByNumber();
         int countAdult = 0;
         int countChildren = 0;
 
         for (FireStations firestation : dataFireStations) {
             int station = Integer.parseInt(firestation.getStation());
             if (stationNumber == station) {
+
                 for (Persons person : dataPersons) {
                     if (person.getAddress().equals(firestation.getAddress())) {
                         for (MedicalRecords medic : dataMedical) {
@@ -64,8 +66,10 @@ public class SafetyNetFireStationService {
                                 long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic.getBirthdate());
                                 if (yearBirth <= 18) {
                                     countChildren++;
+                                    break;
                                 } else {
                                     countAdult++;
+                                    break;
                                 }
                             }
                         }
@@ -75,19 +79,21 @@ public class SafetyNetFireStationService {
                         persons.setAddress(person.getAddress());
                         persons.setPhone(person.getPhone());
                         listPersons.add(persons);
+                        responseFireStationByNumber.setCountPeople(countPeople);
+                        responseFireStationByNumber.setPersonsStationList(listPersons);
                     }
                 }
             }
         }
         if (countAdult != 0 || countChildren != 0) {
+
             countPeople.setChildren(countChildren);
             countPeople.setAdult(countAdult);
+            responseFireStationByNumberArrayList.add(responseFireStationByNumber);
         }
 
-        responseFireStationByNumber.setCountPeople(countPeople);
-        responseFireStationByNumber.setPersonsStationList(listPersons);
 
-        return responseFireStationByNumber;
+        return responseFireStationByNumberArrayList;
 
     }
 
@@ -150,10 +156,10 @@ public class SafetyNetFireStationService {
         List<FireStations> fireStationsList = dataFireStations.stream().filter(fireStations -> fireStation.equals(fireStations.getStation())).collect(Collectors.toList());
 
 
-        for (FireStations fireStations :fireStationsList) {
+        for (FireStations fireStations : fireStationsList) {
             ResponsePersonsByStationNumber responsePersonsByStationNumber = new ResponsePersonsByStationNumber();
             List<PersonsFireStation> tabListPersons = new ArrayList<>();
-            for (Persons person :dataPersons) {
+            for (Persons person : dataPersons) {
                 if (fireStations.getAddress().equals(person.getAddress())) {
                     PersonsFireStation personsFireStation = new PersonsFireStation();
                     for (MedicalRecords medicalRecord : dataMedical) {

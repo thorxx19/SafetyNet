@@ -5,11 +5,9 @@ import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
 import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,6 +25,7 @@ public class SafetyNetPersonService {
     List<Persons> dataPersons;
     List<FireStations> dataFireStations;
     List<MedicalRecords> dataMedical;
+
     public SafetyNetPersonService(SafetyNetCalculatorAgeBirthdate safetyNetCalculatorAgeBirthdate, SafetyNetPersonsRepository safetyNetPersonsRepository, SafetyNetFireStationRepository safetyNetFireStationRepository, SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository) {
         this.safetyNetCalculatorAgeBirthdate = safetyNetCalculatorAgeBirthdate;
         dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
@@ -52,7 +51,7 @@ public class SafetyNetPersonService {
         List<MedicalRecords> medicalStream = dataMedical.stream().filter(x -> lastName.equals(x.getLastName())).collect(Collectors.toList());
 
 
-        for (int i = 0; i <= personsStream.size() - 1 ; i++) {
+        for (int i = 0; i <= personsStream.size() - 1; i++) {
             PersonInfo personInfo = new PersonInfo();
             long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medicalStream.get(i).getBirthdate());
 

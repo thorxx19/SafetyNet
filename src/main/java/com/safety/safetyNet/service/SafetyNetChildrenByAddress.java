@@ -1,10 +1,11 @@
 package com.safety.safetyNet.service;
 
 
-import com.safety.safetyNet.model.*;
+import com.safety.safetyNet.model.MedicalRecords;
+import com.safety.safetyNet.model.Persons;
+import com.safety.safetyNet.model.PersonsChildren;
 import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
-import com.safety.safetyNet.service.SafetyNetCalculatorAgeBirthdate;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

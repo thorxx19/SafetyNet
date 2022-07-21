@@ -8,7 +8,6 @@ import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
 import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,6 +31,7 @@ public class SafetyNetMedicalRecordService {
         dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
         dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
     }
+
     /**
      * Fonction pour ajouter un dossier médical a l'objet listSafety.
      *

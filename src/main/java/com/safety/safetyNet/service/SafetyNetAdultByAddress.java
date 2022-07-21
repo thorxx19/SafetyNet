@@ -24,7 +24,7 @@ public class SafetyNetAdultByAddress {
     SafetyNetCalculatorAgeBirthdate safetyNetCalculatorAgeBirthdate;
 
 
-    public List<PersonsAdult> getAdultByAddress(String address){
+    public List<PersonsAdult> getAdultByAddress(String address) {
 
         List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
@@ -52,8 +52,6 @@ public class SafetyNetAdultByAddress {
         }
         return personsAdultList;
     }
-
-
 
 
 }

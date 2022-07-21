@@ -32,8 +32,8 @@ public class SafetyNetFireStationController {
      * @return les habitants couverts par la station numéro
      */
     @GetMapping("/firestation")
-    public ResponseFireStationByNumber getFireStationByNumber(@RequestParam int stationNumber) {
-        ResponseFireStationByNumber persons = safetyNetFireStationService.getAllPersonsByStationNumber(stationNumber);
+    public List<ResponseFireStationByNumber> getFireStationByNumber(@RequestParam int stationNumber) {
+        List<ResponseFireStationByNumber> persons = safetyNetFireStationService.getAllPersonsByStationNumber(stationNumber);
         log.info("Requête reçue -> getFireStationNumber :{}", stationNumber);
         log.info("Objet retourné -> getFireStationNumber :{}", persons);
         return persons;
