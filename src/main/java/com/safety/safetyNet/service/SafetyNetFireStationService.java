@@ -104,44 +104,51 @@ public class SafetyNetFireStationService {
      * @param address l'adresse des habitant
      * @return liste de personne
      */
-    public ResponsePersonsByAddress getPersonsByAddress(String address) {
+    public List<ResponsePersonsByAddress> getPersonsByAddress(String address) {
 
+        // todo mettre une liste responsePersonsByAddress
 
-        TreeSet<String> stationTree = new TreeSet<>();
-        ResponsePersonsByAddress responsePersonsByAddress = new ResponsePersonsByAddress();
-        Station treeStation = new Station();
+        List<ResponsePersonsByAddress> responsePersonsByAddressList = new ArrayList<>();
+
 
         List<PersonsMedical> listPersons = new ArrayList<>();
-        for (Persons person : dataPersons) {
-            if (address.equals(person.getAddress())) {
-                for (MedicalRecords medic : dataMedical) {
-                    if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
-                            .equals(medic.getFirstName())) {
 
-                        long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic.getBirthdate());
-                        PersonsMedical persons = new PersonsMedical();
-                        persons.setLastName(person.getLastName());
-                        persons.setPhone(person.getPhone());
-                        persons.setAge(yearBirth);
-                        persons.setAllergies(medic.getAllergies());
-                        persons.setMedications(medic.getMedications());
-                        listPersons.add(persons);
 
+        for (FireStations station : dataFireStations) {
+            if (address.equals(station.getAddress())) {
+                ResponsePersonsByAddress responsePersonsByAddress = new ResponsePersonsByAddress();
+                TreeSet<String> stationTree = new TreeSet<>();
+                Station treeStation = new Station();
+                stationTree.add(station.getStation());
+                treeStation.setStation(station.getStation());
+                responsePersonsByAddress.setStation(treeStation);
+                for (Persons person : dataPersons) {
+                    if (address.equals(person.getAddress())) {
+                        for (MedicalRecords medic : dataMedical) {
+                            if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
+                                    .equals(medic.getFirstName())) {
+
+                                long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic.getBirthdate());
+                                PersonsMedical persons = new PersonsMedical();
+                                persons.setLastName(person.getLastName());
+                                persons.setPhone(person.getPhone());
+                                persons.setAge(yearBirth);
+                                persons.setAllergies(medic.getAllergies());
+                                persons.setMedications(medic.getMedications());
+                                listPersons.add(persons);
+
+                            }
+                            responsePersonsByAddress.setPersonsMedicals(listPersons);
+
+                        }
                     }
                 }
-            }
-            for (FireStations station : dataFireStations) {
-                if (address.equals(station.getAddress())) {
-
-                    stationTree.add(station.getStation());
-                    treeStation.setStation(station.getStation());
-                }
+                responsePersonsByAddressList.add(responsePersonsByAddress);
             }
         }
-        responsePersonsByAddress.setPersonsMedicals(listPersons);
-        responsePersonsByAddress.setStation(treeStation);
 
-        return responsePersonsByAddress;
+
+        return responsePersonsByAddressList;
     }
 
     /**

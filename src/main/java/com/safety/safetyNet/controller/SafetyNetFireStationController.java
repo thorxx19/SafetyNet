@@ -47,8 +47,8 @@ public class SafetyNetFireStationController {
      * @return liste d'habitant
      */
     @GetMapping("/fire")
-    public ResponsePersonsByAddress getGroupOfPersonsByAddress(@RequestParam String address) {
-        ResponsePersonsByAddress persons = safetyNetFireStationService.getPersonsByAddress(address);
+    public List<ResponsePersonsByAddress> getGroupOfPersonsByAddress(@RequestParam String address) {
+        List<ResponsePersonsByAddress> persons = safetyNetFireStationService.getPersonsByAddress(address);
         log.info("Requête reçue -> getHabitantAtThisAdrdress :{}", address);
         log.info("Objet retourné -> getHabitantAtThisAdrdress :{}", persons);
         return persons;
