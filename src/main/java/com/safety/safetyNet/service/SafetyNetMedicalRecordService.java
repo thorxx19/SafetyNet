@@ -5,6 +5,7 @@ import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
 import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,16 +20,16 @@ import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 @Slf4j
 public class SafetyNetMedicalRecordService {
 
-    List<Persons> dataPersons;
-    List<FireStations> dataFireStations;
-    List<MedicalRecords> dataMedical;
 
-    public SafetyNetMedicalRecordService(SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository, SafetyNetPersonsRepository safetyNetPersonsRepository, SafetyNetFireStationRepository safetyNetFireStationRepository) {
 
-        dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
-        dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
-        dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
-    }
+
+    @Autowired
+    SafetyNetFireStationRepository safetyNetFireStationRepository;
+    @Autowired
+    SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository;
+    @Autowired
+    SafetyNetPersonsRepository safetyNetPersonsRepository;
+
 
     /**
      * Fonction pour ajouter un dossier médical a l'objet listSafety.
@@ -38,6 +39,9 @@ public class SafetyNetMedicalRecordService {
      */
     public ListSafety postMedicalRecord(MedicalRecords postMedicalRecord) {
         ListSafety listSafety = new ListSafety();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
 
         boolean verifMedicalRecord = true;
 
@@ -66,7 +70,9 @@ public class SafetyNetMedicalRecordService {
      */
     public ListSafety putMedicalRecord(MedicalRecords putMedicalRecord) {
         ListSafety listSafety = new ListSafety();
-
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
 
         for (MedicalRecords medicalRecord : dataMedical) {
             if (putMedicalRecord.getFirstName().equals(medicalRecord.getFirstName()) && putMedicalRecord.getLastName().equals(medicalRecord.getLastName())) {
@@ -91,8 +97,12 @@ public class SafetyNetMedicalRecordService {
      * @return un objet de type ListSafety.
      */
     public ListSafety deleteMedicalRecord(DeletePerson deleteMedicalrecord) {
-
         List<MedicalRecords> medicalList = new ArrayList<>();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+
+
 
         dataMedical.stream().filter(x -> !deleteMedicalrecord.getFirstName().equals(x.getFirstName())
                 && !deleteMedicalrecord.getLastName().equals(x.getLastName())).forEach(x -> medicalList.add(x));

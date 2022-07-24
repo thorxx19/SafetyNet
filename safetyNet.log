@@ -686,3 +686,66 @@ java.util.ConcurrentModificationException: null
 
 24/07/2022 22:07:51 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
  Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+24/07/2022 22:07:52 INFO org.springframework.boot.StartupInfoLogger
+ Starting MedicalRecordIT using Java 11.0.16 on MSI with PID 19892 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+24/07/2022 22:07:52 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+24/07/2022 22:07:56 INFO org.springframework.boot.StartupInfoLogger
+ Started MedicalRecordIT in 4.0 seconds (JVM running for 5.949)
+
+24/07/2022 22:07:57 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+24/07/2022 22:07:02 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+24/07/2022 22:07:23 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=Brive la gaillarde, zip=19100, phone=841-874-5584, email=toto@orange.fr)
+
+24/07/2022 22:07:29 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+24/07/2022 22:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+24/07/2022 22:07:50 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+24/07/2022 22:07:08 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+24/07/2022 22:07:15 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+24/07/2022 22:07:14 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+24/07/2022 22:07:24 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+24/07/2022 22:07:37 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+24/07/2022 22:07:46 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+24/07/2022 22:07:56 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+24/07/2022 22:07:01 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=7)
+
+24/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=Brive la gaillarde, zip=19100, phone=841-874-5584, email=toto@orange.fr)
+
+24/07/2022 22:07:16 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03-06-2010, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+24/07/2022 22:07:24 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+24/07/2022 22:07:29 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
