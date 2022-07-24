@@ -1,15 +1,13 @@
 package com.safety.safetyNet.service;
 
-import com.safety.safetyNet.model.FireStations;
-import com.safety.safetyNet.model.ListSafety;
-import com.safety.safetyNet.model.MedicalRecords;
-import com.safety.safetyNet.model.Persons;
+import com.safety.safetyNet.model.*;
 import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
 import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
@@ -92,15 +90,17 @@ public class SafetyNetMedicalRecordService {
      * @param deleteMedicalrecord un objet de type MedicalRecord.
      * @return un objet de type ListSafety.
      */
-    public ListSafety deleteMedicalRecord(MedicalRecords deleteMedicalrecord) {
-        ListSafety listSafety = new ListSafety();
-        dataMedical.stream().filter(x -> !deleteMedicalrecord.getFirstName().equals(x.getFirstName())
-                && !deleteMedicalrecord.getLastName().equals(x.getLastName())).forEach(x -> dataMedical.add(x));
+    public ListSafety deleteMedicalRecord(DeletePerson deleteMedicalrecord) {
 
+        List<MedicalRecords> medicalList = new ArrayList<>();
+
+        dataMedical.stream().filter(x -> !deleteMedicalrecord.getFirstName().equals(x.getFirstName())
+                && !deleteMedicalrecord.getLastName().equals(x.getLastName())).forEach(x -> medicalList.add(x));
+        ListSafety listSafety = new ListSafety();
 
         listSafety.setPersons(dataPersons);
         listSafety.setFirestations(dataFireStations);
-        listSafety.setMedicalrecords(dataMedical);
+        listSafety.setMedicalrecords(medicalList);
 
         return listSafety;
     }

@@ -106,8 +106,6 @@ public class SafetyNetFireStationService {
      */
     public List<ResponsePersonsByAddress> getPersonsByAddress(String address) {
 
-        // todo mettre une liste responsePersonsByAddress
-
         List<ResponsePersonsByAddress> responsePersonsByAddressList = new ArrayList<>();
 
 

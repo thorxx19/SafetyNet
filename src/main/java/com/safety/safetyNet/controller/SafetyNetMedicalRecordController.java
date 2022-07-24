@@ -1,5 +1,6 @@
 package com.safety.safetyNet.controller;
 
+import com.safety.safetyNet.model.DeletePerson;
 import com.safety.safetyNet.model.ListSafety;
 import com.safety.safetyNet.model.MedicalRecords;
 import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
@@ -50,7 +51,7 @@ public class SafetyNetMedicalRecordController {
      * @param deleteMedicalRecord un object de type MedicalRecords.
      */
     @DeleteMapping("/medicalRecord")
-    public void deleteMedicalRecord(@RequestBody MedicalRecords deleteMedicalRecord) {
+    public void deleteMedicalRecord(@RequestBody DeletePerson deleteMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.deleteMedicalRecord(deleteMedicalRecord);
         safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête DELETE deleteMedicalRecord : {}", deleteMedicalRecord);

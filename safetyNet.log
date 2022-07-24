@@ -1,170 +1,38 @@
 
-22/07/2022 15:07:24 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+24/07/2022 21:07:07 INFO org.springframework.boot.StartupInfoLogger
+ Starting MedicalRecordIT using Java 11.0.16 on MSI with PID 14896 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
 
-22/07/2022 15:07:24 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=35, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))
-
-22/07/2022 15:07:34 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
-
-22/07/2022 15:07:34 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=35, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))]
-
-22/07/2022 15:07:39 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver S
-
-22/07/2022 15:07:39 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[], station=Station(station=null))]
-
-22/07/2022 15:07:05 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver S
-
-22/07/2022 15:07:05 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=null, station=null)]
-
-22/07/2022 15:07:00 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver S
-
-22/07/2022 15:07:00 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=null, station=null)]
-
-22/07/2022 15:07:00 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver S
-
-22/07/2022 15:07:00 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=null, station=null)]
-
-22/07/2022 16:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver S
-
-22/07/2022 16:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[]
-
-22/07/2022 16:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
-
-22/07/2022 16:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=35, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))]
-
-22/07/2022 16:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver S
-
-22/07/2022 16:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[]
-
-22/07/2022 16:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
-
-22/07/2022 16:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=35, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))]
-
-22/07/2022 16:07:43 INFO org.springframework.boot.StartupInfoLogger
- Starting FireIT using Java 11.0.16 on MSI with PID 2696 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
-
-22/07/2022 16:07:43 INFO org.springframework.boot.SpringApplication
+24/07/2022 21:07:07 INFO org.springframework.boot.SpringApplication
  No active profile set, falling back to 1 default profile: "default"
 
-22/07/2022 16:07:46 INFO org.springframework.boot.StartupInfoLogger
- Started FireIT in 4.13 seconds (JVM running for 6.08)
+24/07/2022 21:07:12 INFO org.springframework.boot.StartupInfoLogger
+ Started MedicalRecordIT in 5.117 seconds (JVM running for 7.346)
 
-22/07/2022 16:07:47 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
-
-22/07/2022 16:07:47 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=35, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))]
-
-22/07/2022 16:07:03 INFO org.springframework.boot.StartupInfoLogger
- Starting FireIT using Java 11.0.16 on MSI with PID 8324 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
-
-22/07/2022 16:07:03 INFO org.springframework.boot.SpringApplication
- No active profile set, falling back to 1 default profile: "default"
-
-22/07/2022 16:07:06 INFO org.springframework.boot.StartupInfoLogger
- Started FireIT in 4.018 seconds (JVM running for 5.766)
-
-22/07/2022 16:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
-
-22/07/2022 16:07:07 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=35, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))]
-
-22/07/2022 16:07:20 INFO org.springframework.boot.StartupInfoLogger
- Starting FireIT using Java 11.0.16 on MSI with PID 21000 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
-
-22/07/2022 16:07:20 INFO org.springframework.boot.SpringApplication
- No active profile set, falling back to 1 default profile: "default"
-
-22/07/2022 16:07:23 INFO org.springframework.boot.StartupInfoLogger
- Started FireIT in 4.035 seconds (JVM running for 5.817)
-
-22/07/2022 16:07:24 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
-
-22/07/2022 16:07:24 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[]
-
-22/07/2022 16:07:47 INFO org.springframework.boot.StartupInfoLogger
- Starting FireIT using Java 11.0.16 on MSI with PID 18956 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
-
-22/07/2022 16:07:47 INFO org.springframework.boot.SpringApplication
- No active profile set, falling back to 1 default profile: "default"
-
-22/07/2022 16:07:51 INFO org.springframework.boot.StartupInfoLogger
- Started FireIT in 3.938 seconds (JVM running for 5.669)
-
-22/07/2022 16:07:51 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
-
-22/07/2022 16:07:51 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[]
-
-22/07/2022 16:07:02 INFO org.springframework.boot.StartupInfoLogger
- Starting FireIT using Java 11.0.16 on MSI with PID 11224 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
-
-22/07/2022 16:07:02 INFO org.springframework.boot.SpringApplication
- No active profile set, falling back to 1 default profile: "default"
-
-22/07/2022 16:07:05 INFO org.springframework.boot.StartupInfoLogger
- Started FireIT in 4.416 seconds (JVM running for 6.237)
-
-22/07/2022 16:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
-
-22/07/2022 16:07:06 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[]
-
-22/07/2022 16:07:18 INFO org.springframework.boot.StartupInfoLogger
- Starting FireIT using Java 11.0.16 on MSI with PID 18792 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
-
-22/07/2022 16:07:18 INFO org.springframework.boot.SpringApplication
- No active profile set, falling back to 1 default profile: "default"
-
-22/07/2022 16:07:21 INFO org.springframework.boot.StartupInfoLogger
- Started FireIT in 4.065 seconds (JVM running for 5.802)
-
-22/07/2022 16:07:22 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
-
-22/07/2022 16:07:22 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[]
-
-22/07/2022 16:07:22 ERROR com.safety.safetyNet.service.FireIT
+24/07/2022 21:07:13 ERROR com.safety.safetyNet.service.MedicalRecordIT
  error :
-com.jayway.jsonpath.InvalidPathException: Could not parse token starting at position 2. Expected ?, ', 0-9, * 
-	at com.jayway.jsonpath.internal.path.PathCompiler.fail(PathCompiler.java:622)
-	at com.jayway.jsonpath.internal.path.PathCompiler.readNextToken(PathCompiler.java:143)
-	at com.jayway.jsonpath.internal.path.PathCompiler.readDotToken(PathCompiler.java:171)
-	at com.jayway.jsonpath.internal.path.PathCompiler.readNextToken(PathCompiler.java:145)
-	at com.jayway.jsonpath.internal.path.PathCompiler.readContextToken(PathCompiler.java:124)
-	at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:58)
-	at com.jayway.jsonpath.internal.path.PathCompiler.compile(PathCompiler.java:75)
-	at com.jayway.jsonpath.JsonPath.<init>(JsonPath.java:99)
-	at com.jayway.jsonpath.JsonPath.compile(JsonPath.java:508)
-	at org.springframework.test.util.JsonPathExpectationsHelper.<init>(JsonPathExpectationsHelper.java:61)
-	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.<init>(JsonPathResultMatchers.java:63)
-	at org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath(MockMvcResultMatchers.java:210)
-	at com.safety.safetyNet.service.FireIT.testGetFireEmpty(FireIT.java:43)
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.util.ConcurrentModificationException
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:199)
+	at com.safety.safetyNet.service.MedicalRecordIT.testMedicalRecord3(MedicalRecordIT.java:119)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -234,18 +102,587 @@ com.jayway.jsonpath.InvalidPathException: Could not parse token starting at posi
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
+	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	... 90 common frames omitted
 
-22/07/2022 16:07:49 INFO org.springframework.boot.StartupInfoLogger
- Starting FireIT using Java 11.0.16 on MSI with PID 17136 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+24/07/2022 21:07:55 INFO org.springframework.boot.StartupInfoLogger
+ Starting MedicalRecordIT using Java 11.0.16 on MSI with PID 9612 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
 
-22/07/2022 16:07:49 INFO org.springframework.boot.SpringApplication
+24/07/2022 21:07:55 INFO org.springframework.boot.SpringApplication
  No active profile set, falling back to 1 default profile: "default"
 
-22/07/2022 16:07:53 INFO org.springframework.boot.StartupInfoLogger
- Started FireIT in 3.941 seconds (JVM running for 5.702)
+24/07/2022 21:07:59 INFO org.springframework.boot.StartupInfoLogger
+ Started MedicalRecordIT in 4.777 seconds (JVM running for 6.599)
 
-22/07/2022 16:07:53 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
+24/07/2022 21:07:00 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=04/06/1985, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
 
-22/07/2022 16:07:53 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- Objet retourné -> getHabitantAtThisAdrdress :[]
+24/07/2022 21:07:00 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+24/07/2022 21:07:00 ERROR com.safety.safetyNet.service.MedicalRecordIT
+ error :
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.util.ConcurrentModificationException
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:199)
+	at com.safety.safetyNet.service.MedicalRecordIT.testMedicalRecord3(MedicalRecordIT.java:119)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
+	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	... 90 common frames omitted
+
+24/07/2022 21:07:20 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03-06-2010, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+24/07/2022 21:07:48 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+24/07/2022 21:07:57 ERROR org.apache.juli.logging.DirectJDKLog
+ Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
+	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+24/07/2022 22:07:56 ERROR org.apache.juli.logging.DirectJDKLog
+ Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
+	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+24/07/2022 22:07:18 ERROR org.apache.juli.logging.DirectJDKLog
+ Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
+	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+24/07/2022 22:07:42 ERROR org.apache.juli.logging.DirectJDKLog
+ Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
+	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+24/07/2022 22:07:02 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03-06-2010, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+24/07/2022 22:07:14 ERROR org.apache.juli.logging.DirectJDKLog
+ Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
+	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+24/07/2022 22:07:32 ERROR org.apache.juli.logging.DirectJDKLog
+ Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
+java.util.ConcurrentModificationException: null
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
+	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:97)
+	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+24/07/2022 22:07:51 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+24/07/2022 22:07:46 INFO org.springframework.boot.StartupInfoLogger
+ Starting MedicalRecordIT using Java 11.0.16 on MSI with PID 15976 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+
+24/07/2022 22:07:46 INFO org.springframework.boot.SpringApplication
+ No active profile set, falling back to 1 default profile: "default"
+
+24/07/2022 22:07:50 INFO org.springframework.boot.StartupInfoLogger
+ Started MedicalRecordIT in 4.262 seconds (JVM running for 6.166)
+
+24/07/2022 22:07:51 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)

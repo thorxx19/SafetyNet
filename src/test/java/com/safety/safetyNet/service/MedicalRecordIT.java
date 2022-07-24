@@ -3,6 +3,7 @@ package com.safety.safetyNet.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.safety.safetyNet.model.DeletePerson;
 import com.safety.safetyNet.model.MedicalRecords;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
@@ -103,15 +104,10 @@ public class MedicalRecordIT {
     @Test
     @DisplayName("test le end point delete /medicalRecord .")
     public void testMedicalRecord3() {
-        MedicalRecords medicalRecords = new MedicalRecords();
-        List<String> medicationList = new ArrayList<>();
-        List<String> allergiesList = new ArrayList<>();
+        DeletePerson medicalRecords = new DeletePerson();
 
         medicalRecords.setFirstName("Olivier");
         medicalRecords.setLastName("Froidefond");
-        medicalRecords.setBirthdate("20/12/1981");
-        medicalRecords.setMedications(medicationList);
-        medicalRecords.setAllergies(allergiesList);
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, false);
