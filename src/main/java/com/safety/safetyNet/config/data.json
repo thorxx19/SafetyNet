@@ -183,6 +183,14 @@
     "zip" : "97451",
     "phone" : "841-874-7458",
     "email" : "gramps@email.com"
+  }, {
+    "firstName" : "Olivier",
+    "lastName" : "Froidefond",
+    "address" : "6 rue jacques prevert",
+    "city" : "culver",
+    "zip" : "97451",
+    "phone" : "841-874-5584",
+    "email" : "toto@toto.fr"
   } ],
   "firestations" : [ {
     "address" : "1509 Culver St",
@@ -222,6 +230,9 @@
     "station" : "3"
   }, {
     "address" : "951 LoneTree Rd",
+    "station" : "2"
+  }, {
+    "address" : "chemin d'enbiane",
     "station" : "2"
   } ],
   "medicalrecords" : [ {
@@ -362,5 +373,11 @@
     "birthdate" : "08/06/1945",
     "medications" : [ "tradoxidine:400mg" ],
     "allergies" : [ ]
+  }, {
+    "firstName" : "Olivier",
+    "lastName" : "Froidefond",
+    "birthdate" : "03-06-2010",
+    "medications" : [ "aznol:350mg", "hydrapermazol:100mg" ],
+    "allergies" : [ "nillacilan" ]
   } ]
 }
