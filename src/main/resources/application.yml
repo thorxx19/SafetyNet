@@ -20,8 +20,14 @@ logging:
     console: "%red(%d{dd/MM/yyyy}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %msg%n%throwable"
     file: "%n%d{dd/MM/yyyy HH:MM:ss} %p %C{1.}%n %m%n"
 spring:
-  main:
-    banner-mode: off
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+    main:
+      banner-mode: off
+springdoc:
+  api-docs:
+    path: /api-docs
 management:
   endpoints:
     web:
