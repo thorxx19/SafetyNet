@@ -66,7 +66,7 @@ public class SafetyNetFireStationControllerTest {
             mockMvc.perform(post("/firestation")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content("{\"address\" : \"chemin d'enbiane\",\"station\" : \"2\"}"))
-                    .andExpect(status().isOk());
+                    .andExpect(status().is2xxSuccessful());
         } catch (Exception e) {
             log.error("error :", e);
         }

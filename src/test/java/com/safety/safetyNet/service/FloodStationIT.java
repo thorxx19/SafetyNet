@@ -37,7 +37,6 @@ public class FloodStationIT {
     }
 
     @Test
-    @Disabled
     @DisplayName("test le end point /flood/stations?stations=5 et vérifie le résultat retourné soit vide.")
     public void testGetFloodStationEmpty() {
         try {
