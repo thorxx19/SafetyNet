@@ -29,7 +29,7 @@ safetynet.pathFile: "src/test/java/com/safety/safetyNet/data/dataTest.json"
 ---
 
 management.endpoints.web.exposure.include: "*"
-=======
+
 spring:
     mvc:
       pathmatch:
@@ -44,4 +44,4 @@ management:
     web:
       exposure:
         include: "*"
->>>>>>> 69c4872fe1508de4fb9df8056d1695f10ab1820f
+
