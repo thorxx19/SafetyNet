@@ -7,7 +7,12 @@ import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetMedicalRecordService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
+import java.util.Objects;
 
 /**
  * @author o.froidefond
@@ -25,12 +30,21 @@ public class SafetyNetMedicalRecordController {
      * Retourne une listSafety modifiée vers "safetyNetRepository.writeData()" avec un nouveaux dossier médical.
      *
      * @param postMedicalRecord un object de type MedicalRecords.
+     * @return
      */
     @PostMapping("/medicalRecord")
-    public void postMedicalRecord(@RequestBody MedicalRecords postMedicalRecord) {
+    public ResponseEntity<Object> postMedicalRecord(@RequestBody MedicalRecords postMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.postMedicalRecord(postMedicalRecord);
         safetyNetWriteFileRepository.writeData(listSafety);
+        if (Objects.isNull(listSafety)){
+            return ResponseEntity.noContent().build();
+        }
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .buildAndExpand(listSafety.getPersons())
+                .toUri();
         log.info("Requête POST postMedicalRecord : {}", postMedicalRecord);
+        return ResponseEntity.created(location).build();
     }
 
     /**

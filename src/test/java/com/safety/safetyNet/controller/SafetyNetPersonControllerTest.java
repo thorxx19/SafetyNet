@@ -37,7 +37,7 @@ class SafetyNetPersonControllerTest {
             mockMvc.perform(post("/person")
                             .contentType(MediaType.APPLICATION_JSON)
                             .content("{\"firstName\":\"Olivier\",\"lastName\":\"Froidefond\",\"address\":\"6 rue jacques prevert\",\"city\":\"culver\",\"zip\":\"97451\",\"phone\":\"841-874-5584\",\"email\":\"toto@toto.fr\"}"))
-                    .andExpect(status().isOk());
+                    .andExpect(status().is2xxSuccessful());
         } catch (Exception e) {
             log.error("error :", e);
         }

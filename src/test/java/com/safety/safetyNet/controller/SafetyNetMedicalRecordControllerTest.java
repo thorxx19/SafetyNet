@@ -37,7 +37,7 @@ class SafetyNetMedicalRecordControllerTest {
         try {
             mockMvc.perform(post("/medicalRecord").contentType(MediaType.APPLICATION_JSON)
                             .content("{\"firstName\" : \"Olivier\",\"lastName\" : \"Froidefond\",\"birthdate\" : \"03/06/1984\",\"medications\" : [ \"aznol:350mg\", \"hydrapermazol:100mg\" ],\"allergies\" : [ \"nillacilan\" ]}"))
-                    .andExpect(status().isOk());
+                    .andExpect(status().is2xxSuccessful());
         } catch (Exception e) {
             log.error("error :", e);
         }

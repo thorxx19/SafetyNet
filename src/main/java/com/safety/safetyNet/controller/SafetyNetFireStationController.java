@@ -6,9 +6,13 @@ import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetFireStationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author o.froidefond
@@ -72,12 +76,21 @@ public class SafetyNetFireStationController {
      * Retourne une listSafety modifiée vers "safetyNetRepository.writeData()" avec une nouvelle caserne de pompiers.
      *
      * @param postFirestations un object de type FireStations.
+     * @return
      */
     @PostMapping("/firestation")
-    public void postFireStation(@RequestBody FireStations postFirestations) {
+    public ResponseEntity<Object> postFireStation(@RequestBody FireStations postFirestations) {
         ListSafety listSafety = safetyNetFireStationService.postNewFireStation(postFirestations);
         safetyNetWriteFileRepository.writeData(listSafety);
+        if (Objects.isNull(listSafety)){
+            return ResponseEntity.noContent().build();
+        }
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .buildAndExpand(listSafety.getPersons())
+                .toUri();
         log.info("Requête reçue -> postFireStation :{}", postFirestations);
+        return ResponseEntity.created(location).build();
     }
 
     /**

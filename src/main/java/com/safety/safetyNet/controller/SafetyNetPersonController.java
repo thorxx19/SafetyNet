@@ -9,8 +9,12 @@ import com.safety.safetyNet.service.SafetyNetPersonService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author o.froidefond
@@ -44,12 +48,21 @@ public class SafetyNetPersonController {
      * Retourne une listSafety modifiée vers "safetyNetRepository.writeData()" avec une nouvelle personne.
      *
      * @param newPerson un object de type Persons.
+     * @return HTTP status
      */
     @PostMapping("/person")
-    public void postNewPerson(@RequestBody Persons newPerson) {
+    public ResponseEntity<ListSafety> postNewPerson(@RequestBody Persons newPerson) {
         ListSafety listSafety = safetyNetPersonService.postNewPerson(newPerson);
         safetyNetWriteFileRepository.writeData(listSafety);
+        if (Objects.isNull(listSafety)){
+            return ResponseEntity.noContent().build();
+        }
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .buildAndExpand(listSafety.getPersons())
+                .toUri();
         log.info("Requête reçue -> postNewPerson :{}", newPerson);
+        return ResponseEntity.created(location).build();
     }
 
     /**

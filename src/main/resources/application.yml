@@ -29,3 +29,19 @@ safetynet.pathFile: "src/test/java/com/safety/safetyNet/data/dataTest.json"
 ---
 
 management.endpoints.web.exposure.include: "*"
+=======
+spring:
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+    main:
+      banner-mode: off
+springdoc:
+  api-docs:
+    path: /api-docs
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+>>>>>>> 69c4872fe1508de4fb9df8056d1695f10ab1820f

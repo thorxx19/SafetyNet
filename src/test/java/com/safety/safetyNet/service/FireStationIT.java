@@ -78,7 +78,7 @@ public class FireStationIT {
                             .contentType(MediaType.APPLICATION_JSON)
                             .accept(MediaType.APPLICATION_JSON)
                             .content(requestJson))
-                    .andExpect(status().isOk());
+                    .andExpect(status().is2xxSuccessful());
         } catch (Exception e) {
             log.error("error :", e);
         }
