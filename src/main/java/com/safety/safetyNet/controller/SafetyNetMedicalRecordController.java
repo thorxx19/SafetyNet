@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.Objects;
 
@@ -30,10 +31,10 @@ public class SafetyNetMedicalRecordController {
      * Retourne une listSafety modifiée vers "safetyNetRepository.writeData()" avec un nouveaux dossier médical.
      *
      * @param postMedicalRecord un object de type MedicalRecords.
-     * @return
+     * @return http status
      */
     @PostMapping("/medicalRecord")
-    public ResponseEntity<Object> postMedicalRecord(@RequestBody MedicalRecords postMedicalRecord) {
+    public ResponseEntity<Object> postMedicalRecord(@Valid @RequestBody MedicalRecords postMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.postMedicalRecord(postMedicalRecord);
         safetyNetWriteFileRepository.writeData(listSafety);
         if (Objects.isNull(listSafety)){
@@ -53,7 +54,7 @@ public class SafetyNetMedicalRecordController {
      * @param putMedicalRecord un object de type MedicalRecords.
      */
     @PutMapping("/medicalRecord")
-    public void putMedicalRecord(@RequestBody MedicalRecords putMedicalRecord) {
+    public void putMedicalRecord(@Valid @RequestBody MedicalRecords putMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.putMedicalRecord(putMedicalRecord);
         safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête PUT putMedicalRecord : {}", putMedicalRecord);
@@ -65,7 +66,7 @@ public class SafetyNetMedicalRecordController {
      * @param deleteMedicalRecord un object de type MedicalRecords.
      */
     @DeleteMapping("/medicalRecord")
-    public void deleteMedicalRecord(@RequestBody DeletePerson deleteMedicalRecord) {
+    public void deleteMedicalRecord(@Valid @RequestBody DeletePerson deleteMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.deleteMedicalRecord(deleteMedicalRecord);
         safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête DELETE deleteMedicalRecord : {}", deleteMedicalRecord);

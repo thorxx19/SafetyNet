@@ -76,7 +76,7 @@ public class SafetyNetFireStationController {
      * Retourne une listSafety modifiée vers "safetyNetRepository.writeData()" avec une nouvelle caserne de pompiers.
      *
      * @param postFirestations un object de type FireStations.
-     * @return
+     * @return http status
      */
     @PostMapping("/firestation")
     public ResponseEntity<Object> postFireStation(@RequestBody FireStations postFirestations) {

@@ -15,6 +15,7 @@ public class SafetyNetReadFileRepository {
      * Fonction pour lire le fichier de données.
      *
      * @return un object de type listSafety.
+     * @param file pathFile
      */
     public ListSafety readfile(String file) {
 

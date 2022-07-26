@@ -8,10 +8,12 @@ import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetPersonService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;
@@ -51,7 +53,7 @@ public class SafetyNetPersonController {
      * @return HTTP status
      */
     @PostMapping("/person")
-    public ResponseEntity<ListSafety> postNewPerson(@RequestBody Persons newPerson) {
+    public ResponseEntity<ListSafety> postNewPerson(@Valid @RequestBody Persons newPerson) {
         ListSafety listSafety = safetyNetPersonService.postNewPerson(newPerson);
         safetyNetWriteFileRepository.writeData(listSafety);
         if (Objects.isNull(listSafety)){
@@ -71,7 +73,7 @@ public class SafetyNetPersonController {
      * @param deletePerson un object de type Persons.
      */
     @DeleteMapping("/person")
-    public void deletePerson(@RequestBody DeletePerson deletePerson) {
+    public void deletePerson(@Valid @RequestBody DeletePerson deletePerson) {
         ListSafety listSafety = safetyNetPersonService.deletePerson(deletePerson);
         safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête reçue -> deletePerson :{}", deletePerson);
@@ -83,7 +85,7 @@ public class SafetyNetPersonController {
      * @param putPerson un object de type Persons.
      */
     @PutMapping("/person")
-    public void putPerson(@RequestBody Persons putPerson) {
+    public void putPerson(@Valid @RequestBody Persons putPerson) {
         ListSafety listSafety = safetyNetPersonService.putPerson(putPerson);
         safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête reçue -> putPerson :{}", putPerson);
