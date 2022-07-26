@@ -1,6 +1,7 @@
 package com.safety.safetyNet.service;
 
 
+import com.safety.safetyNet.configuration.SafetyNetConfiguration;
 import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.TreeSet;
 
-import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
 /**
  * @author o.froidefond
@@ -20,8 +20,8 @@ import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 public class SafetyNetMailService {
     @Autowired
     SafetyNetPersonsRepository safetyNetPersonsRepository;
-
-
+    @Autowired
+    SafetyNetConfiguration safetyNetConfiguration;
     /**
      * Fonction pour récupérer tout les mails d'une ville.
      *
@@ -29,7 +29,8 @@ public class SafetyNetMailService {
      * @return Une liste de mail trié
      */
     public TreeSet<String> getMailByCity(String city) {
-        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        String pathFile = safetyNetConfiguration.getPathFile();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
         TreeSet<String> treeMail = new TreeSet<>();
 
         for (Persons dataMail : dataPersons) {

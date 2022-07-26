@@ -1,3 +1,5 @@
+safetynet:
+  pathFile: "src/main/java/com/safety/safetyNet/data/data.json"
 server:
   port: 9000
 logging:
@@ -19,11 +21,11 @@ logging:
   pattern:
     console: "%red(%d{dd/MM/yyyy}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %msg%n%throwable"
     file: "%n%d{dd/MM/yyyy HH:MM:ss} %p %C{1.}%n %m%n"
-spring:
-  main:
-    banner-mode: off
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+spring.main.banner-mode: off
+
+---
+spring.config.activate.on-profile: test
+safetynet.pathFile: "src/test/java/com/safety/safetyNet/data/dataTest.json"
+---
+
+management.endpoints.web.exposure.include: "*"

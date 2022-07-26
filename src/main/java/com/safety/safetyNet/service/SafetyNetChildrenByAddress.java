@@ -1,6 +1,7 @@
 package com.safety.safetyNet.service;
 
 
+import com.safety.safetyNet.configuration.SafetyNetConfiguration;
 import com.safety.safetyNet.model.MedicalRecords;
 import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.model.PersonsChildren;
@@ -13,7 +14,6 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
 @Slf4j
 @Repository
@@ -25,12 +25,14 @@ public class SafetyNetChildrenByAddress {
     SafetyNetPersonsRepository safetyNetPersonsRepository;
     @Autowired
     SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository;
+    @Autowired
+    SafetyNetConfiguration safetyNetConfiguration;
 
     public List<PersonsChildren> getChildrenByAddress(String address) {
+        String pathFile = safetyNetConfiguration.getPathFile();
         List<PersonsChildren> listMineur = new ArrayList<>();
-
-        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
-        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
 
         for (MedicalRecords medic : dataMedical) {
             long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic.getBirthdate());

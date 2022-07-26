@@ -1,5 +1,6 @@
 package com.safety.safetyNet.service;
 
+import com.safety.safetyNet.configuration.SafetyNetConfiguration;
 import com.safety.safetyNet.model.FireStations;
 import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
@@ -11,7 +12,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.TreeSet;
 
-import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
 /**
  * @author o.froidefond
@@ -23,6 +23,8 @@ public class SafetyNetPhoneService {
     SafetyNetPersonsRepository safetyNetPersonsRepository;
     @Autowired
     SafetyNetFireStationRepository safetyNetFireStationRepository;
+    @Autowired
+    SafetyNetConfiguration safetyNetConfiguration;
 
 
     /**
@@ -32,8 +34,9 @@ public class SafetyNetPhoneService {
      * @return liste de numéro de téléphone unique
      */
     public TreeSet<String> getNumberPhoneByFireStation(int stationNumber) {
-        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
-        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
+        String pathFile = safetyNetConfiguration.getPathFile();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(pathFile);
 
 
         TreeSet<String> treePhone = new TreeSet<>();

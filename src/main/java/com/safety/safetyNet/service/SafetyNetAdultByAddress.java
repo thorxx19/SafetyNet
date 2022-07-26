@@ -1,5 +1,6 @@
 package com.safety.safetyNet.service;
 
+import com.safety.safetyNet.configuration.SafetyNetConfiguration;
 import com.safety.safetyNet.model.MedicalRecords;
 import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.model.PersonsAdult;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
+
 
 @Service
 public class SafetyNetAdultByAddress {
@@ -22,12 +23,14 @@ public class SafetyNetAdultByAddress {
     SafetyNetPersonsRepository safetyNetPersonsRepository;
     @Autowired
     SafetyNetCalculatorAgeBirthdate safetyNetCalculatorAgeBirthdate;
+    @Autowired
+    SafetyNetConfiguration safetyNetConfiguration;
 
 
     public List<PersonsAdult> getAdultByAddress(String address) {
-
-        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
-        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
+        String pathFile = safetyNetConfiguration.getPathFile();
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
 
 
         List<PersonsAdult> personsAdultList = new ArrayList<>();

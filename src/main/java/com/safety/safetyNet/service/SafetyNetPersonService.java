@@ -1,5 +1,6 @@
 package com.safety.safetyNet.service;
 
+import com.safety.safetyNet.configuration.SafetyNetConfiguration;
 import com.safety.safetyNet.model.*;
 import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
 import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
@@ -12,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.safety.safetyNet.constantes.SafetyNetConstantes.PATH_FILE;
 
 /**
  * @author o.froidefond
@@ -29,6 +29,8 @@ public class SafetyNetPersonService {
     SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository;
     @Autowired
     SafetyNetPersonsRepository safetyNetPersonsRepository;
+    @Autowired
+    SafetyNetConfiguration safetyNetConfiguration;
 
 
 
@@ -41,8 +43,9 @@ public class SafetyNetPersonService {
      * @return une liste de personnes qui ont le même nom de famille.
      */
     public List<PersonInfo> getPersonCardInfoByName(String firstname, String lastName) {
-        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
-        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+        String pathFile = safetyNetConfiguration.getPathFile();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
 
         List<PersonInfo> personInfoList = new ArrayList<>();
 
@@ -74,11 +77,11 @@ public class SafetyNetPersonService {
      * @return le nouvelle object de type listSafety
      */
     public ListSafety postNewPerson(Persons newPerson) {
-
+        String pathFile = safetyNetConfiguration.getPathFile();
         ListSafety listSafety = new ListSafety();
-        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
-        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
-        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(pathFile);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
         boolean verifPerson = true;
 
         for (Persons person : dataPersons) {
@@ -105,9 +108,10 @@ public class SafetyNetPersonService {
      * @return le nouvelle object de type listSafety
      */
     public ListSafety deletePerson(DeletePerson deletePerson) {
-        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
-        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
-        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+        String pathFile = safetyNetConfiguration.getPathFile();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(pathFile);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
         List<Persons> personsList = new ArrayList<>();
         ListSafety listSafety = new ListSafety();
 
@@ -129,9 +133,10 @@ public class SafetyNetPersonService {
      * @return le nouvelle object de type listSafety
      */
     public ListSafety putPerson(Persons putPerson) {
-        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(PATH_FILE);
-        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(PATH_FILE);
-        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(PATH_FILE);
+        String pathFile = safetyNetConfiguration.getPathFile();
+        List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
+        List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(pathFile);
+        List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
         ListSafety listSafety = new ListSafety();
 
         for (Persons person : dataPersons) {

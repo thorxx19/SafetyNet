@@ -1,751 +1,1417 @@
 
-24/07/2022 21:07:07 INFO org.springframework.boot.StartupInfoLogger
- Starting MedicalRecordIT using Java 11.0.16 on MSI with PID 14896 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+26/07/2022 11:07:46 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ RequÃªte reÃ§ue -> getFireStationNumber :5
 
-24/07/2022 21:07:07 INFO org.springframework.boot.SpringApplication
- No active profile set, falling back to 1 default profile: "default"
+26/07/2022 11:07:46 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retournÃ© -> getFireStationNumber :[]
 
-24/07/2022 21:07:12 INFO org.springframework.boot.StartupInfoLogger
- Started MedicalRecordIT in 5.117 seconds (JVM running for 7.346)
+26/07/2022 11:07:56 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ RequÃªte reÃ§ue -> getFireStationNumber :4
 
-24/07/2022 21:07:13 ERROR com.safety.safetyNet.service.MedicalRecordIT
- error :
-org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.util.ConcurrentModificationException
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
-	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:199)
-	at com.safety.safetyNet.service.MedicalRecordIT.testMedicalRecord3(MedicalRecordIT.java:119)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
-	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
-Caused by: java.util.ConcurrentModificationException: null
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
-	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	... 90 common frames omitted
+26/07/2022 11:07:56 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retournÃ© -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=Lily, lastName=Cooper, address=489 Manchester St, phone=841-874-9845), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888)], countPeople=CountPeople(children=0, adult=4))]
 
-24/07/2022 21:07:55 INFO org.springframework.boot.StartupInfoLogger
- Starting MedicalRecordIT using Java 11.0.16 on MSI with PID 9612 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+26/07/2022 14:07:22 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter
+ 
 
-24/07/2022 21:07:55 INFO org.springframework.boot.SpringApplication
- No active profile set, falling back to 1 default profile: "default"
+***************************
+APPLICATION FAILED TO START
+***************************
 
-24/07/2022 21:07:59 INFO org.springframework.boot.StartupInfoLogger
- Started MedicalRecordIT in 4.777 seconds (JVM running for 6.599)
+Description:
 
-24/07/2022 21:07:00 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=04/06/1985, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+Configuration property name 'SafetyNet' is not valid:
 
-24/07/2022 21:07:00 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+    Invalid characters: 'S', 'N'
+    Bean: safetyNetConfiguration
+    Reason: Canonical names should be kebab-case ('-' separated), lowercase alpha-numeric characters and must start with a letter
 
-24/07/2022 21:07:00 ERROR com.safety.safetyNet.service.MedicalRecordIT
- error :
-org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.util.ConcurrentModificationException
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:72)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:167)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:134)
-	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:199)
-	at com.safety.safetyNet.service.MedicalRecordIT.testMedicalRecord3(MedicalRecordIT.java:119)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
-	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
-	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:71)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
-	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
-	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
-	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
-	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
-Caused by: java.util.ConcurrentModificationException: null
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
-	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	... 90 common frames omitted
+Action:
 
-24/07/2022 21:07:20 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03-06-2010, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+Modify 'SafetyNet' so that it conforms to the canonical names requirements.
 
-24/07/2022 21:07:48 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
 
-24/07/2022 21:07:57 ERROR org.apache.juli.logging.DirectJDKLog
- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
-java.util.ConcurrentModificationException: null
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
-	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+26/07/2022 14:07:21 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter
+ 
 
-24/07/2022 22:07:56 ERROR org.apache.juli.logging.DirectJDKLog
- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
-java.util.ConcurrentModificationException: null
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
-	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+***************************
+APPLICATION FAILED TO START
+***************************
 
-24/07/2022 22:07:18 ERROR org.apache.juli.logging.DirectJDKLog
- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
-java.util.ConcurrentModificationException: null
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
-	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+Description:
 
-24/07/2022 22:07:42 ERROR org.apache.juli.logging.DirectJDKLog
- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
-java.util.ConcurrentModificationException: null
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
-	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+Web server failed to start. Port 9000 was already in use.
 
-24/07/2022 22:07:02 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03-06-2010, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+Action:
 
-24/07/2022 22:07:14 ERROR org.apache.juli.logging.DirectJDKLog
- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
-java.util.ConcurrentModificationException: null
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:95)
-	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:829)
+Identify and stop the process that's listening on port 9000 or configure this application to listen on another port.
 
-24/07/2022 22:07:32 ERROR org.apache.juli.logging.DirectJDKLog
- Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.util.ConcurrentModificationException] with root cause
-java.util.ConcurrentModificationException: null
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1661)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:497)
-	at com.safety.safetyNet.service.SafetyNetMedicalRecordService.deleteMedicalRecord(SafetyNetMedicalRecordService.java:97)
-	at com.safety.safetyNet.controller.SafetyNetMedicalRecordController.deleteMedicalRecord(SafetyNetMedicalRecordController.java:55)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:931)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:687)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:829)
 
-24/07/2022 22:07:51 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+26/07/2022 14:07:55 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter
+ 
 
-24/07/2022 22:07:46 INFO org.springframework.boot.StartupInfoLogger
- Starting MedicalRecordIT using Java 11.0.16 on MSI with PID 15976 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+***************************
+APPLICATION FAILED TO START
+***************************
 
-24/07/2022 22:07:46 INFO org.springframework.boot.SpringApplication
- No active profile set, falling back to 1 default profile: "default"
+Description:
 
-24/07/2022 22:07:50 INFO org.springframework.boot.StartupInfoLogger
- Started MedicalRecordIT in 4.262 seconds (JVM running for 6.166)
+Web server failed to start. Port 9000 was already in use.
 
-24/07/2022 22:07:51 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+Action:
 
-24/07/2022 22:07:52 INFO org.springframework.boot.StartupInfoLogger
- Starting MedicalRecordIT using Java 11.0.16 on MSI with PID 19892 (started by froid in C:\Users\froid\OneDrive\Bureau\OpenClassRooms\safetyNet)
+Identify and stop the process that's listening on port 9000 or configure this application to listen on another port.
 
-24/07/2022 22:07:52 INFO org.springframework.boot.SpringApplication
- No active profile set, falling back to 1 default profile: "default"
 
-24/07/2022 22:07:56 INFO org.springframework.boot.StartupInfoLogger
- Started MedicalRecordIT in 4.0 seconds (JVM running for 5.949)
+26/07/2022 14:07:44 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter
+ 
 
-24/07/2022 22:07:57 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+***************************
+APPLICATION FAILED TO START
+***************************
 
-24/07/2022 22:07:02 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+Description:
+
+Web server failed to start. Port 9000 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9000 or configure this application to listen on another port.
+
+
+26/07/2022 14:07:51 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter
+ 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9000 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9000 or configure this application to listen on another port.
+
+
+26/07/2022 14:07:42 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter
+ 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9000 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9000 or configure this application to listen on another port.
+
+
+26/07/2022 14:07:51 INFO com.safety.safetyNet.controller.SafetyNetPersonController
  RequÃªte reÃ§ue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
 
-24/07/2022 22:07:23 INFO com.safety.safetyNet.controller.SafetyNetPersonController
- RequÃªte reÃ§ue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=Brive la gaillarde, zip=19100, phone=841-874-5584, email=toto@orange.fr)
-
-24/07/2022 22:07:29 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+26/07/2022 14:07:04 INFO com.safety.safetyNet.controller.SafetyNetPersonController
  RequÃªte reÃ§ue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
 
-24/07/2022 22:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- RequÃªte reÃ§ue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+26/07/2022 14:07:50 INFO org.springframework.boot.StartupInfoLogger
+ Starting PersonsIT using Java 11.0.16 on PP-00228 with PID 8048 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
 
-24/07/2022 22:07:50 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+26/07/2022 14:07:50 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
 
-24/07/2022 22:07:08 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- RequÃªte reÃ§ue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+26/07/2022 14:07:53 INFO org.springframework.boot.StartupInfoLogger
+ Started PersonsIT in 3.729 seconds (JVM running for 5.536)
 
-24/07/2022 22:07:15 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
-
-24/07/2022 22:07:14 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+26/07/2022 14:07:54 INFO com.safety.safetyNet.controller.SafetyNetPersonController
  RequÃªte reÃ§ue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
 
-24/07/2022 22:07:24 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+26/07/2022 14:07:42 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetChildrenControllerTest using Java 11.0.16 on PP-00228 with PID 16796 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
 
-24/07/2022 22:07:37 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- RequÃªte reÃ§ue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+26/07/2022 14:07:42 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
 
-24/07/2022 22:07:46 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+26/07/2022 14:07:45 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetChildrenControllerTest in 4.161 seconds (JVM running for 6.843)
 
-24/07/2022 22:07:56 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- RequÃªte reÃ§ue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+26/07/2022 14:07:45 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
 
-24/07/2022 22:07:01 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
- RequÃªte reÃ§ue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=7)
+26/07/2022 14:07:45 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
 
-24/07/2022 22:07:11 INFO com.safety.safetyNet.controller.SafetyNetPersonController
- RequÃªte reÃ§ue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=Brive la gaillarde, zip=19100, phone=841-874-5584, email=toto@orange.fr)
+26/07/2022 14:07:45 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetFireStationControllerTest using Java 11.0.16 on PP-00228 with PID 16796 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
 
-24/07/2022 22:07:16 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03-06-2010, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+26/07/2022 14:07:45 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
 
-24/07/2022 22:07:24 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+26/07/2022 14:07:46 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetFireStationControllerTest in 0.876 seconds (JVM running for 8.023)
 
-24/07/2022 22:07:29 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
- RequÃªte DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+26/07/2022 14:07:46 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+26/07/2022 14:07:46 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+26/07/2022 14:07:46 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[]
+
+26/07/2022 14:07:46 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :3
+
+26/07/2022 14:07:46 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[]
+
+26/07/2022 14:07:46 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+26/07/2022 14:07:46 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+26/07/2022 14:07:46 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+26/07/2022 14:07:46 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+26/07/2022 14:07:46 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMailControllerTest using Java 11.0.16 on PP-00228 with PID 16796 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:46 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:47 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMailControllerTest in 0.678 seconds (JVM running for 8.962)
+
+26/07/2022 14:07:47 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+26/07/2022 14:07:47 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+26/07/2022 14:07:47 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMedicalRecordControllerTest using Java 11.0.16 on PP-00228 with PID 16796 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:47 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:48 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMedicalRecordControllerTest in 0.615 seconds (JVM running for 9.625)
+
+26/07/2022 14:07:48 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+26/07/2022 14:07:48 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03/06/1984, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+26/07/2022 14:07:48 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:48 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPersonControllerTest using Java 11.0.16 on PP-00228 with PID 16796 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:48 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:48 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPersonControllerTest in 0.567 seconds (JVM running for 10.259)
+
+26/07/2022 14:07:48 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:48 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:48 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:48 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPhoneControllerTest using Java 11.0.16 on PP-00228 with PID 16796 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:48 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:49 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPhoneControllerTest in 0.584 seconds (JVM running for 10.911)
+
+26/07/2022 14:07:49 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+26/07/2022 14:07:49 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+26/07/2022 14:07:51 ERROR com.safety.safetyNet.repository.SafetyNetReadFileRepository
+ Error :
+java.io.FileNotFoundException: src\test\java\com\safety\safetyNet\config\dataTe.json (Le chemin d’accès spécifié est introuvable)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:1029)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3494)
+	at com.safety.safetyNet.repository.SafetyNetReadFileRepository.readfile(SafetyNetReadFileRepository.java:24)
+	at com.safety.safetyNet.repository.SafetyNetReadFileRepositoryTest.lambda$exceptionReadFile$0(SafetyNetReadFileRepositoryTest.java:26)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3082)
+	at com.safety.safetyNet.repository.SafetyNetReadFileRepositoryTest.exceptionReadFile(SafetyNetReadFileRepositoryTest.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+26/07/2022 14:07:21 INFO org.springframework.boot.StartupInfoLogger
+ Starting ChildAlertIT using Java 11.0.16 on PP-00228 with PID 16004 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:21 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:26 INFO org.springframework.boot.StartupInfoLogger
+ Started ChildAlertIT in 6.939 seconds (JVM running for 10.299)
+
+26/07/2022 14:07:27 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver 
+
+26/07/2022 14:07:27 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[PersonsByAddress(siblings=Siblings(children=[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]), adult=[PersonsAdult(firstName=John, lastName=Boyd), PersonsAdult(firstName=Jacob, lastName=Boyd), PersonsAdult(firstName=Felicia, lastName=Boyd)])]
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[aly@imail.com, bstel@email.com, clivfd@ymail.com, drk@email.com, gramps@email.com, jaboyd@email.com, jpeter@email.com, lily@email.com, reg@email.com, soph@email.com, ssanw@email.com, tcoop@ymail.com, tenz@email.com, ward@email.com, zarc@email.com]
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culve
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=36, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))]
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[]
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=John, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Jacob, lastName=Boyd, address=1509 Culver St, phone=841-874-6513), PersonsStation(firstName=Tenley, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Roger, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Felicia, lastName=Boyd, address=1509 Culver St, phone=841-874-6544), PersonsStation(firstName=Tessa, lastName=Carman, address=834 Binoc Ave, phone=841-874-6512), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741)], countPeople=CountPeople(children=3, adult=10))]
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :1
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Duncan, age=22, email=jaboyd@email.com, medications=[], allergies=[shellfish])], address=644 Gershwin Cir), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Walker, age=41, email=reg@email.com, medications=[thradox:700mg], allergies=[illisoxian]), PersonsFireStation(lastName=Peters, age=40, email=jpeter@email.com, medications=[], allergies=[])], address=908 73rd St), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Stelzer, age=47, email=bstel@email.com, medications=[ibupurin:200mg, hydrapermazol:400mg], allergies=[nillacilan]), PersonsFireStation(lastName=Stelzer, age=41, email=ssanw@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Stelzer, age=8, email=bstel@email.com, medications=[noxidian:100mg, pharmacol:2500mg], allergies=[])], address=947 E. Rose Dr)]
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=04/06/1985, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonanathan,Nom:Marrack
+
+26/07/2022 14:07:28 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[PersonInfo(lastName=Marrack, address=29 15th St, age=33, email=drk@email.com, medications=[], allergies=[])]
+
+26/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonan,Nom:Marrac
+
+26/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[]
+
+26/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=521 chemin d'enbiane, city=Figeac, zip=46100, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :5
+
+26/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+26/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+26/07/2022 14:07:29 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[841-874-6874, 841-874-8888, 841-874-9845, 841-874-9888]
+
+26/07/2022 14:07:34 INFO org.springframework.boot.StartupInfoLogger
+ Starting ChildAlertIT using Java 11.0.16 on PP-00228 with PID 10320 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:34 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:39 INFO org.springframework.boot.StartupInfoLogger
+ Started ChildAlertIT in 5.573 seconds (JVM running for 8.351)
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver 
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[PersonsByAddress(siblings=Siblings(children=[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]), adult=[PersonsAdult(firstName=John, lastName=Boyd), PersonsAdult(firstName=Jacob, lastName=Boyd), PersonsAdult(firstName=Felicia, lastName=Boyd)])]
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[aly@imail.com, bstel@email.com, clivfd@ymail.com, drk@email.com, gramps@email.com, jaboyd@email.com, jpeter@email.com, lily@email.com, reg@email.com, soph@email.com, ssanw@email.com, tcoop@ymail.com, tenz@email.com, ward@email.com, zarc@email.com]
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culve
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=36, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))]
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[]
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+26/07/2022 14:07:40 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=John, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Jacob, lastName=Boyd, address=1509 Culver St, phone=841-874-6513), PersonsStation(firstName=Tenley, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Roger, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Felicia, lastName=Boyd, address=1509 Culver St, phone=841-874-6544), PersonsStation(firstName=Tessa, lastName=Carman, address=834 Binoc Ave, phone=841-874-6512), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741)], countPeople=CountPeople(children=3, adult=10))]
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :1
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Duncan, age=22, email=jaboyd@email.com, medications=[], allergies=[shellfish])], address=644 Gershwin Cir), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Walker, age=41, email=reg@email.com, medications=[thradox:700mg], allergies=[illisoxian]), PersonsFireStation(lastName=Peters, age=40, email=jpeter@email.com, medications=[], allergies=[])], address=908 73rd St), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Stelzer, age=47, email=bstel@email.com, medications=[ibupurin:200mg, hydrapermazol:400mg], allergies=[nillacilan]), PersonsFireStation(lastName=Stelzer, age=41, email=ssanw@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Stelzer, age=8, email=bstel@email.com, medications=[noxidian:100mg, pharmacol:2500mg], allergies=[])], address=947 E. Rose Dr)]
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=04/06/1985, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonanathan,Nom:Marrack
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[PersonInfo(lastName=Marrack, address=29 15th St, age=33, email=drk@email.com, medications=[], allergies=[])]
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonan,Nom:Marrac
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[]
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=521 chemin d'enbiane, city=Figeac, zip=46100, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :5
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+26/07/2022 14:07:41 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[841-874-6874, 841-874-8888, 841-874-9845, 841-874-9888]
+
+26/07/2022 14:07:47 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetChildrenControllerTest using Java 11.0.16 on PP-00228 with PID 10100 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:47 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:50 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetChildrenControllerTest in 4.063 seconds (JVM running for 6.712)
+
+26/07/2022 14:07:50 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+26/07/2022 14:07:50 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+26/07/2022 14:07:50 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetFireStationControllerTest using Java 11.0.16 on PP-00228 with PID 10100 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:50 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:51 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetFireStationControllerTest in 1.261 seconds (JVM running for 8.25)
+
+26/07/2022 14:07:51 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+26/07/2022 14:07:51 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+26/07/2022 14:07:51 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[]
+
+26/07/2022 14:07:51 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :3
+
+26/07/2022 14:07:52 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[]
+
+26/07/2022 14:07:52 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+26/07/2022 14:07:52 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+26/07/2022 14:07:52 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+26/07/2022 14:07:52 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+26/07/2022 14:07:52 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMailControllerTest using Java 11.0.16 on PP-00228 with PID 10100 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:52 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:52 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMailControllerTest in 0.777 seconds (JVM running for 9.337)
+
+26/07/2022 14:07:52 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+26/07/2022 14:07:52 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+26/07/2022 14:07:52 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMedicalRecordControllerTest using Java 11.0.16 on PP-00228 with PID 10100 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:52 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:53 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMedicalRecordControllerTest in 0.588 seconds (JVM running for 9.968)
+
+26/07/2022 14:07:53 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+26/07/2022 14:07:53 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03/06/1984, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+26/07/2022 14:07:53 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:53 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPersonControllerTest using Java 11.0.16 on PP-00228 with PID 10100 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:53 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:54 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPersonControllerTest in 0.563 seconds (JVM running for 10.603)
+
+26/07/2022 14:07:54 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:54 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:54 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:54 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPhoneControllerTest using Java 11.0.16 on PP-00228 with PID 10100 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:54 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:54 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPhoneControllerTest in 0.493 seconds (JVM running for 11.169)
+
+26/07/2022 14:07:54 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+26/07/2022 14:07:54 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+26/07/2022 14:07:56 ERROR com.safety.safetyNet.repository.SafetyNetReadFileRepository
+ Error :
+java.io.FileNotFoundException: src\test\java\com\safety\safetyNet\config\dataTe.json (Le chemin d’accès spécifié est introuvable)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:1029)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3494)
+	at com.safety.safetyNet.repository.SafetyNetReadFileRepository.readfile(SafetyNetReadFileRepository.java:24)
+	at com.safety.safetyNet.repository.SafetyNetReadFileRepositoryTest.lambda$exceptionReadFile$0(SafetyNetReadFileRepositoryTest.java:26)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3082)
+	at com.safety.safetyNet.repository.SafetyNetReadFileRepositoryTest.exceptionReadFile(SafetyNetReadFileRepositoryTest.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+26/07/2022 14:07:19 INFO org.springframework.boot.StartupInfoLogger
+ Starting ChildAlertIT using Java 11.0.16 on PP-00228 with PID 13572 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:19 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:24 INFO org.springframework.boot.StartupInfoLogger
+ Started ChildAlertIT in 5.614 seconds (JVM running for 8.359)
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver 
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[PersonsByAddress(siblings=Siblings(children=[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]), adult=[PersonsAdult(firstName=John, lastName=Boyd), PersonsAdult(firstName=Jacob, lastName=Boyd), PersonsAdult(firstName=Felicia, lastName=Boyd)])]
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[aly@imail.com, bstel@email.com, clivfd@ymail.com, drk@email.com, gramps@email.com, jaboyd@email.com, jpeter@email.com, lily@email.com, reg@email.com, soph@email.com, ssanw@email.com, tcoop@ymail.com, tenz@email.com, ward@email.com, zarc@email.com]
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culve
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=36, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))]
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[]
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=John, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Jacob, lastName=Boyd, address=1509 Culver St, phone=841-874-6513), PersonsStation(firstName=Tenley, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Roger, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Felicia, lastName=Boyd, address=1509 Culver St, phone=841-874-6544), PersonsStation(firstName=Tessa, lastName=Carman, address=834 Binoc Ave, phone=841-874-6512), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741)], countPeople=CountPeople(children=3, adult=10))]
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :1
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Duncan, age=22, email=jaboyd@email.com, medications=[], allergies=[shellfish])], address=644 Gershwin Cir), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Walker, age=41, email=reg@email.com, medications=[thradox:700mg], allergies=[illisoxian]), PersonsFireStation(lastName=Peters, age=40, email=jpeter@email.com, medications=[], allergies=[])], address=908 73rd St), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Stelzer, age=47, email=bstel@email.com, medications=[ibupurin:200mg, hydrapermazol:400mg], allergies=[nillacilan]), PersonsFireStation(lastName=Stelzer, age=41, email=ssanw@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Stelzer, age=8, email=bstel@email.com, medications=[noxidian:100mg, pharmacol:2500mg], allergies=[])], address=947 E. Rose Dr)]
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=04/06/1985, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonanathan,Nom:Marrack
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[PersonInfo(lastName=Marrack, address=29 15th St, age=33, email=drk@email.com, medications=[], allergies=[])]
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonan,Nom:Marrac
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[]
+
+26/07/2022 14:07:25 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:26 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=521 chemin d'enbiane, city=Figeac, zip=46100, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:26 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:26 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :5
+
+26/07/2022 14:07:26 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+26/07/2022 14:07:26 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+26/07/2022 14:07:26 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[841-874-6874, 841-874-8888, 841-874-9845, 841-874-9888]
+
+26/07/2022 14:07:30 INFO org.springframework.boot.StartupInfoLogger
+ Starting ChildAlertIT using Java 11.0.16 on PP-00228 with PID 15368 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:30 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:34 INFO org.springframework.boot.StartupInfoLogger
+ Started ChildAlertIT in 4.898 seconds (JVM running for 7.182)
+
+26/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver 
+
+26/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[PersonsByAddress(siblings=Siblings(children=[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]), adult=[PersonsAdult(firstName=John, lastName=Boyd), PersonsAdult(firstName=Jacob, lastName=Boyd), PersonsAdult(firstName=Felicia, lastName=Boyd)])]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[aly@imail.com, bstel@email.com, clivfd@ymail.com, drk@email.com, gramps@email.com, jaboyd@email.com, jpeter@email.com, lily@email.com, reg@email.com, soph@email.com, ssanw@email.com, tcoop@ymail.com, tenz@email.com, ward@email.com, zarc@email.com]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culve
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=36, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=John, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Jacob, lastName=Boyd, address=1509 Culver St, phone=841-874-6513), PersonsStation(firstName=Tenley, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Roger, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Felicia, lastName=Boyd, address=1509 Culver St, phone=841-874-6544), PersonsStation(firstName=Tessa, lastName=Carman, address=834 Binoc Ave, phone=841-874-6512), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741)], countPeople=CountPeople(children=3, adult=10))]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :1
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Duncan, age=22, email=jaboyd@email.com, medications=[], allergies=[shellfish])], address=644 Gershwin Cir), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Walker, age=41, email=reg@email.com, medications=[thradox:700mg], allergies=[illisoxian]), PersonsFireStation(lastName=Peters, age=40, email=jpeter@email.com, medications=[], allergies=[])], address=908 73rd St), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Stelzer, age=47, email=bstel@email.com, medications=[ibupurin:200mg, hydrapermazol:400mg], allergies=[nillacilan]), PersonsFireStation(lastName=Stelzer, age=41, email=ssanw@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Stelzer, age=8, email=bstel@email.com, medications=[noxidian:100mg, pharmacol:2500mg], allergies=[])], address=947 E. Rose Dr)]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=04/06/1985, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonanathan,Nom:Marrack
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[PersonInfo(lastName=Marrack, address=29 15th St, age=33, email=drk@email.com, medications=[], allergies=[])]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonan,Nom:Marrac
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=521 chemin d'enbiane, city=Figeac, zip=46100, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :5
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[841-874-6874, 841-874-8888, 841-874-9845, 841-874-9888]
+
+26/07/2022 14:07:32 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetChildrenControllerTest using Java 11.0.16 on PP-00228 with PID 9320 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:32 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:34 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetChildrenControllerTest in 3.495 seconds (JVM running for 5.698)
+
+26/07/2022 14:07:34 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+26/07/2022 14:07:34 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+26/07/2022 14:07:35 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetFireStationControllerTest using Java 11.0.16 on PP-00228 with PID 9320 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:35 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:35 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetFireStationControllerTest in 0.721 seconds (JVM running for 6.655)
+
+26/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+26/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+26/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[]
+
+26/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :3
+
+26/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[]
+
+26/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+26/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+26/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+26/07/2022 14:07:35 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+26/07/2022 14:07:35 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMailControllerTest using Java 11.0.16 on PP-00228 with PID 9320 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:35 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:36 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMailControllerTest in 0.543 seconds (JVM running for 7.402)
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+26/07/2022 14:07:36 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetMedicalRecordControllerTest using Java 11.0.16 on PP-00228 with PID 9320 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:36 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:36 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetMedicalRecordControllerTest in 0.506 seconds (JVM running for 7.943)
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=03/06/1984, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+26/07/2022 14:07:36 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:37 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPersonControllerTest using Java 11.0.16 on PP-00228 with PID 9320 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:37 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:37 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPersonControllerTest in 0.473 seconds (JVM running for 8.474)
+
+26/07/2022 14:07:37 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:37 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:37 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:37 INFO org.springframework.boot.StartupInfoLogger
+ Starting SafetyNetPhoneControllerTest using Java 11.0.16 on PP-00228 with PID 9320 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:37 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:38 INFO org.springframework.boot.StartupInfoLogger
+ Started SafetyNetPhoneControllerTest in 0.485 seconds (JVM running for 9.028)
+
+26/07/2022 14:07:38 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+26/07/2022 14:07:38 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+26/07/2022 14:07:40 ERROR com.safety.safetyNet.repository.SafetyNetReadFileRepository
+ Error :
+java.io.FileNotFoundException: src\test\java\com\safety\safetyNet\config\dataTe.json (Le chemin d’accès spécifié est introuvable)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at com.fasterxml.jackson.core.JsonFactory.createParser(JsonFactory.java:1029)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3494)
+	at com.safety.safetyNet.repository.SafetyNetReadFileRepository.readfile(SafetyNetReadFileRepository.java:24)
+	at com.safety.safetyNet.repository.SafetyNetReadFileRepositoryTest.lambda$exceptionReadFile$0(SafetyNetReadFileRepositoryTest.java:26)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:55)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:37)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3082)
+	at com.safety.safetyNet.repository.SafetyNetReadFileRepositoryTest.exceptionReadFile(SafetyNetReadFileRepositoryTest.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:725)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:149)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:140)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:84)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(ExecutableInvoker.java:115)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.lambda$invoke$0(ExecutableInvoker.java:105)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:104)
+	at org.junit.jupiter.engine.execution.ExecutableInvoker.invoke(ExecutableInvoker.java:98)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:214)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:210)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:66)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+
+26/07/2022 14:07:58 INFO org.springframework.boot.StartupInfoLogger
+ Starting ChildAlertIT using Java 11.0.16 on PP-00228 with PID 14396 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:58 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:02 INFO org.springframework.boot.StartupInfoLogger
+ Started ChildAlertIT in 4.608 seconds (JVM running for 6.762)
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver 
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[PersonsByAddress(siblings=Siblings(children=[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]), adult=[PersonsAdult(firstName=John, lastName=Boyd), PersonsAdult(firstName=Jacob, lastName=Boyd), PersonsAdult(firstName=Felicia, lastName=Boyd)])]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[aly@imail.com, bstel@email.com, clivfd@ymail.com, drk@email.com, gramps@email.com, jaboyd@email.com, jpeter@email.com, lily@email.com, reg@email.com, soph@email.com, ssanw@email.com, tcoop@ymail.com, tenz@email.com, ward@email.com, zarc@email.com]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culve
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=36, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=John, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Jacob, lastName=Boyd, address=1509 Culver St, phone=841-874-6513), PersonsStation(firstName=Tenley, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Roger, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Felicia, lastName=Boyd, address=1509 Culver St, phone=841-874-6544), PersonsStation(firstName=Tessa, lastName=Carman, address=834 Binoc Ave, phone=841-874-6512), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741)], countPeople=CountPeople(children=3, adult=10))]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :1
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Duncan, age=22, email=jaboyd@email.com, medications=[], allergies=[shellfish])], address=644 Gershwin Cir), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Walker, age=41, email=reg@email.com, medications=[thradox:700mg], allergies=[illisoxian]), PersonsFireStation(lastName=Peters, age=40, email=jpeter@email.com, medications=[], allergies=[])], address=908 73rd St), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Stelzer, age=47, email=bstel@email.com, medications=[ibupurin:200mg, hydrapermazol:400mg], allergies=[nillacilan]), PersonsFireStation(lastName=Stelzer, age=41, email=ssanw@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Stelzer, age=8, email=bstel@email.com, medications=[noxidian:100mg, pharmacol:2500mg], allergies=[])], address=947 E. Rose Dr)]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :5
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=04/06/1985, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonanathan,Nom:Marrack
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[PersonInfo(lastName=Marrack, address=29 15th St, age=33, email=drk@email.com, medications=[], allergies=[])]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonan,Nom:Marrac
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[]
+
+26/07/2022 14:07:03 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:04 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=521 chemin d'enbiane, city=Figeac, zip=46100, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:04 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:04 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :5
+
+26/07/2022 14:07:04 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+26/07/2022 14:07:04 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+26/07/2022 14:07:04 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[841-874-6874, 841-874-8888, 841-874-9845, 841-874-9888]
+
+26/07/2022 14:07:08 INFO org.springframework.boot.StartupInfoLogger
+ Starting ChildAlertIT using Java 11.0.16 on PP-00228 with PID 10320 (started by o.froidefond in C:\Users\o.froidefond\Desktop\Openclassrooms\SafetyNet)
+
+26/07/2022 14:07:08 INFO org.springframework.boot.SpringApplication
+ The following 1 profile is active: "test"
+
+26/07/2022 14:07:12 INFO org.springframework.boot.StartupInfoLogger
+ Started ChildAlertIT in 4.611 seconds (JVM running for 6.796)
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver 
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[]
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Requête reçue -> getAddressChild :1509 Culver St
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetChildrenController
+ Objet retourné -> getAddressChild :[PersonsByAddress(siblings=Siblings(children=[PersonsChildren(firstName=Tenley, lastName=Boyd, age=9), PersonsChildren(firstName=Roger, lastName=Boyd, age=5)]), adult=[PersonsAdult(firstName=John, lastName=Boyd), PersonsAdult(firstName=Jacob, lastName=Boyd), PersonsAdult(firstName=Felicia, lastName=Boyd)])]
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culver
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[aly@imail.com, bstel@email.com, clivfd@ymail.com, drk@email.com, gramps@email.com, jaboyd@email.com, jpeter@email.com, lily@email.com, reg@email.com, soph@email.com, ssanw@email.com, tcoop@ymail.com, tenz@email.com, ward@email.com, zarc@email.com]
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Requête reçue -> getMailAllPersons :Culve
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetMailController
+ Objet retourné -> getMailAllPersons :[]
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver St
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[ResponsePersonsByAddress(personsMedicals=[PersonsMedical(lastName=Boyd, phone=841-874-6512, age=38, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan]), PersonsMedical(lastName=Boyd, phone=841-874-6513, age=33, medications=[pharmacol:5000mg, terazine:10mg, noznazol:250mg], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=9, medications=[], allergies=[peanut]), PersonsMedical(lastName=Boyd, phone=841-874-6512, age=5, medications=[], allergies=[]), PersonsMedical(lastName=Boyd, phone=841-874-6544, age=36, medications=[tetracyclaz:650mg], allergies=[xilliathal])], station=Station(station=3))]
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHabitantAtThisAdrdress :1509 Culver 
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHabitantAtThisAdrdress :[]
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :5
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[]
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> postFireStation :FireStations(address=chemin d'enbiane, station=2)
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> putFireStation :FireStations(address=chemin d'enbiane, station=5)
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> deleteFireStation :FireStations(address=chemin d'enbiane, station=)
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getFireStationNumber :3
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getFireStationNumber :[ResponseFireStationByNumber(personsStationList=[PersonsStation(firstName=John, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Jacob, lastName=Boyd, address=1509 Culver St, phone=841-874-6513), PersonsStation(firstName=Tenley, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Roger, lastName=Boyd, address=1509 Culver St, phone=841-874-6512), PersonsStation(firstName=Felicia, lastName=Boyd, address=1509 Culver St, phone=841-874-6544), PersonsStation(firstName=Tessa, lastName=Carman, address=834 Binoc Ave, phone=841-874-6512), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741), PersonsStation(firstName=Tony, lastName=Cooper, address=112 Steppes Pl, phone=841-874-6874), PersonsStation(firstName=Ron, lastName=Peters, address=112 Steppes Pl, phone=841-874-8888), PersonsStation(firstName=Allison, lastName=Boyd, address=112 Steppes Pl, phone=841-874-9888), PersonsStation(firstName=Foster, lastName=Shepard, address=748 Townings Dr, phone=841-874-6544), PersonsStation(firstName=Clive, lastName=Ferguson, address=748 Townings Dr, phone=841-874-6741)], countPeople=CountPeople(children=3, adult=10))]
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :1
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Duncan, age=22, email=jaboyd@email.com, medications=[], allergies=[shellfish])], address=644 Gershwin Cir), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Walker, age=41, email=reg@email.com, medications=[thradox:700mg], allergies=[illisoxian]), PersonsFireStation(lastName=Peters, age=40, email=jpeter@email.com, medications=[], allergies=[])], address=908 73rd St), ResponsePersonsByStationNumber(personsByFireStations=[PersonsFireStation(lastName=Stelzer, age=47, email=bstel@email.com, medications=[ibupurin:200mg, hydrapermazol:400mg], allergies=[nillacilan]), PersonsFireStation(lastName=Stelzer, age=41, email=ssanw@email.com, medications=[], allergies=[]), PersonsFireStation(lastName=Stelzer, age=8, email=bstel@email.com, medications=[noxidian:100mg, pharmacol:2500mg], allergies=[])], address=947 E. Rose Dr)]
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Requête reçue -> getHomesAtThisStationNumber :5
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetFireStationController
+ Objet retourné -> getHomesAtThisStationNumber :[]
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête POST postMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=04/06/1985, medications=[aznol:350mg, hydrapermazol:100mg], allergies=[nillacilan])
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête PUT putMedicalRecord : MedicalRecords(firstName=Olivier, lastName=Froidefond, birthdate=20/12/1981, medications=[aznol:350mg], allergies=[nillacilan])
+
+26/07/2022 14:07:13 INFO com.safety.safetyNet.controller.SafetyNetMedicalRecordController
+ Requête DELETE deleteMedicalRecord : DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonanathan,Nom:Marrack
+
+26/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[PersonInfo(lastName=Marrack, address=29 15th St, age=33, email=drk@email.com, medications=[], allergies=[])]
+
+26/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:Jonan,Nom:Marrac
+
+26/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Objet retourné -> getMedicalRecordsOfThisPerson :[]
+
+26/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> postNewPerson :Persons(firstName=Olivier, lastName=Froidefond, address=6 rue jacques prevert, city=culver, zip=97451, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> putPerson :Persons(firstName=Olivier, lastName=Froidefond, address=521 chemin d'enbiane, city=Figeac, zip=46100, phone=841-874-5584, email=toto@toto.fr)
+
+26/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetPersonController
+ Requête reçue -> deletePerson :DeletePerson(firstName=Olivier, lastName=Froidefond)
+
+26/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :5
+
+26/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[]
+
+26/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Requête reçue -> getNumberPhone :4
+
+26/07/2022 14:07:14 INFO com.safety.safetyNet.controller.SafetyNetPhoneController
+ Objet retourné -> getNumberPhone :[841-874-6874, 841-874-8888, 841-874-9845, 841-874-9888]

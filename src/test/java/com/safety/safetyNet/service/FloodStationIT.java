@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -21,6 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @Slf4j
+@ActiveProfiles("test")
 public class FloodStationIT {
     @Autowired
     private MockMvc mockMvc;
@@ -37,7 +39,6 @@ public class FloodStationIT {
     }
 
     @Test
-    @Disabled
     @DisplayName("test le end point /flood/stations?stations=5 et vérifie le résultat retourné soit vide.")
     public void testGetFloodStationEmpty() {
         try {
