@@ -42,7 +42,7 @@ public class FireIT {
     public void testGetFireEmpty() {
         try {
             mockMvc.perform(get("/fire?address=1509 Culver ")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$", Matchers.empty()));
+                    .is4xxClientError()).andExpect(jsonPath("$", Matchers.empty()));
         } catch (Exception e) {
             log.error("error :", e);
         }

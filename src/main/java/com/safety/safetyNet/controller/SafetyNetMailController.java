@@ -4,6 +4,8 @@ package com.safety.safetyNet.controller;
 import com.safety.safetyNet.service.SafetyNetMailService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,10 +29,14 @@ public class SafetyNetMailController {
      * @return les mail des habitants
      */
     @GetMapping("/communityEmail")
-    public TreeSet<String> getAllMailByCity(@RequestParam String city) {
+    public ResponseEntity<?> getAllMailByCity(@RequestParam String city) {
         TreeSet<String> listEmail = safetyNetMailService.getMailByCity(city);
         log.info("Requête reçue -> getMailAllPersons :{}", city);
         log.info("Objet retourné -> getMailAllPersons :{}", listEmail);
-        return listEmail;
+        if (listEmail.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(listEmail);
+        } else {
+            return ResponseEntity.status(HttpStatus.OK).body(listEmail);
+        }
     }
 }

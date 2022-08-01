@@ -4,6 +4,8 @@ package com.safety.safetyNet.controller;
 import com.safety.safetyNet.service.SafetyNetPhoneService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,10 +28,14 @@ public class SafetyNetPhoneController {
      * @return liste de n° de tel des résident
      */
     @GetMapping("/phoneAlert")
-    public TreeSet<String> getNumberByPhone(@RequestParam int firestation) {
+    public ResponseEntity<?> getNumberByPhone(@RequestParam int firestation) {
         TreeSet<String> phone = safetyNetPhoneService.getNumberPhoneByFireStation(firestation);
         log.info("Requête reçue -> getNumberPhone :{}", firestation);
         log.info("Objet retourné -> getNumberPhone :{}", phone);
-        return phone;
+        if (phone.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(phone);
+        } else {
+            return ResponseEntity.status(HttpStatus.OK).body(phone);
+        }
     }
 }

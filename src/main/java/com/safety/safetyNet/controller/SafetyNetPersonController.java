@@ -8,7 +8,7 @@ import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetPersonService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -39,11 +39,15 @@ public class SafetyNetPersonController {
      * @return la fiche de la personne compléte
      */
     @GetMapping("/personInfo")
-    public List<PersonInfo> getPatientCardByName(@RequestParam String firstName, String lastName) {
+    public ResponseEntity<?> getPatientCardByName(@RequestParam String firstName, String lastName) {
         List<PersonInfo> persons = safetyNetPersonService.getPersonCardInfoByName(firstName, lastName);
         log.info("Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:{},Nom:{}", firstName, lastName);
         log.info("Objet retourné -> getMedicalRecordsOfThisPerson :{}", persons);
-        return persons;
+        if (persons.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(persons);
+        } else {
+            return ResponseEntity.status(HttpStatus.OK).body(persons);
+        }
     }
 
     /**

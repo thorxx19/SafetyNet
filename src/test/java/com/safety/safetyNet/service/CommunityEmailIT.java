@@ -42,7 +42,7 @@ public class CommunityEmailIT {
     public void testGetCommunityEmailEmpty() {
         try {
             mockMvc.perform(get("/communityEmail?city=Culve")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$", Matchers.empty()));
+                    .is4xxClientError()).andExpect(jsonPath("$", Matchers.empty()));
         } catch (Exception e) {
             log.error("error :", e);
         }

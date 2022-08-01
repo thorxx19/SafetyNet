@@ -43,7 +43,7 @@ public class PhoneAlertIT {
     public void testGetPhoneAlertEmpty() {
         try {
             mockMvc.perform(get("/phoneAlert?firestation=5")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$", Matchers.empty()));
+                    .is4xxClientError()).andExpect(jsonPath("$", Matchers.empty()));
         } catch (Exception e) {
             log.error("error :", e);
         }

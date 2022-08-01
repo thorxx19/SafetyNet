@@ -53,7 +53,7 @@ public class FireStationIT {
     public void testGetFireStationEmpty() {
         try {
             mockMvc.perform(get("/firestation?stationNumber=5")).andExpect(status()
-                            .isOk())
+                            .is4xxClientError())
                     .andExpect(jsonPath("$", Matchers.empty()));
         } catch (Exception e) {
             log.error("error :", e);

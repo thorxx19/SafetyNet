@@ -26,6 +26,10 @@ spring.main.banner-mode: off
 ---
 spring.config.activate.on-profile: test
 safetynet.pathFile: "src/test/java/com/safety/safetyNet/data/dataTest.json"
+logging:
+  path: logs
+  file:
+    name: safetyNetTest.log
 ---
 
 management.endpoints.web.exposure.include: "*"

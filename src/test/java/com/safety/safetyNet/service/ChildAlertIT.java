@@ -43,7 +43,7 @@ public class ChildAlertIT {
     public void getChildAlertEmpty() {
         try {
             mockMvc.perform(get("/childAlert?address=1509 Culver ")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$", Matchers.empty()));
+                    .is4xxClientError()).andExpect(jsonPath("$", Matchers.empty()));
         } catch (Exception e) {
             log.error("error :", e);
         }

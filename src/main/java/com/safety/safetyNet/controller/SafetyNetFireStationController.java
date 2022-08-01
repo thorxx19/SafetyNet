@@ -6,6 +6,7 @@ import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetFireStationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -36,11 +37,15 @@ public class SafetyNetFireStationController {
      * @return les habitants couverts par la station numéro
      */
     @GetMapping("/firestation")
-    public List<ResponseFireStationByNumber> getFireStationByNumber(@RequestParam int stationNumber) {
+    public ResponseEntity<?> getFireStationByNumber(@RequestParam int stationNumber) {
         List<ResponseFireStationByNumber> persons = safetyNetFireStationService.getAllPersonsByStationNumber(stationNumber);
         log.info("Requête reçue -> getFireStationNumber :{}", stationNumber);
         log.info("Objet retourné -> getFireStationNumber :{}", persons);
-        return persons;
+        if (persons.isEmpty()){
+           return ResponseEntity.status(HttpStatus.NOT_FOUND).body(persons);
+        } else {
+           return ResponseEntity.status(HttpStatus.OK).body(persons);
+        }
     }
 
     /**
@@ -51,11 +56,15 @@ public class SafetyNetFireStationController {
      * @return liste d'habitant
      */
     @GetMapping("/fire")
-    public List<ResponsePersonsByAddress> getGroupOfPersonsByAddress(@RequestParam String address) {
+    public ResponseEntity<?> getGroupOfPersonsByAddress(@RequestParam String address) {
         List<ResponsePersonsByAddress> persons = safetyNetFireStationService.getPersonsByAddress(address);
         log.info("Requête reçue -> getHabitantAtThisAdrdress :{}", address);
         log.info("Objet retourné -> getHabitantAtThisAdrdress :{}", persons);
-        return persons;
+        if (persons.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(persons);
+        } else {
+            return ResponseEntity.status(HttpStatus.OK).body(persons);
+        }
     }
 
     /**
@@ -65,11 +74,15 @@ public class SafetyNetFireStationController {
      * @return liste de foyer
      */
     @GetMapping("/flood/stations")
-    public List<ResponsePersonsByStationNumber> getPersonsCardsByStationNumber(@RequestParam String stations) {
+    public ResponseEntity<?> getPersonsCardsByStationNumber(@RequestParam String stations) {
         List<ResponsePersonsByStationNumber> persons = safetyNetFireStationService.getPersonsByStationNumber(stations);
         log.info("Requête reçue -> getHomesAtThisStationNumber :{}", stations);
         log.info("Objet retourné -> getHomesAtThisStationNumber :{}", persons);
-        return persons;
+        if (persons.isEmpty()) {
+           return ResponseEntity.status(HttpStatus.NOT_FOUND).body(persons);
+        } else {
+           return ResponseEntity.status(HttpStatus.OK).body(persons);
+        }
     }
 
     /**
@@ -79,18 +92,11 @@ public class SafetyNetFireStationController {
      * @return http status
      */
     @PostMapping("/firestation")
-    public ResponseEntity<Object> postFireStation(@RequestBody FireStations postFirestations) {
+    public ResponseEntity<?> postFireStation(@RequestBody FireStations postFirestations) {
         ListSafety listSafety = safetyNetFireStationService.postNewFireStation(postFirestations);
         safetyNetWriteFileRepository.writeData(listSafety);
-        if (Objects.isNull(listSafety)){
-            return ResponseEntity.noContent().build();
-        }
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .buildAndExpand(listSafety.getPersons())
-                .toUri();
         log.info("Requête reçue -> postFireStation :{}", postFirestations);
-        return ResponseEntity.created(location).build();
+        return ResponseEntity.status(HttpStatus.CREATED).body(listSafety.getPersons());
     }
 
     /**

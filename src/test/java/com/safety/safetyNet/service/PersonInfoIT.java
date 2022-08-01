@@ -42,7 +42,7 @@ public class PersonInfoIT {
     public void testGetPersonInfoEmpty() {
         try {
             mockMvc.perform(get("/personInfo?firstName=Jonan&lastName=Marrac")).andExpect(status()
-                    .isOk()).andExpect(jsonPath("$", Matchers.empty()));
+                    .is4xxClientError()).andExpect(jsonPath("$", Matchers.empty()));
         } catch (Exception e) {
             log.error("error :", e);
         }
