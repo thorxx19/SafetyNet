@@ -16,7 +16,6 @@ public class MedicalRecords {
     private String firstName;
     @NotNull
     private String lastName;
-    @Past
     private String birthdate;
     private List<String> medications;
     private List<String> allergies;

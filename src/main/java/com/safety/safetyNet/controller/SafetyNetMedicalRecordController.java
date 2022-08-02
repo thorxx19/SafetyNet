@@ -6,14 +6,12 @@ import com.safety.safetyNet.model.MedicalRecords;
 import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetMedicalRecordService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
 import javax.validation.Valid;
-import java.net.URI;
-import java.util.Objects;
 
 /**
  * @author o.froidefond
@@ -34,18 +32,11 @@ public class SafetyNetMedicalRecordController {
      * @return http status
      */
     @PostMapping("/medicalRecord")
-    public ResponseEntity<Object> postMedicalRecord(@Valid @RequestBody MedicalRecords postMedicalRecord) {
+    public ResponseEntity<?> postMedicalRecord(@Valid @RequestBody MedicalRecords postMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.postMedicalRecord(postMedicalRecord);
         safetyNetWriteFileRepository.writeData(listSafety);
-        if (Objects.isNull(listSafety)){
-            return ResponseEntity.noContent().build();
-        }
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .buildAndExpand(listSafety.getPersons())
-                .toUri();
         log.info("Requête POST postMedicalRecord : {}", postMedicalRecord);
-        return ResponseEntity.created(location).build();
+        return ResponseEntity.status(HttpStatus.CREATED).body(Strings.EMPTY);
     }
 
     /**

@@ -7,11 +7,12 @@ import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetPersonService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 
 import javax.validation.Valid;
 import java.net.URI;
@@ -57,18 +58,11 @@ public class SafetyNetPersonController {
      * @return HTTP status
      */
     @PostMapping("/person")
-    public ResponseEntity<ListSafety> postNewPerson(@Valid @RequestBody Persons newPerson) {
+    public ResponseEntity<?> postNewPerson(@Valid @RequestBody Persons newPerson) {
         ListSafety listSafety = safetyNetPersonService.postNewPerson(newPerson);
         safetyNetWriteFileRepository.writeData(listSafety);
-        if (Objects.isNull(listSafety)){
-            return ResponseEntity.noContent().build();
-        }
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .buildAndExpand(listSafety.getPersons())
-                .toUri();
         log.info("Requête reçue -> postNewPerson :{}", newPerson);
-        return ResponseEntity.created(location).build();
+        return ResponseEntity.status(HttpStatus.CREATED).body(Strings.EMPTY);
     }
 
     /**

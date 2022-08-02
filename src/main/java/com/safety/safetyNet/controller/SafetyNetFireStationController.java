@@ -5,15 +5,13 @@ import com.safety.safetyNet.model.*;
 import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetFireStationService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import java.net.URI;
 import java.util.List;
-import java.util.Objects;
+
 
 /**
  * @author o.froidefond
@@ -96,7 +94,7 @@ public class SafetyNetFireStationController {
         ListSafety listSafety = safetyNetFireStationService.postNewFireStation(postFirestations);
         safetyNetWriteFileRepository.writeData(listSafety);
         log.info("Requête reçue -> postFireStation :{}", postFirestations);
-        return ResponseEntity.status(HttpStatus.CREATED).body(listSafety.getPersons());
+        return ResponseEntity.status(HttpStatus.CREATED).body(Strings.EMPTY);
     }
 
     /**
