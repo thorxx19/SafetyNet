@@ -1,7 +1,11 @@
 package com.safety.safetyNet.service;
 
 import com.safety.safetyNet.configuration.SafetyNetConfiguration;
-import com.safety.safetyNet.model.*;
+import com.safety.safetyNet.model.ListSafety;
+import com.safety.safetyNet.model.Persons;
+import com.safety.safetyNet.model.MedicalRecords;
+import com.safety.safetyNet.model.FireStations;
+import com.safety.safetyNet.model.DeletePerson;
 import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
 import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
@@ -49,7 +53,8 @@ public class SafetyNetMedicalRecordService {
         boolean verifMedicalRecord = true;
 
         for (MedicalRecords medicalRecord : dataMedical) {
-            if (postMedicalRecord.getFirstName().equals(medicalRecord.getFirstName()) && postMedicalRecord.getLastName().equals(medicalRecord.getLastName())) {
+            if (postMedicalRecord.getFirstName().equals(medicalRecord.getFirstName())
+                    && postMedicalRecord.getLastName().equals(medicalRecord.getLastName())) {
                 verifMedicalRecord = false;
                 break;
             }
@@ -79,7 +84,8 @@ public class SafetyNetMedicalRecordService {
         List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
 
         for (MedicalRecords medicalRecord : dataMedical) {
-            if (putMedicalRecord.getFirstName().equals(medicalRecord.getFirstName()) && putMedicalRecord.getLastName().equals(medicalRecord.getLastName())) {
+            if (putMedicalRecord.getFirstName().equals(medicalRecord.getFirstName())
+                    && putMedicalRecord.getLastName().equals(medicalRecord.getLastName())) {
                 medicalRecord.setBirthdate(putMedicalRecord.getBirthdate());
                 medicalRecord.setMedications(putMedicalRecord.getMedications());
                 medicalRecord.setAllergies(putMedicalRecord.getAllergies());

@@ -1,7 +1,12 @@
 package com.safety.safetyNet.service;
 
 import com.safety.safetyNet.configuration.SafetyNetConfiguration;
-import com.safety.safetyNet.model.*;
+import com.safety.safetyNet.model.ListSafety;
+import com.safety.safetyNet.model.PersonInfo;
+import com.safety.safetyNet.model.Persons;
+import com.safety.safetyNet.model.MedicalRecords;
+import com.safety.safetyNet.model.FireStations;
+import com.safety.safetyNet.model.DeletePerson;
 import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
 import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
@@ -36,7 +41,7 @@ public class SafetyNetPersonService {
 
 
     /**
-     * fonction pour récupérer une liste de personnes avec les antécédant médicaux
+     * fonction pour récupérer une liste de personnes avec les antécédant médicaux.
      *
      * @param firstname le prénom
      * @param lastName  le nom de famille
@@ -49,14 +54,17 @@ public class SafetyNetPersonService {
 
         List<PersonInfo> personInfoList = new ArrayList<>();
 
-        List<Persons> personsStream = dataPersons.stream().filter(x -> lastName.equals(x.getLastName())).collect(Collectors.toList());
+        List<Persons> personsStream = dataPersons.stream().filter(x -> lastName.equals(x.getLastName()))
+                .collect(Collectors.toList());
 
-        List<MedicalRecords> medicalStream = dataMedical.stream().filter(x -> lastName.equals(x.getLastName())).collect(Collectors.toList());
+        List<MedicalRecords> medicalStream = dataMedical.stream().filter(x -> lastName.equals(x.getLastName()))
+                .collect(Collectors.toList());
 
 
         for (int i = 0; i <= personsStream.size() - 1; i++) {
             PersonInfo personInfo = new PersonInfo();
-            long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medicalStream.get(i).getBirthdate());
+            long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medicalStream.get(i)
+                    .getBirthdate());
 
             personInfo.setLastName(personsStream.get(i).getLastName());
             personInfo.setAddress(personsStream.get(i).getAddress());
@@ -85,7 +93,8 @@ public class SafetyNetPersonService {
         boolean verifPerson = true;
 
         for (Persons person : dataPersons) {
-            if (newPerson.getFirstName().equals(person.getFirstName()) && newPerson.getLastName().equals(person.getLastName())) {
+            if (newPerson.getFirstName().equals(person.getFirstName()) && newPerson.getLastName()
+                    .equals(person.getLastName())) {
                 verifPerson = false;
                 break;
             }
@@ -140,7 +149,8 @@ public class SafetyNetPersonService {
         ListSafety listSafety = new ListSafety();
 
         for (Persons person : dataPersons) {
-            if (putPerson.getFirstName().equals(person.getFirstName()) && putPerson.getLastName().equals(person.getLastName())) {
+            if (putPerson.getFirstName().equals(person.getFirstName()) && putPerson.getLastName()
+                    .equals(person.getLastName())) {
                 person.setAddress(putPerson.getAddress());
                 person.setCity(putPerson.getCity());
                 person.setZip(putPerson.getZip());

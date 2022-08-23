@@ -6,6 +6,7 @@ import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.model.PersonsAdult;
 import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 
 
 @Service
+@Slf4j
 public class SafetyNetAdultByAddress {
     @Autowired
     SafetyNetMedicalRecordsRepository safetyNetMedicalRecordsRepository;
@@ -32,10 +34,11 @@ public class SafetyNetAdultByAddress {
         List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
 
-
+        log.debug("Start");
         List<PersonsAdult> personsAdultList = new ArrayList<>();
 
-        List<Persons> personsByAddress = dataPersons.stream().filter(person -> address.equals(person.getAddress())).collect(Collectors.toList());
+        List<Persons> personsByAddress = dataPersons.stream().filter(person -> address.equals(person.getAddress()))
+                .collect(Collectors.toList());
 
         for (MedicalRecords medic : dataMedical) {
             long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic.getBirthdate());
@@ -53,6 +56,7 @@ public class SafetyNetAdultByAddress {
                 }
             }
         }
+        log.debug("end");
         return personsAdultList;
     }
 

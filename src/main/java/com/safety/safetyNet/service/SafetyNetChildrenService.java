@@ -4,7 +4,6 @@ import com.safety.safetyNet.model.PersonsAdult;
 import com.safety.safetyNet.model.PersonsByAddress;
 import com.safety.safetyNet.model.PersonsChildren;
 import com.safety.safetyNet.model.Siblings;
-import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

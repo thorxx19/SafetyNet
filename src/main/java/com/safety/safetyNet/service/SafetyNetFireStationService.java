@@ -1,7 +1,18 @@
 package com.safety.safetyNet.service;
 
 import com.safety.safetyNet.configuration.SafetyNetConfiguration;
-import com.safety.safetyNet.model.*;
+import com.safety.safetyNet.model.FireStations;
+import com.safety.safetyNet.model.ResponseFireStationByNumber;
+import com.safety.safetyNet.model.Persons;
+import com.safety.safetyNet.model.MedicalRecords;
+import com.safety.safetyNet.model.PersonsStation;
+import com.safety.safetyNet.model.CountPeople;
+import com.safety.safetyNet.model.ResponsePersonsByAddress;
+import com.safety.safetyNet.model.PersonsMedical;
+import com.safety.safetyNet.model.Station;
+import com.safety.safetyNet.model.ResponsePersonsByStationNumber;
+import com.safety.safetyNet.model.PersonsFireStation;
+import com.safety.safetyNet.model.ListSafety;
 import com.safety.safetyNet.repository.SafetyNetFireStationRepository;
 import com.safety.safetyNet.repository.SafetyNetMedicalRecordsRepository;
 import com.safety.safetyNet.repository.SafetyNetPersonsRepository;
@@ -64,9 +75,11 @@ public class SafetyNetFireStationService {
                 for (Persons person : dataPersons) {
                     if (person.getAddress().equals(firestation.getAddress())) {
                         for (MedicalRecords medic : dataMedical) {
-                            if (person.getLastName().equals(medic.getLastName()) && person.getFirstName().equals(medic.getFirstName())) {
+                            if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
+                                    .equals(medic.getFirstName())) {
 
-                                long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic.getBirthdate());
+                                long yearBirth = safetyNetCalculatorAgeBirthdate
+                                        .calculeDateBirthdate(medic.getBirthdate());
                                 if (yearBirth <= 18) {
                                     countChildren++;
                                     break;
@@ -132,7 +145,8 @@ public class SafetyNetFireStationService {
                             if (person.getLastName().equals(medic.getLastName()) && person.getFirstName()
                                     .equals(medic.getFirstName())) {
 
-                                long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medic.getBirthdate());
+                                long yearBirth = safetyNetCalculatorAgeBirthdate
+                                        .calculeDateBirthdate(medic.getBirthdate());
                                 PersonsMedical persons = new PersonsMedical();
                                 persons.setLastName(person.getLastName());
                                 persons.setPhone(person.getPhone());
@@ -167,7 +181,8 @@ public class SafetyNetFireStationService {
         List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(pathFile);
         List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
         List<ResponsePersonsByStationNumber> responseListPersonsByStationNumber = new ArrayList<>();
-        List<FireStations> fireStationsList = dataFireStations.stream().filter(fireStations -> fireStation.equals(fireStations.getStation())).collect(Collectors.toList());
+        List<FireStations> fireStationsList = dataFireStations.stream()
+                .filter(fireStations -> fireStation.equals(fireStations.getStation())).collect(Collectors.toList());
 
 
         for (FireStations fireStations : fireStationsList) {
@@ -177,8 +192,10 @@ public class SafetyNetFireStationService {
                 if (fireStations.getAddress().equals(person.getAddress())) {
                     PersonsFireStation personsFireStation = new PersonsFireStation();
                     for (MedicalRecords medicalRecord : dataMedical) {
-                        if (medicalRecord.getLastName().equals(person.getLastName()) && medicalRecord.getFirstName().equals(person.getFirstName())) {
-                            long yearBirth = safetyNetCalculatorAgeBirthdate.calculeDateBirthdate(medicalRecord.getBirthdate());
+                        if (medicalRecord.getLastName().equals(person.getLastName())
+                                && medicalRecord.getFirstName().equals(person.getFirstName())) {
+                            long yearBirth = safetyNetCalculatorAgeBirthdate
+                                    .calculeDateBirthdate(medicalRecord.getBirthdate());
 
                             responsePersonsByStationNumber.setAddress(person.getAddress());
                             personsFireStation.setLastName(person.getLastName());

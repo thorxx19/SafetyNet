@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class SafetyNetCalculatorAgeBirthdate {
 
     /**
-     * method pour calculer l'age
+     * method pour calculer l'age.
      *
      * @param date object de type MedicalRecords
      * @return l'age calculer
