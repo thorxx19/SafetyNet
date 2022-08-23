@@ -5,7 +5,6 @@ import com.safety.safetyNet.model.ListSafety;
 import com.safety.safetyNet.model.MedicalRecords;
 import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetMedicalRecordService;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +17,7 @@ import javax.validation.Valid;
  */
 
 @RestController
-@Slf4j
+@CrossOrigin("http://localhost:3000/")
 public class SafetyNetMedicalRecordController {
     @Autowired
     SafetyNetMedicalRecordService safetyNetMedicalRecordService;
@@ -35,7 +34,6 @@ public class SafetyNetMedicalRecordController {
     public ResponseEntity<?> postMedicalRecord(@Valid @RequestBody MedicalRecords postMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.postMedicalRecord(postMedicalRecord);
         safetyNetWriteFileRepository.writeData(listSafety);
-        log.info("Requête POST postMedicalRecord : {}", postMedicalRecord);
         return ResponseEntity.status(HttpStatus.CREATED).body(Strings.EMPTY);
     }
 
@@ -48,7 +46,6 @@ public class SafetyNetMedicalRecordController {
     public void putMedicalRecord(@Valid @RequestBody MedicalRecords putMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.putMedicalRecord(putMedicalRecord);
         safetyNetWriteFileRepository.writeData(listSafety);
-        log.info("Requête PUT putMedicalRecord : {}", putMedicalRecord);
     }
 
     /**
@@ -60,6 +57,5 @@ public class SafetyNetMedicalRecordController {
     public void deleteMedicalRecord(@Valid @RequestBody DeletePerson deleteMedicalRecord) {
         ListSafety listSafety = safetyNetMedicalRecordService.deleteMedicalRecord(deleteMedicalRecord);
         safetyNetWriteFileRepository.writeData(listSafety);
-        log.info("Requête DELETE deleteMedicalRecord : {}", deleteMedicalRecord);
     }
 }

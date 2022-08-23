@@ -15,6 +15,7 @@ logging:
       safety:
         safetyNet:
           repository: ERROR
+          filter: INFO
           service: INFO
           controller: INFO
           SafetyNetApplication: ERROR
@@ -30,6 +31,18 @@ logging:
   path: logs
   file:
     name: safetyNetTest.log
+  level:
+    root: ERROR
+    org:
+      springframework:
+        web: ERROR
+      boot:
+        StartupInfoLogger: ERROR
+    com:
+      safety:
+        safetyNet:
+          service: DEBUG
+          filter: INFO
 ---
 
 management.endpoints.web.exposure.include: "*"
@@ -40,9 +53,6 @@ spring:
         matching-strategy: ant_path_matcher
     main:
       banner-mode: off
-springdoc:
-  api-docs:
-    path: /api-docs
 management:
   endpoints:
     web:

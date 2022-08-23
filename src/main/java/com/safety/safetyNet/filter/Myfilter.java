@@ -35,15 +35,20 @@ public class Myfilter implements Filter {
         responseCacheWrapperObject.copyBodyToResponse();
 
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
-        String queryString = URLDecoder.decode(httpServletRequest.getQueryString(), StandardCharsets.UTF_8);
-        log.info("Protocol :{}", request.getProtocol());
-        log.info("Method :{}", httpServletRequest.getMethod());
-        log.info("Server Name :{} ", request.getServerName());
-        log.info("Local Port :{}", request.getLocalPort());
-        log.info("Mapping :{}", httpServletRequest.getServletPath());
-        log.info("Parametre :{}", queryString);
 
-        filterChain.doFilter(request, response);
+        log.info("Protocol :{} Method :{} Server :{} Port:{} End point:{}", request.getProtocol(), httpServletRequest.getMethod()
+                , request.getServerName(), request.getLocalPort(), httpServletRequest.getServletPath());
+
+        if (!httpServletRequest.getServletPath().contains("swagger")
+                && !httpServletRequest.getServletPath().contains("api-docs")
+                && !httpServletRequest.getServletPath().contains("actuator")
+                && !httpServletRequest.getServletPath().isBlank()){
+            log.info("Parametre :{}", URLDecoder.decode(httpServletRequest.getQueryString(), StandardCharsets.UTF_8));
+        }
+        if (!httpServletRequest.getServletPath().isBlank()){
+            filterChain.doFilter(request, response);
+        }
+
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
         log.info("code Response :{}", httpServletResponse.getStatus());
         log.info("Response Json :{}", responseStr);

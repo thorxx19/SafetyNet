@@ -1,10 +1,13 @@
 package com.safety.safetyNet.controller;
 
 
-import com.safety.safetyNet.model.*;
+import com.safety.safetyNet.model.ResponsePersonsByStationNumber;
+import com.safety.safetyNet.model.ResponseFireStationByNumber;
+import com.safety.safetyNet.model.FireStations;
+import com.safety.safetyNet.model.ResponsePersonsByAddress;
+import com.safety.safetyNet.model.ListSafety;
 import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetFireStationService;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +21,7 @@ import java.util.List;
  */
 
 @RestController
-@Slf4j
+@CrossOrigin("http://localhost:3000/")
 public class SafetyNetFireStationController {
 
 
@@ -36,9 +39,8 @@ public class SafetyNetFireStationController {
      */
     @GetMapping("/firestation")
     public ResponseEntity<?> getFireStationByNumber(@RequestParam int stationNumber) {
-        List<ResponseFireStationByNumber> persons = safetyNetFireStationService.getAllPersonsByStationNumber(stationNumber);
-        log.info("Requête reçue -> getFireStationNumber :{}", stationNumber);
-        log.info("Objet retourné -> getFireStationNumber :{}", persons);
+        List<ResponseFireStationByNumber> persons = safetyNetFireStationService
+                .getAllPersonsByStationNumber(stationNumber);
         if (persons.isEmpty()){
            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(persons);
         } else {
@@ -56,8 +58,6 @@ public class SafetyNetFireStationController {
     @GetMapping("/fire")
     public ResponseEntity<?> getGroupOfPersonsByAddress(@RequestParam String address) {
         List<ResponsePersonsByAddress> persons = safetyNetFireStationService.getPersonsByAddress(address);
-        log.info("Requête reçue -> getHabitantAtThisAdrdress :{}", address);
-        log.info("Objet retourné -> getHabitantAtThisAdrdress :{}", persons);
         if (persons.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(persons);
         } else {
@@ -74,8 +74,6 @@ public class SafetyNetFireStationController {
     @GetMapping("/flood/stations")
     public ResponseEntity<?> getPersonsCardsByStationNumber(@RequestParam String stations) {
         List<ResponsePersonsByStationNumber> persons = safetyNetFireStationService.getPersonsByStationNumber(stations);
-        log.info("Requête reçue -> getHomesAtThisStationNumber :{}", stations);
-        log.info("Objet retourné -> getHomesAtThisStationNumber :{}", persons);
         if (persons.isEmpty()) {
            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(persons);
         } else {
@@ -93,7 +91,6 @@ public class SafetyNetFireStationController {
     public ResponseEntity<?> postFireStation(@RequestBody FireStations postFirestations) {
         ListSafety listSafety = safetyNetFireStationService.postNewFireStation(postFirestations);
         safetyNetWriteFileRepository.writeData(listSafety);
-        log.info("Requête reçue -> postFireStation :{}", postFirestations);
         return ResponseEntity.status(HttpStatus.CREATED).body(Strings.EMPTY);
     }
 
@@ -106,7 +103,6 @@ public class SafetyNetFireStationController {
     public void deleteFireStation(@RequestBody FireStations deleteFireStations) {
         ListSafety listSafety = safetyNetFireStationService.deleteFireStation(deleteFireStations);
         safetyNetWriteFileRepository.writeData(listSafety);
-        log.info("Requête reçue -> deleteFireStation :{}", deleteFireStations);
     }
 
     /**
@@ -118,6 +114,5 @@ public class SafetyNetFireStationController {
     public void putFireStation(@RequestBody FireStations putFireStations) {
         ListSafety listSafety = safetyNetFireStationService.putFireStation(putFireStations);
         safetyNetWriteFileRepository.writeData(listSafety);
-        log.info("Requête reçue -> putFireStation :{}", putFireStations);
     }
 }

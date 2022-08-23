@@ -6,24 +6,20 @@ import com.safety.safetyNet.model.PersonInfo;
 import com.safety.safetyNet.model.Persons;
 import com.safety.safetyNet.repository.SafetyNetWriteFileRepository;
 import com.safety.safetyNet.service.SafetyNetPersonService;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
-
-
 import javax.validation.Valid;
-import java.net.URI;
 import java.util.List;
-import java.util.Objects;
+
 
 /**
  * @author o.froidefond
  */
 @RestController
-@Slf4j
+@CrossOrigin("http://localhost:3000/")
 public class SafetyNetPersonController {
 
     @Autowired
@@ -42,8 +38,6 @@ public class SafetyNetPersonController {
     @GetMapping("/personInfo")
     public ResponseEntity<?> getPatientCardByName(@RequestParam String firstName, String lastName) {
         List<PersonInfo> persons = safetyNetPersonService.getPersonCardInfoByName(firstName, lastName);
-        log.info("Requête reçue -> getMedicalRecordsOfThisPerson :Prénom:{},Nom:{}", firstName, lastName);
-        log.info("Objet retourné -> getMedicalRecordsOfThisPerson :{}", persons);
         if (persons.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(persons);
         } else {
@@ -61,7 +55,6 @@ public class SafetyNetPersonController {
     public ResponseEntity<?> postNewPerson(@Valid @RequestBody Persons newPerson) {
         ListSafety listSafety = safetyNetPersonService.postNewPerson(newPerson);
         safetyNetWriteFileRepository.writeData(listSafety);
-        log.info("Requête reçue -> postNewPerson :{}", newPerson);
         return ResponseEntity.status(HttpStatus.CREATED).body(Strings.EMPTY);
     }
 
@@ -74,7 +67,6 @@ public class SafetyNetPersonController {
     public void deletePerson(@Valid @RequestBody DeletePerson deletePerson) {
         ListSafety listSafety = safetyNetPersonService.deletePerson(deletePerson);
         safetyNetWriteFileRepository.writeData(listSafety);
-        log.info("Requête reçue -> deletePerson :{}", deletePerson);
     }
 
     /**
@@ -86,7 +78,5 @@ public class SafetyNetPersonController {
     public void putPerson(@Valid @RequestBody Persons putPerson) {
         ListSafety listSafety = safetyNetPersonService.putPerson(putPerson);
         safetyNetWriteFileRepository.writeData(listSafety);
-        log.info("Requête reçue -> putPerson :{}", putPerson);
-
     }
 }

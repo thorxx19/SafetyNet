@@ -8,9 +8,15 @@ import org.springframework.stereotype.Repository;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author froid
+ */
 @Slf4j
 @Repository
 public class SafetyNetReadFileRepository {
+
+
+
     /**
      * Fonction pour lire le fichier de données.
      *

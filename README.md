@@ -34,5 +34,5 @@ http://localhost:9000/actuator
 Link [Swagger](https://www.baeldung.com/spring-rest-openapi-documentation) documentation
 
 ```bash
-http://localhost:9000/v3/api-docs/
+http://localhost:9000/swagger-ui/index.html
 ```
