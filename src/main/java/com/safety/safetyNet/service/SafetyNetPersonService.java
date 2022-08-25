@@ -48,6 +48,7 @@ public class SafetyNetPersonService {
      * @return une liste de personnes qui ont le même nom de famille.
      */
     public List<PersonInfo> getPersonCardInfoByName(String firstname, String lastName) {
+        log.debug("Start getPersonCardInfoByName");
         String pathFile = safetyNetConfiguration.getPathFile();
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
         List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
@@ -74,7 +75,7 @@ public class SafetyNetPersonService {
             personInfo.setAllergies(medicalStream.get(i).getAllergies());
             personInfoList.add(personInfo);
         }
-
+        log.debug("End getPersonCardInfoByName");
         return personInfoList;
     }
 
@@ -85,6 +86,7 @@ public class SafetyNetPersonService {
      * @return le nouvelle object de type listSafety
      */
     public ListSafety postNewPerson(Persons newPerson) {
+        log.debug("Start postNewPerson");
         String pathFile = safetyNetConfiguration.getPathFile();
         ListSafety listSafety = new ListSafety();
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
@@ -106,7 +108,7 @@ public class SafetyNetPersonService {
         listSafety.setPersons(dataPersons);
         listSafety.setFirestations(dataFireStations);
         listSafety.setMedicalrecords(dataMedical);
-
+        log.debug("End postNewPerson");
         return listSafety;
     }
 
@@ -117,6 +119,7 @@ public class SafetyNetPersonService {
      * @return le nouvelle object de type listSafety
      */
     public ListSafety deletePerson(DeletePerson deletePerson) {
+        log.debug("Start deletePerson");
         String pathFile = safetyNetConfiguration.getPathFile();
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
         List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(pathFile);
@@ -131,7 +134,7 @@ public class SafetyNetPersonService {
         listSafety.setPersons(personsList);
         listSafety.setFirestations(dataFireStations);
         listSafety.setMedicalrecords(dataMedical);
-
+        log.debug("End deletePerson");
         return listSafety;
     }
 
@@ -142,6 +145,7 @@ public class SafetyNetPersonService {
      * @return le nouvelle object de type listSafety
      */
     public ListSafety putPerson(Persons putPerson) {
+        log.debug("Start putPerson");
         String pathFile = safetyNetConfiguration.getPathFile();
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
         List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(pathFile);
@@ -163,7 +167,7 @@ public class SafetyNetPersonService {
         listSafety.setPersons(dataPersons);
         listSafety.setFirestations(dataFireStations);
         listSafety.setMedicalrecords(dataMedical);
-
+        log.debug("End putPerson");
         return listSafety;
     }
 }

@@ -29,6 +29,7 @@ public class SafetyNetChildrenByAddress {
     SafetyNetConfiguration safetyNetConfiguration;
 
     public List<PersonsChildren> getChildrenByAddress(String address) {
+        log.debug("Start getChildrenByAddress");
         String pathFile = safetyNetConfiguration.getPathFile();
         List<PersonsChildren> listMineur = new ArrayList<>();
         List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
@@ -50,7 +51,7 @@ public class SafetyNetChildrenByAddress {
                 }
             }
         }
-
+        log.debug("End getChildrenByAddress");
         return listMineur;
     }
 }

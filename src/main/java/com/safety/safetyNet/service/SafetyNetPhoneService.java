@@ -34,6 +34,7 @@ public class SafetyNetPhoneService {
      * @return liste de numéro de téléphone unique
      */
     public TreeSet<String> getNumberPhoneByFireStation(int stationNumber) {
+        log.debug("Start getNumberPhoneByFireStation");
         String pathFile = safetyNetConfiguration.getPathFile();
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
         List<FireStations> dataFireStations = safetyNetFireStationRepository.getFireStation(pathFile);
@@ -51,7 +52,7 @@ public class SafetyNetPhoneService {
                 }
             }
         }
-
+        log.debug("End getNumberPhoneByFireStation");
         return treePhone;
     }
 }

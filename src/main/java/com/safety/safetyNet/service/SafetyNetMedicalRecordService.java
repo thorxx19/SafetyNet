@@ -44,6 +44,7 @@ public class SafetyNetMedicalRecordService {
      * @return un object de type ListSafety.
      */
     public ListSafety postMedicalRecord(MedicalRecords postMedicalRecord) {
+        log.debug("Start postMedicalRecord");
         String pathFile = safetyNetConfiguration.getPathFile();
         ListSafety listSafety = new ListSafety();
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
@@ -66,7 +67,7 @@ public class SafetyNetMedicalRecordService {
         listSafety.setPersons(dataPersons);
         listSafety.setFirestations(dataFireStations);
         listSafety.setMedicalrecords(dataMedical);
-
+        log.debug("End postMedicalRecord");
         return listSafety;
     }
 
@@ -77,6 +78,7 @@ public class SafetyNetMedicalRecordService {
      * @return un objet de type ListSafety.
      */
     public ListSafety putMedicalRecord(MedicalRecords putMedicalRecord) {
+        log.debug("Start putMedicalRecord");
         String pathFile = safetyNetConfiguration.getPathFile();
         ListSafety listSafety = new ListSafety();
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
@@ -96,7 +98,7 @@ public class SafetyNetMedicalRecordService {
         listSafety.setPersons(dataPersons);
         listSafety.setFirestations(dataFireStations);
         listSafety.setMedicalrecords(dataMedical);
-
+        log.debug("End putMedicalRecord");
         return listSafety;
     }
 
@@ -107,6 +109,7 @@ public class SafetyNetMedicalRecordService {
      * @return un objet de type ListSafety.
      */
     public ListSafety deleteMedicalRecord(DeletePerson deleteMedicalrecord) {
+        log.debug("Start deleteMedicalRecord");
         String pathFile = safetyNetConfiguration.getPathFile();
         List<MedicalRecords> medicalList = new ArrayList<>();
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
@@ -122,7 +125,7 @@ public class SafetyNetMedicalRecordService {
         listSafety.setPersons(dataPersons);
         listSafety.setFirestations(dataFireStations);
         listSafety.setMedicalrecords(medicalList);
-
+        log.debug("End deleteMedicalRecord");
         return listSafety;
     }
 }

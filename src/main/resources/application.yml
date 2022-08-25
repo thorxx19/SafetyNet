@@ -5,7 +5,8 @@ server:
 logging:
   path: logs
   file:
-    name: safetyNet.log
+    max-size: 1MB
+    name: ${logging.path}/SafetyNet.log
   level:
     root: ERROR
     org:
@@ -30,7 +31,8 @@ safetynet.pathFile: "src/test/java/com/safety/safetyNet/data/dataTest.json"
 logging:
   path: logs
   file:
-    name: safetyNetTest.log
+    max-size: 1MB
+    name: ${logging.path}/SafetyNetTest.log
   level:
     root: ERROR
     org:

@@ -29,6 +29,7 @@ public class SafetyNetMailService {
      * @return Une liste de mail trié
      */
     public TreeSet<String> getMailByCity(String city) {
+        log.debug("Start getMailByCity");
         String pathFile = safetyNetConfiguration.getPathFile();
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
         TreeSet<String> treeMail = new TreeSet<>();
@@ -38,8 +39,7 @@ public class SafetyNetMailService {
                 treeMail.add(dataMail.getEmail());
             }
         }
-
+        log.debug("End getMailByCity");
         return treeMail;
-
     }
 }

@@ -34,7 +34,7 @@ public class SafetyNetAdultByAddress {
         List<MedicalRecords> dataMedical = safetyNetMedicalRecordsRepository.getMedicalRecords(pathFile);
         List<Persons> dataPersons = safetyNetPersonsRepository.getPerson(pathFile);
 
-        log.debug("Start");
+        log.debug("Start getAdultByAddress");
         List<PersonsAdult> personsAdultList = new ArrayList<>();
 
         List<Persons> personsByAddress = dataPersons.stream().filter(person -> address.equals(person.getAddress()))
@@ -56,7 +56,7 @@ public class SafetyNetAdultByAddress {
                 }
             }
         }
-        log.debug("end");
+        log.debug("end getAdultByAddress");
         return personsAdultList;
     }
 

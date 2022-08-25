@@ -22,7 +22,7 @@ public class SafetyNetCalculatorAgeBirthdate {
      */
     public long calculeDateBirthdate(String date) {
 
-
+        log.debug("Start calculator age");
         Calendar today = Calendar.getInstance();
         SimpleDateFormat dateTimeFormatter = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -37,7 +37,7 @@ public class SafetyNetCalculatorAgeBirthdate {
         TimeUnit time = TimeUnit.DAYS;
         long resultDay = time.convert(result, TimeUnit.MILLISECONDS);
 
-
+        log.debug("End calculator age");
         return resultDay / 365;
     }
 

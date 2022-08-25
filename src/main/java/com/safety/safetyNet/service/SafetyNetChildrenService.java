@@ -31,7 +31,7 @@ public class SafetyNetChildrenService {
      * @return liste de mineur
      */
     public List<PersonsByAddress> getChildrenByAddress(String address) {
-
+        log.debug("Start getChildrenByAddress");
         List<PersonsChildren> personsChildren = safetyNetChildrenByAddress.getChildrenByAddress(address);
         List<PersonsAdult> personsAdults = safetyNetAdultByAddress.getAdultByAddress(address);
         List<PersonsByAddress> responseChildByAddress = new ArrayList<>();
@@ -78,6 +78,7 @@ public class SafetyNetChildrenService {
             }
             responseChildByAddress.add(persons);
         }
+        log.debug("Start getChildrenByAddress");
         return responseChildByAddress;
     }
 }
