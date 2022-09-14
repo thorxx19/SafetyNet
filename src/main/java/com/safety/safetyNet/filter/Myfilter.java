@@ -39,7 +39,8 @@ public class Myfilter implements Filter {
                 && !httpServletRequest.getServletPath().contains("api-docs")
                 && !httpServletRequest.getServletPath().contains("actuator")
                 && !httpServletRequest.getServletPath().isBlank()
-                && !httpServletRequest.getServletPath().contains("favicon")) {
+                && !httpServletRequest.getServletPath().contains("favicon")
+                && httpServletRequest.getQueryString() != null) {
                 log.info("Protocol :{} Method :{} Server :{} Port:{} End point:{}", request.getProtocol(), httpServletRequest.getMethod()
                     , request.getServerName(), request.getLocalPort(), httpServletRequest.getServletPath());
                 log.info("Parametre :{}", URLDecoder.decode(httpServletRequest.getQueryString(), StandardCharsets.UTF_8));
